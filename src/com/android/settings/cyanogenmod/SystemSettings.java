@@ -31,6 +31,7 @@ public class SystemSettings extends SettingsPreferenceFragment {
 
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
+    private PreferenceScreen mNavigationBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,11 @@ public class SystemSettings extends SettingsPreferenceFragment {
                 updateBatteryPulseDescription();
             }
         }
+
+        mNavigationBar = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR);
+        if (mNavigationBar != null) {
+            getPreferenceScreen().removePreference(mNavigationBar);
+            }
     }
 
     private void updateLightPulseDescription() {

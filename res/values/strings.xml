@@ -4844,6 +4844,17 @@
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
     <string name="volume_ring_only_description">Ringtone</string>
 
+    <!-- Navigation Bar  -->
+    <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
+    <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_show">Show Navigation Bar</string>
+    <string name="navigation_bar_summary">Toggle Navigation Bar On/Off</string>
+    <string name="hw_keys_title">Hardware Keys</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
+    <string name="navigation_bar_reboot_message">Reboot required</string>
+
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
