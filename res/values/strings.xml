@@ -4844,6 +4844,17 @@
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
     <string name="volume_ring_only_description">Ringtone</string>
 
+    <!-- Navigation Bar  -->
+    <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
+    <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_show">Show Navigation Bar</string>
+    <string name="navigation_bar_summary">Toggle Navigation Bar On/Off</string>
+    <string name="hw_keys_title">Hardware Keys</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
+    <string name="navigation_bar_reboot_message">Reboot required</string>
+
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
     <string name="title_expanded_widget">Power widget</string>
@@ -4962,6 +4973,11 @@
     <string name="adb_over_network_summary">Enable TCP/IP debugging over network interfaces (Wi-Fi, USB networks). This setting is reset on reboot</string>
     <!-- Warning for Adb over Network -->
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
+
+    <!-- On-Screen Buttons -->
+    <string name="on_screen_buttons_height_title">Change height</string>
+    <string name="on_screen_buttons_height_summary">Change height of Navigation Bar</string>
+    <string name="display_category_on_screen_buttons_height_title">Navigation Bar</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
