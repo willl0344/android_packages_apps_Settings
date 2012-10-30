@@ -60,6 +60,7 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
     private CheckBoxPreference mExpandedDesktopNoNavbarPref;
+    private PreferenceScreen mNavigationBar;
 
     private boolean mIsPrimary;
 
@@ -72,6 +73,7 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
 
         // Only show the hardware keys config on a device that does not have a navbar
         // and the navigation bar config on phones that has a navigation bar
+        /** Comment out ***
         boolean removeKeys = false;
         boolean removeNavbar = false;
 
@@ -96,6 +98,7 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         if (removeNavbar) {
             prefScreen.removePreference(navbarCategory);
         }
+        */
 
         // Determine which user is logged in
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
@@ -123,6 +126,11 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
                 prefScreen.removePreference(mNotificationPulse);
                 mNotificationPulse = null;
             }
+        }
+
+        mNavigationBar = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR);
+        if (mNavigationBar != null) {
+            getPreferenceScreen().removePreference(mNavigationBar);
         }
 
         // Pie controls
@@ -193,7 +201,6 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
             updateExpandedDesktop(value ? 2 : 0);
             return true;
         }
-
         return false;
     }
 

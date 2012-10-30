@@ -55,6 +55,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     // If there is no setting in the provider, use this
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
+    private static final int FALLBACK_ON_SCREEN_BUTTONS_HEIGHT = 32;
 
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -66,6 +67,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_HOME_WAKE = "pref_home_wake";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
+    private static final String ON_SCREEN_BUTTONS_HEIGHT = "on_screen_buttons_height";
+    //private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -81,6 +84,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private CheckBoxPreference mVolumeWake;
     private PreferenceScreen mDisplayRotationPreference;
     private WarnedListPreference mFontSizePref;
+
+    private ListPreference mOnScreenButtonsHeight;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -141,6 +146,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         disableUnusableTimeouts(mScreenTimeoutPreference);
         updateTimeoutPreferenceDescription(currentTimeout);
         updateDisplayRotationPreferenceDescription();
+
+        mOnScreenButtonsHeight = (ListPreference) findPreference(ON_SCREEN_BUTTONS_HEIGHT);
+        final long currentOnScreenButtonsHeight = Settings.System.getLong(resolver, ON_SCREEN_BUTTONS_HEIGHT, FALLBACK_ON_SCREEN_BUTTONS_HEIGHT);
+        mOnScreenButtonsHeight.setValue(String.valueOf(currentOnScreenButtonsHeight));
+        mOnScreenButtonsHeight.setOnPreferenceChangeListener(this);
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
@@ -456,6 +466,16 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
         }
+
+        if (ON_SCREEN_BUTTONS_HEIGHT.equals(key)) {
+            int value = Integer.parseInt((String) objValue);
+            try {
+                Settings.System.putInt(getContentResolver(), ON_SCREEN_BUTTONS_HEIGHT, value);
+            } catch (NumberFormatException e) {
+                Log.e(TAG, "could not persist on-screen button height setting", e);
+            }
+        }
+
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
         }
