@@ -61,16 +61,16 @@ public class SystemSettings extends SettingsPreferenceFragment {
             }
         }
 
-        // Only show the hardware keys config on a device that does not have a navbar
-        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-                ServiceManager.getService(Context.WINDOW_SERVICE));
-        try {
-            if (windowManager.hasNavigationBar()) {
-                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
-            }
-        } catch (RemoteException e) {
-            // Do nothing
-        }
+//        // Only show the hardware keys config on a device that does not have a navbar
+//        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+//                ServiceManager.getService(Context.WINDOW_SERVICE));
+//        try {
+//            if (windowManager.hasNavigationBar()) {
+//                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
+//            }
+//        } catch (RemoteException e) {
+//            // Do nothing
+//       }
     }
 
     private void updateLightPulseDescription() {
