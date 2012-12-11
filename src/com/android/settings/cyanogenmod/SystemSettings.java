@@ -36,7 +36,6 @@ public class SystemSettings extends SettingsPreferenceFragment {
 
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
-    private PreferenceScreen mNavigationBar;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,21 +61,16 @@ public class SystemSettings extends SettingsPreferenceFragment {
             }
         }
 
-        mNavigationBar = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR);
-        if (mNavigationBar != null) {
-            getPreferenceScreen().removePreference(mNavigationBar);
+        // Only show the hardware keys config on a device that does not have a navbar
+        IWindowManager windowManager = IWindowManager.Stub.asInterface(
+                ServiceManager.getService(Context.WINDOW_SERVICE));
+        try {
+            if (windowManager.hasNavigationBar()) {
+                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
             }
-
-//        // Only show the hardware keys config on a device that does not have a navbar
-//        IWindowManager windowManager = IWindowManager.Stub.asInterface(
-//                ServiceManager.getService(Context.WINDOW_SERVICE));
-//        try {
-//            if (windowManager.hasNavigationBar()) {
-//                getPreferenceScreen().removePreference(findPreference(KEY_HARDWARE_KEYS));
-//            }
-//        } catch (RemoteException e) {
-//            // Do nothing
-//        }
+        } catch (RemoteException e) {
+            // Do nothing
+        }
     }
 
     private void updateLightPulseDescription() {
