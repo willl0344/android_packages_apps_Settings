@@ -70,6 +70,8 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
                     .getBooleanExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK, false);
                 intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,
                                 isFallback);
+                intent.putExtra("pattern_size",
+                                getActivity().getIntent().getByteExtra("pattern_size", LockPatternUtils.PATTERN_SIZE_DEFAULT));
                 startActivity(intent);
                 getActivity().finish();
             }
@@ -91,6 +93,8 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
             demoPattern.add(LockPatternView.Cell.of(0,1));
             demoPattern.add(LockPatternView.Cell.of(1,1));
             demoPattern.add(LockPatternView.Cell.of(2,1));
+            mPatternView.setLockPatternSize(
+                            getActivity().getIntent().getByteExtra("pattern_size", LockPatternUtils.PATTERN_SIZE_DEFAULT));
             mPatternView.setPattern(LockPatternView.DisplayMode.Animate, demoPattern);
             mPatternView.disableInput();
 
@@ -109,6 +113,8 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                 intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,
                                 isFallback);
+                intent.putExtra("pattern_size",
+                                getActivity().getIntent().getByteExtra("pattern_size", LockPatternUtils.PATTERN_SIZE_DEFAULT));
                 startActivity(intent);
                 getActivity().overridePendingTransition(0, 0); // no animation
                 getActivity().finish();
