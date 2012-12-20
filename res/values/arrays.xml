@@ -1194,6 +1194,7 @@
         <item>30dp</item>
         <item>32dp</item>
         <item>36dp</item>
+        <item>42dp</item>
         <item>48dp</item>
         <item>60dp</item>
     </string-array>
@@ -1204,6 +1205,7 @@
         <item>30</item>
         <item>32</item>
         <item>36</item>
+        <item>42</item>
         <item>48</item>
         <item>60</item>
     </string-array>
