@@ -57,15 +57,12 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
         private View mSkipButton;
         private LockPatternView mPatternView;
 
-        private byte mPatternSize = LockPatternUtils.PATTERN_SIZE_DEFAULT;
-
         @Override
         public void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             // Don't show the tutorial if the user has seen it before.
             LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
             if (savedInstanceState == null && lockPatternUtils.isPatternEverChosen()) {
-                mPatternSize = getActivity().getIntent().getByteExtra("pattern_size", LockPatternUtils.PATTERN_SIZE_DEFAULT);
                 Intent intent = new Intent(getActivity(), ChooseLockPattern.class);
                 intent.setFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                 intent.putExtra("confirm_credentials", false);
@@ -73,7 +70,6 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
                     .getBooleanExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK, false);
                 intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,
                                 isFallback);
-                intent.putExtra("pattern_size", mPatternSize);
                 startActivity(intent);
                 getActivity().finish();
             }
@@ -95,7 +91,6 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
             demoPattern.add(LockPatternView.Cell.of(0,1));
             demoPattern.add(LockPatternView.Cell.of(1,1));
             demoPattern.add(LockPatternView.Cell.of(2,1));
-            mPatternView.setLockPatternSize(mPatternSize);
             mPatternView.setPattern(LockPatternView.DisplayMode.Animate, demoPattern);
             mPatternView.disableInput();
 
@@ -114,7 +109,6 @@ public class ChooseLockPatternTutorial extends PreferenceActivity {
                 intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
                 intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,
                                 isFallback);
-                intent.putExtra("pattern_size", mPatternSize);
                 startActivity(intent);
                 getActivity().overridePendingTransition(0, 0); // no animation
                 getActivity().finish();
