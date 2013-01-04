@@ -5036,6 +5036,9 @@
     <string name="on_screen_buttons_height_title">Change height</string>
     <string name="on_screen_buttons_height_summary">Change height of Navigation Bar</string>
     <string name="display_category_on_screen_buttons_height_title">Navigation Bar</string>
+    <string name="on_screen_buttons_width_title">Change width in landscape</string>
+    <string name="on_screen_buttons_width_summary">Change width of Navigation Bar in landscape</string>
+    <string name="display_category_on_screen_buttons_width_title">Navigation Bar</string>
 
     <string name="lockscreen_buttons_title">Button actions</string>
     <string name="lockscreen_buttons_summary">View or change lock screen button actions</string>
