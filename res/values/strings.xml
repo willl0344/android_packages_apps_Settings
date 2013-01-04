@@ -5033,11 +5033,12 @@
     <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks, including GSM data network!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
 
     <!-- On-Screen Buttons -->
-    <string name="on_screen_buttons_height_title">Change height in portrait mode</string>
-    <string name="on_screen_buttons_height_summary">Realtime change</string>
+    <string name="on_screen_buttons_height_title">Change height</string>
+    <string name="on_screen_buttons_height_summary">Change height of Navigation Bar</string>
     <string name="display_category_on_screen_buttons_height_title">Navigation Bar</string>
-    <string name="on_screen_buttons_width_title">Change width in landscape mode</string>
-    <string name="on_screen_buttons_width_summary">Reboot required to take effect</string>
+    <string name="on_screen_buttons_width_title">Change width in landscape</string>
+    <string name="on_screen_buttons_width_summary">Change width of Navigation Bar in landscape</string>
+    <string name="display_category_on_screen_buttons_width_title">Navigation Bar</string>
 
     <string name="lockscreen_buttons_title">Button actions</string>
     <string name="lockscreen_buttons_summary">View or change lock screen button actions</string>
