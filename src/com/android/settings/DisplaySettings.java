@@ -55,7 +55,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
     private static final int FALLBACK_ON_SCREEN_BUTTONS_HEIGHT = 32;
-    private static final int FALLBACK_ON_SCREEN_BUTTONS_WIDTH = 32;
 
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -65,7 +64,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String ON_SCREEN_BUTTONS_HEIGHT = "on_screen_buttons_height";
-    private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
+    //private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -84,7 +83,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private WarnedListPreference mFontSizePref;
 
     private ListPreference mOnScreenButtonsHeight;
-    private ListPreference mOnScreenButtonsWidth;
 
     private final Configuration mCurConfig = new Configuration();
 
@@ -139,11 +137,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         final long currentOnScreenButtonsHeight = Settings.System.getLong(resolver, ON_SCREEN_BUTTONS_HEIGHT, FALLBACK_ON_SCREEN_BUTTONS_HEIGHT);
         mOnScreenButtonsHeight.setValue(String.valueOf(currentOnScreenButtonsHeight));
         mOnScreenButtonsHeight.setOnPreferenceChangeListener(this);
-
-        mOnScreenButtonsWidth = (ListPreference) findPreference(ON_SCREEN_BUTTONS_WIDTH);
-        final long currentOnScreenButtonsWidth = Settings.System.getLong(resolver, ON_SCREEN_BUTTONS_WIDTH, FALLBACK_ON_SCREEN_BUTTONS_WIDTH);
-        mOnScreenButtonsWidth.setValue(String.valueOf(currentOnScreenButtonsWidth));
-        mOnScreenButtonsWidth.setOnPreferenceChangeListener(this);
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
@@ -429,15 +422,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Settings.System.putInt(getContentResolver(), ON_SCREEN_BUTTONS_HEIGHT, value);
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist on-screen button height setting", e);
-            }
-        }
-
-        if (ON_SCREEN_BUTTONS_WIDTH.equals(key)) {
-            int value = Integer.parseInt((String) objValue);
-            try {
-                Settings.System.putInt(getContentResolver(), ON_SCREEN_BUTTONS_WIDTH, value);
-            } catch (NumberFormatException e) {
-                Log.e(TAG, "could not persist on-screen button width setting", e);
             }
         }
 
