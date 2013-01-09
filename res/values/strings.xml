@@ -5040,11 +5040,10 @@
 
     <!-- On-Screen Buttons -->
     <string name="on_screen_buttons_height_title">Change height in portrait mode</string>
-    <string name="on_screen_buttons_height_summary">Realtime change</string>
+    <string name="on_screen_buttons_height_summary">Real-time change</string>
     <string name="display_category_on_screen_buttons_height_title">Navigation Bar</string>
     <string name="on_screen_buttons_width_title">Change width in landscape mode</string>
-    <string name="on_screen_buttons_width_summary">Requires a reboot to take effect</string>
-    <string name="display_category_on_screen_buttons_width_title">Navigation Bar</string>
+    <string name="on_screen_buttons_width_summary">Real-time change</string>
 
     <string name="lockscreen_buttons_title">Button actions</string>
     <string name="lockscreen_buttons_summary">View or change lock screen button actions</string>
