@@ -5139,4 +5139,7 @@
     <string name="lockscreen_maximize_widgets_summary">Show widgets maximized and the unlock minimized when the screen is turned on</string>
 
     <!-- **** CYANOGENMOD ADDITIONS END **** -->
+
+    <!-- Custom sound settings -->
+    <string name="safe_headset_volume_title">Safe headset volume</string>
 </resources>
