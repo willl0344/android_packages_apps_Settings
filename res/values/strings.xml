@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (C) 2007 The Android Open Source Project
      Copyright (C) 2013 The CyanogenMod Project
 
@@ -4437,7 +4437,7 @@
     <!-- Cell Broadcast settings description [CHAR LIMIT=100] -->
     <string name="cell_broadcast_settings_summary">Select the types of emergency alerts to display.</string>
 
-    <!-- CYANOGENMOD EDITS START -->
+    <!-- **** CYANOGENMOD ADDITIONS START **** -->
 
     <string name="ok">OK</string>
 
@@ -4969,7 +4969,7 @@
     <string name="cm_sound_mode_silent">Silent</string>
     <string name="cm_sound_mode_vibrate">Vibrate</string>
     <string name="cm_sound_mode_sound">Sound</string>
-    <string name="cm_sound_mode_soundVibrate">Sound + Vibrate</string>
+    <string name="cm_sound_mode_soundVibrate">Sound &amp; Vibrate</string>
     <string name="pref_flash_mode_title">Flash mode</string>
     <string name="expanded_haptic_feedback_title">Haptic feedback</string>
 

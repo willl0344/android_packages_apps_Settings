@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- Copyright (C) 2007 The Android Open Source Project
      Copyright (C) 2013 The CyanogenMod Project
 
@@ -800,7 +800,7 @@
         <item>Always allow</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD EDITS START **** -->
+    <!-- **** CYANOGENMOD ADDITIONS START **** -->
 
     <!-- Volume Overlay options. -->
     <string-array name="volume_overlay_entries">
@@ -1052,9 +1052,9 @@
     </string-array>
 
     <string-array name="entries_network_widget">
-        <item>2G/3G+2G</item>
-        <item>2G/3G Only</item>
-        <item>2G/3G Only/3G+2G</item>
+        <item>2G | 2G+3G</item>
+        <item>2G | 3G</item>
+        <item>2G | 3G | 2G+3G</item>
     </string-array>
 
     <string-array name="values_network_widget" translatable="false">
@@ -1084,8 +1084,8 @@
     </integer-array>
 
     <string-array name="entries_screentimeout_widget">
-        <item>15s/1m/5m</item>
-        <item>30s/2m/5m</item>
+        <item>15s | 1m | 5m</item>
+        <item>30s | 2m | 5m</item>
     </string-array>
 
     <string-array name="values_screentimeout_widget" translatable="false">
@@ -1323,5 +1323,5 @@
         <item>2</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD EDITS END **** -->
+    <!-- **** CYANOGENMOD ADDITIONS END **** -->
 </resources>
