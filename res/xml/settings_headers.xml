@@ -93,13 +93,6 @@
         android:fragment="com.android.settings.cyanogenmod.SystemSettings"
         android:title="@string/system_settings_title" />
 
-    <!-- Toolbar -->
-    <header
-        android:id="@+id/toolbar_settings"
-        android:icon="@drawable/ic_settings_themes"
-        android:fragment="com.android.settings.cyanogenmod.Toolbar"
-        android:title="@string/pie_controls_title" />
-
     <!-- DEVICE -->
     <header android:id="@+id/device_section"
         android:title="@string/header_category_device" />
