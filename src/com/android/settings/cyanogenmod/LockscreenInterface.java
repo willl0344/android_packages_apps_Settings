@@ -1,4 +1,5 @@
 /*
+ * Copyright (C) 2012 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -98,8 +99,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mCustomBackground.setOnPreferenceChangeListener(this);
         updateCustomBackgroundSummary();
 
-        mWallpaperImage = new File(getActivity().getFilesDir()+"/lockwallpaper");
-        mWallpaperTemporary = new File(getActivity().getCacheDir()+"/lockwallpaper.tmp");
+        mWallpaperImage = new File(getActivity().getFilesDir() + "/lockwallpaper");
+        mWallpaperTemporary = new File(getActivity().getCacheDir() + "/lockwallpaper.tmp");
     }
 
     private void updateCustomBackgroundSummary() {
@@ -241,12 +242,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             try {
                 mWallpaperTemporary.createNewFile();
                 mWallpaperTemporary.setWritable(true, false);
-                intent.putExtra(MediaStore.EXTRA_OUTPUT ,Uri.fromFile(mWallpaperTemporary));
+                intent.putExtra(MediaStore.EXTRA_OUTPUT, Uri.fromFile(mWallpaperTemporary));
                 intent.putExtra("return-data", false);
                 getActivity().startActivityFromFragment(this, intent, REQUEST_CODE_BG_WALLPAPER);
-                //Ignored would be preferable to nothing
             } catch (IOException e) {
+                // Do nothing here
             } catch (ActivityNotFoundException e) {
+                // Do nothing here
             }
         } else if (selection == LOCKSCREEN_BACKGROUND_DEFAULT_WALLPAPER) {
             Settings.System.putString(getContentResolver(),
