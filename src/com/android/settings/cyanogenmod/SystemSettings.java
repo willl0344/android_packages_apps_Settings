@@ -105,7 +105,7 @@ public class SystemSettings extends SettingsPreferenceFragment {
 //            prefScreen.removePreference(findPreference(KEY_QUICK_SETTINGS));
 //            prefScreen.removePreference(findPreference(KEY_POWER_MENU));
 //            prefScreen.removePreference(findPreference(KEY_NOTIFICATION_DRAWER));
-//        }
+        }
 
         // Preferences that applies to all users
         // Notification lights
