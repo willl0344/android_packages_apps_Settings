@@ -4871,17 +4871,6 @@
     <string name="ring_mode_vibrate">Vibrate</string>
     <string name="ring_mode_mute">Mute</string>
 
-    <!-- Navigation Bar  -->
-    <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
-    <string name="navigation_bar_title">Buttons and layout</string>
-    <string name="navigation_bar_show">Show Navigation Bar</string>
-    <string name="navigation_bar_summary">Toggle Navigation bar on/off</string>
-    <string name="hw_keys_title">Hardware Keys</string>
-    <string name="key_menu_enabled">Menu Key Enabled</string>
-    <string name="key_back_enabled">Back Key Enabled</string>
-    <string name="key_home_enabled">Home Key Enabled</string>
-    <string name="navigation_bar_reboot_message">Reboot required</string>
-
     <!-- Hardware keys -->
     <string name="hardware_keys_title">Hardware keys</string>
     <string name="hardware_keys_bindings_title">Key actions</string>
@@ -4903,6 +4892,17 @@
     <string name="hardware_keys_action_search">Search assistant</string>
     <string name="hardware_keys_action_voice_search">Voice search</string>
     <string name="hardware_keys_action_in_app_search">In-app search</string>
+
+    <!-- Navigation Bar  -->
+    <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
+    <string name="navigation_bar_title">Buttons and layout</string>
+    <string name="navigation_bar_show">Show Navigation Bar</string>
+    <string name="navigation_bar_summary">Toggle Navigation bar on/off</string>
+    <string name="hw_keys_title">Hardware Keys</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
+    <string name="navigation_bar_reboot_message">Reboot required</string>
 
     <!-- Navigation Bar -->
     <string name="navigation_bar_summary1">Navigation bar customization</string>
