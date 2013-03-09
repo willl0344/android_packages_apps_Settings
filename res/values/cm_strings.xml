@@ -1375,7 +1375,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="no_notifications_pulldown_off">Off</string>
     <string name="no_notifications_pulldown_nonperm">Non-permanent only</string>
     <string name="no_notifications_pulldown_all">All Notifications</string>
-    <string name="title_no_notifications_pulldown">Quick pulldown without notifications</string>
+    <string name="title_no_notifications_pulldown">Quick pulldown without notifications</string> 
+
+    <!-- TRDS Settings -->
+    <string name="trds_settings_title">Dark Droid</string>
 
     <!-- App sidebar -->
     <string name="app_sidebar_title">Appbar</string>
