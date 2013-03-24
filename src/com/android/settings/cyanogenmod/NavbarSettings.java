@@ -28,8 +28,6 @@ import android.provider.Settings;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.Utils;
-import com.android.settings.util.Helpers;
-
 
 public class NavbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -169,7 +167,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             value = mEnableNavigationBar.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_SHOW, value ? 1 : 0);
-            Helpers.restartSystemUI();
             if (value) {
                 enableKeysPrefs();
             } else {
