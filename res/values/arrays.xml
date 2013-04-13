@@ -1389,6 +1389,7 @@
         <item>1</item>
         <item>2</item>
         <item>3</item>
+    </string-array>
 
     <!-- Stylus Gestures -->
     <string-array name="gestures_entries" translatable="false">
