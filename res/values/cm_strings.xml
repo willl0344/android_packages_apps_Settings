@@ -162,6 +162,19 @@
 
     <!-- Notification Drawer  -->
     <string name="notification_drawer_title">Notification drawer</string>
+    <string name="notification_style_grouptitle">Style</string>
+    <string name="notification_style_title">Notification drawer style</string>
+    <string name="notification_style_summary">Change your notification drawer style</string>
+
+    <!-- Notification drawer background -->
+    <string name="notification_wallpaper_title">Notification drawer background</string>
+    <string name="notification_wallpaper_landscape_title">Different landscape background</string>
+    <string name="notification_background_color_fill">Color fill</string>
+    <string name="notification_background_custom_image">Custom image</string>
+    <string name="notification_background_default_wallpaper">Default background</string>
+    <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
+    <string name="notif_wallpaper_alpha_title">Notification background transparency</string>
+    
 
     <string name="lock_screen_title">Lock screen</string>
 
@@ -629,6 +642,21 @@
     <string name="brightness_slider_top">On top</string>
     <string name="brightness_slider_bottom">On the bottom</string>
     <string name="brightness_slider_none">Don\'t Show</string>
+
+    <!-- Notification drawer settings  -->
+    <string name="notification_drawer_title">Notification drawer</string>
+    <string name="notification_style_grouptitle">Style</string>
+    <string name="notification_style_title">Notification drawer style</string>
+    <string name="notification_style_summary">Change your notification drawer style</string>
+
+    <!-- Notification drawer background -->
+    <string name="notification_wallpaper_title">Notification drawer background</string>
+    <string name="notification_wallpaper_landscape_title">Different landscape background</string>
+    <string name="notification_background_color_fill">Color fill</string>
+    <string name="notification_background_custom_image">Custom image</string>
+    <string name="notification_background_default_wallpaper">Default background</string>
+    <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
+    <string name="notif_wallpaper_alpha_title">Notification background transparency</string>
 
     <!-- Notification Behavior Preferences -->
     <string name="notification_behaviour_title">Notification behavior</string>
