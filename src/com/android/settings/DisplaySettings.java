@@ -466,8 +466,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mDualPanel) {
             Settings.System.putBoolean(getContentResolver(), Settings.System.FORCE_DUAL_PANEL, ((CheckBoxPreference) preference).isChecked());
-            return true; 
-
+            return true;
+        }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
