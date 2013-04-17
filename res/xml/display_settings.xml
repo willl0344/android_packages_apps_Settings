@@ -91,7 +91,7 @@
 
         <PreferenceCategory
         android:key="misc"
-        android:title="@string/misc_short">
+        android:title="@string/misc_short" />
 
         <PreferenceScreen
             android:key="custom_carrier_label"
