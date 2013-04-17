@@ -38,7 +38,7 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         // Load the preferences from an XML resource
-        addPreferencesFromResource(R.xml.power_widget_settings);
+        addPreferencesFromResource(R.xml.notification_drawer_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
 
