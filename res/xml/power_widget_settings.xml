@@ -80,7 +80,7 @@
             android:title="@string/brightness_location_title"
             android:dependency="expanded_widget" />
 
-        <ListPreference
+        <Preference
             android:fragment="com.android.settings.cyanogenmod.NotificationDrawerSettings"
             android:key="notification_behaviour"
             android:title="@string/notification_behaviour_title" />
