@@ -651,11 +651,6 @@
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
-
-    <!-- Auto-Hide Status Bar -->
-    <string name="auto_hide_statusbar">Auto Hide statusbar</string>
-    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
-
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
