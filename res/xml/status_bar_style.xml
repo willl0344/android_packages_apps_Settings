@@ -14,19 +14,12 @@
      limitations under the License.
 -->
 
-<PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/status_bar_background_style">
-
-    <!-- Status bar tweaks -->
-    <PreferenceCategory
-        android:title="@string/status_bar_background_style">
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
 
         <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="status_bar_color"
             android:title="@string/status_bar_color_title"
-            android:defaultValue="#000000" />
+            android:defaultValue="0xff000000" />
 
         <com.android.settings.widget.SeekBarPreference
              android:key="status_bar_alpha"
@@ -38,7 +31,5 @@
             android:title="@string/status_bar_alpha_mode_text_title"
             android:entries="@array/entries_status_bar_alpha_mode"
             android:entryValues="@array/values_status_bar_alpha_mode" />
-
-    </PreferenceCategory>
 
 </PreferenceScreen>
