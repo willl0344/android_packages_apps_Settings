@@ -651,17 +651,6 @@
     <string name="custom_carrier_label_explain">Please enter a new label. Enter an empty to revert to stock label.</string>
     <string name="custom_carrier_label_notset">Custom label currently not set</string>
 
-    <!-- Status bar background style -->
-    <string name="status_bar_transparency_title">Status bar transparency</string>
-    <string name="status_bar_color_title">Status bar color</string>
-    <string name="status_bar_background_style">Background style</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Show status bar transparency</string>
-    <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
-    <string name="status_bar_alpha_mode_home">on launcher</string>
-    <string name="status_bar_alpha_mode_default">on launcher and keyguard</string>
-    <string name="status_bar_alpha_mode_always">always</string>
-    <string name="status_bar_style_reset">Reset</string>
-
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
@@ -701,7 +690,6 @@
     <string name="status_bar_title">Status bar</string>
     <string name="status_bar_clock_title">Clock</string>
     <string name="status_bar_general_title">General</string>
-    <string name="status_bar_style_title">Style</string>
     <string name="status_bar_clock_style_title">Clock style</string>
     <string name="clock_style_noclock">Do not show the clock</string>
     <string name="clock_style_right">Right clock</string>
