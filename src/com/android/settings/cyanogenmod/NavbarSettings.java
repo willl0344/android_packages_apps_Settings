@@ -46,6 +46,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_BACK_ENABLED = "key_back_enabled";
     private static final String KEY_HOME_ENABLED = "key_home_enabled";
 
+    private boolean mHasNavBarByDefault; 
+
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     CheckBoxPreference mEnableNavigationBar;
@@ -92,11 +94,12 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mRingPreference = (PreferenceScreen) findPreference(PREF_RING);
         mStyleDimenPreference = (PreferenceScreen) findPreference(PREF_STYLE_DIMEN);
 
-        boolean hasNavBarByDefault = mContext.getResources().getBoolean(
+        mHasNavBarByDefault = mContext.getResources().getBoolean( 
                 com.android.internal.R.bool.config_showNavigationBar);
-        mEnableNavigationBar = (CheckBoxPreference) findPreference("enable_nav_bar");
-        mEnableNavigationBar.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+	boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
+                Settings.System.NAVIGATION_BAR_SHOW, mHasNavBarByDefault ? 1 : 0) == 1; 
+        mEnableNavigationBar = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_BAR);
+        mEnableNavigationBar.setChecked(enableNavigationBar); 
 
         if (mEnableNavigationBar.isChecked()) {
             enableKeysPrefs();
@@ -120,13 +123,16 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                     Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
         } 	
 
-        updateNavbarPreferences(Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1);
+        updateNavbarPreferences(enableNavigationBar); 
     }
 
 
-    private void updateNavbarPreferences( boolean show ) {
-
+    private void updateNavbarPreferences(boolean show) {
+        if (mHasNavBarByDefault) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.UI_FORCE_OVERFLOW_BUTTON,
+                    show ? 0 : 1);
+        } 
         mGlowTimes.setEnabled(show);
         mNavBarMenuDisplay.setEnabled(show);
         menuDisplayLocation.setEnabled(show);
