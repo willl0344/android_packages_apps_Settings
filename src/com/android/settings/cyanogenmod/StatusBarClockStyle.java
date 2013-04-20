@@ -57,6 +57,7 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment implements O
     public static final int CLOCK_DATE_STYLE_UPPERCASE = 2;
     private static final int CUSTOM_CLOCK_DATE_FORMAT_INDEX = 18;
 
+    private ListPreference mClockStyle;
     private ListPreference mClockAmPmStyle;
     private ColorPickerPreference mColorPicker;
     ListPreference mClockDateDisplay;
@@ -71,6 +72,14 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment implements O
         addPreferencesFromResource(R.xml.status_bar_clock_style);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        mStatusBarClock = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CLOCK);
+        mClockStyle = (ListPreference) findPreference(PREF_ENABLE);
+        mClockStyle.setOnPreferenceChangeListener(this);
+        mClockStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUSBAR_CLOCK_STYLE,
+                0)));
+        mClockStyle.setSummary(mClockStyle.getEntry());
 
         mClockAmPmStyle = (ListPreference) prefSet.findPreference(PREF_AM_PM_STYLE);
         mClockAmPmStyle.setOnPreferenceChangeListener(this);
@@ -142,6 +151,13 @@ public class StatusBarClockStyle extends SettingsPreferenceFragment implements O
             result = Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_CLOCK_AM_PM_STYLE, val);
             mClockAmPmStyle.setSummary(mClockAmPmStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mClockStyle) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mClockStyle.findIndexOfValue((String) newValue);
+            result = Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUSBAR_CLOCK_STYLE, val);
+            mClockStyle.setSummary(mClockStyle.getEntries()[index]);
             return true;
         } else if (preference == mColorPicker) {
             String hex = ColorPickerPreference.convertToARGB(Integer.valueOf(String
