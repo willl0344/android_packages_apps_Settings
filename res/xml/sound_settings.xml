@@ -196,4 +196,10 @@
         android:entries="@array/less_notification_sounds_entries"
         android:entryValues="@array/less_notification_sounds_values" />
 
+    <CheckBoxPreference
+        android:key="lock_volume_keys"
+        android:title="@string/sound_lock_volume_keys_title"
+        android:summary="@string/sound_lock_volume_keys_summary"
+        android:persistent="false" />
+
 </PreferenceScreen>

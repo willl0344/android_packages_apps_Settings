@@ -96,6 +96,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private static final String KEY_POWER_NOTIFICATIONS_VIBRATE = "power_notifications_vibrate";
     private static final String KEY_POWER_NOTIFICATIONS_RINGTONE = "power_notifications_ringtone";
     private static final String PREF_LESS_NOTIFICATION_SOUNDS = "less_notification_sounds";
+    private static final String KEY_LOCK_VOLUME_KEYS = "lock_volume_keys";
 
     private static final String RING_MODE_NORMAL = "normal";
     private static final String RING_MODE_VIBRATE = "vibrate";
@@ -146,6 +147,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     private Preference mPowerSoundsRingtone;
 
     private ListPreference mAnnoyingNotifications;
+    private CheckBoxPreference mLockVolumeKeys;
 
     // To track whether a confirmation dialog was clicked.
     private boolean mDialogClicked;
@@ -236,6 +238,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
                 Settings.System.MUTE_ANNOYING_NOTIFICATIONS_THRESHOLD,
                 0);
         mAnnoyingNotifications.setValue(Integer.toString(notificationThreshold));
+
+        mLockVolumeKeys = (CheckBoxPreference) findPreference(KEY_LOCK_VOLUME_KEYS);
+        mLockVolumeKeys.setChecked(Settings.System.getInt(resolver,
+                Settings.System.LOCK_VOLUME_KEYS, 0) != 0);
 
         mDtmfTone = (CheckBoxPreference) findPreference(KEY_DTMF_TONE);
         mDtmfTone.setPersistent(false);
@@ -500,6 +506,10 @@ public class SoundSettings extends SettingsPreferenceFragment implements
         } else if (preference == mConvertSoundToVibration) {
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_CONVERT_SOUND_TO_VIBRATION,
                     mConvertSoundToVibration.isChecked() ? 1 : 0);
+
+        } else if (preference == mLockVolumeKeys) {
+            Settings.System.putInt(getContentResolver(), Settings.System.LOCK_VOLUME_KEYS,
+                    mLockVolumeKeys.isChecked() ? 1 : 0);
 
         } else if (preference == mMusicFx) {
             // let the framework fire off the intent
