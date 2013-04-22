@@ -1301,8 +1301,6 @@ public class DevelopmentSettings extends PreferenceFragment
             writeKillAppLongpressBackOptions();
         } else if (preference == mAdvancedReboot) {
             writeAdvancedRebootOptions();
-        } else if (preference == mMSOB) {
-            writeMSOBOptions(newValue);
         }
 
         return false;
@@ -1355,6 +1353,8 @@ public class DevelopmentSettings extends PreferenceFragment
                 writeRootAccessOptions(newValue);
             }
             return true;
+            } else if (preference == mMSOB) {
+            writeMSOBOptions(newValue);
         }
         return false;
     }
