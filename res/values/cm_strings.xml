@@ -680,6 +680,11 @@
     <string name="camera_sounds_title">Camera shutter sound</string>
     <string name="camera_sounds_summary">WARNING: Disabling the camera shutter sound is illegal in some areas!</string>
 
+    <!-- Performance Setting : Vibration Strength -->
+    <string name="pref_vibe_strength_title">Vibration Strength</string>
+    <string name="pref_vibe_strength_summary">Vibration strength is <xliff:g id="vibe_strength">%1$s</xliff:g></string>
+    <string name="pref_vibe_strength_dialogtitle">Enter a value between 0-120</string>
+
     <!-- Kill app long-press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
