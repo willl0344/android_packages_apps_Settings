@@ -906,4 +906,5 @@ public class Settings extends PreferenceActivity
     public static class UserSettingsActivity extends Settings { /* empty */ }
     public static class NotificationAccessSettingsActivity extends Settings { /* empty */ }
     public static class BlacklistSettingsActivity extends Settings { /* empty */ }
+    public static class NotificationShortcutsSettingsActivity extends Settings { /* empty */ }
 }
