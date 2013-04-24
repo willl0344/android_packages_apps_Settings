@@ -22,13 +22,11 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
-import android.preference.EditTextPreference;
 import android.preference.Preference;
 import android.preference.ListPreference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-import com.android.settings.Utils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -51,9 +49,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
 
     private static final String NOTIFICATION_SHADE_DIM = "notification_shade_dim";
 
-    public static final String VIBE_STR = "pref_vibe_strength";
-    public static final String VIBE_STR_FILE = "/sys/class/timed_output/vibrator/vibe_strength";
-
     private ListPreference mUseDitheringPref;
 
     private CheckBoxPreference mUse16bppAlphaPref;
@@ -61,8 +56,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mNotificationShadeDim;
 
     private AlertDialog alertDialog;
-
-    private EditTextPreference mVibeStrength;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -87,16 +80,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             mNotificationShadeDim = (CheckBoxPreference) prefSet.findPreference(NOTIFICATION_SHADE_DIM);
             mNotificationShadeDim.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.NOTIFICATION_SHADE_DIM, ActivityManager.isHighEndGfx() ? 1 : 0) == 1));
-
-            mVibeStrength = (EditTextPreference) prefSet.findPreference(VIBE_STR);
-            if (!Utils.fileExists(VIBE_STR_FILE)) {
-                prefSet.removePreference(mVibeStrength);
-            } else {
-                mVibeStrength.setOnPreferenceChangeListener(this);
-                String mCurVibeStrength = Utils.fileReadOneLine(VIBE_STR_FILE);
-                mVibeStrength.setSummary(getString(R.string.pref_vibe_strength_summary, mCurVibeStrength));
-                mVibeStrength.setText(mCurVibeStrength);
-            }
 
             /* Display the warning dialog */
             alertDialog = new AlertDialog.Builder(getActivity()).create();
@@ -140,17 +123,6 @@ public class PerformanceSettings extends SettingsPreferenceFragment
             int index = mUseDitheringPref.findIndexOfValue(newVal);
             SystemProperties.set(USE_DITHERING_PERSIST_PROP, newVal);
             mUseDitheringPref.setSummary(mUseDitheringPref.getEntries()[index]);
-        } else if (preference == mVibeStrength) {
-            int strength = Integer.parseInt((String) newValue);
-            if (strength > 120 || strength < 0) {
-                return false;
-            }
-            if (Utils.fileWriteOneLine(VIBE_STR_FILE, (String) newValue)) {
-                mVibeStrength.setSummary(getString(R.string.pref_vibe_strength_summary, (String) newValue));
-                return true;
-            } else {
-                return false;
-            }
         }
         return true;
     }
