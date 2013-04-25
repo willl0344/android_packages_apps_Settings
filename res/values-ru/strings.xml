@@ -2612,7 +2612,7 @@
     <string name="notification_style_grouptitle">Стиль</string>
     <string name="notification_style_title">Стиль панели уведомления</string>
     <string name="notification_style_summary">Изменить стиль панели уведомления</string>
-    string name="notification_wallpaper_title">Фон панели уведомлений</string>
+    <string name="notification_wallpaper_title">Фон панели уведомлений</string>
     <string name="notification_wallpaper_landscape_title">Фон панели уведомлений в ландшафтном режиме</string>
     <string name="notification_background_color_fill">Заливка цветом</string>
     <string name="notification_background_custom_image">Свое изображение</string>
