@@ -2642,7 +2642,7 @@
     <string name="media_scanner_on_boot_disabled">Не сканировать медиа</string>
     <string name="sound_lock_volume_keys_title">Блокировать клавиши громкости</string>
     <string name="sound_lock_volume_keys_summary">Предотвращать случайное отключение тихого режима кнопками громкости</string>
-    string name="camera_sounds_title">Звук затвора камеры</string>
+    <string name="camera_sounds_title">Звук затвора камеры</string>
     <string name="camera_sounds_summary">ВНИМАНИЕ: отключение звука затвора камеры иногда незаконно!</string>
     <string name="notification_shortcuts_grouptitle">Ярлыки</string>
     <string name="notification_shortcuts_settings_title">Ярлыки панели уведомлений</string>
