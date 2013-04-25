@@ -1719,6 +1719,8 @@
 
         <activity android:name=".cyanogenmod.NotificationDrawerStyle" />
 
+        <activity android:name=".UserInterface" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
