@@ -91,10 +91,11 @@
 
         <PreferenceCategory
         android:key="misc"
-        android:title="@string/misc_short" />
+        android:title="@string/user_interface_title" />
 
-        <PreferenceScreen
-            android:key="custom_carrier_label"
-            android:title="@string/custom_carrier_label_title" />
+        <Preference
+            android:fragment="com.android.settings.UserInterface"
+            android:key="user_interface"
+            android:title="@string/user_interface_title" />
 
 </PreferenceScreen>

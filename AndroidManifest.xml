@@ -1639,6 +1639,8 @@
 
         <activity android:name=".cyanogenmod.StatusBarClockStyle" />
 
+        <activity android:name=".UserInterface" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
