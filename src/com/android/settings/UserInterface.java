@@ -25,17 +25,17 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.RemoteException;
-import android.os.ServiceManager;
 import android.os.SystemProperties;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.Spannable;
-import android.view.IWindowManager;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -62,8 +62,6 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         addPreferencesFromResource(R.xml.user_interface_settings);
 
         PreferenceScreen prefs = getPreferenceScreen();
-
-        mMisc = (PreferenceCategory) prefs.findPreference(MISC_SETTINGS);
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -101,8 +99,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     }
 
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
-            Preference preference) {
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
@@ -121,7 +118,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                     updateCustomLabelTextSummary();
                     Intent i = new Intent();
                     i.setAction("com.android.settings.LABEL_CHANGED");
-                    mContext.sendBroadcast(i);
+                    getActivity().sendBroadcast(i);
                 }
             });
             alert.setNegativeButton(getResources().getString(R.string.cancel),
@@ -132,6 +129,10 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             });
 
             alert.show();
+         }
+ 
+         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
 }
+

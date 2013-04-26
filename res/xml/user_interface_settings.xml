@@ -6,10 +6,6 @@
         android:key="misc"
         android:title="@string/misc_short">
 
-        <PreferenceScreen
-            android:key="custom_carrier_label"
-            android:title="@string/custom_carrier_label_title" />
-
         <ListPreference
             android:key="pref_low_battery_warning_policy"
             android:title="@string/pref_low_battery_warning_policy_title"
@@ -17,6 +13,10 @@
             android:entries="@array/pref_low_battery_warning_policy_entries"
             android:entryValues="@array/pref_low_battery_warning_policy_values"
             android:defaultValue="0" />
+
+        <Preference
+            android:key="custom_carrier_label"
+            android:title="@string/custom_carrier_label_title" />
 
     </PreferenceCategory>
 
