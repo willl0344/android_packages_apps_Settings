@@ -49,7 +49,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
-    private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off"
+    private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
 
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
@@ -82,7 +82,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
         // respect device default configuration
         // true fades while false animates
-        boolean electronBeamFadesConfig = mContext.getResources().getBoolean(
+        boolean electronBeamFadesConfig = getActivity().getResources().getBoolean(
                 com.android.internal.R.bool.config_animateScreenLights);
 
         // use this to enable/disable crt on feature
@@ -93,7 +93,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mCrtOff = (CheckBoxPreference) findPreference(KEY_POWER_CRT_SCREEN_OFF);
         mCrtOff.setChecked(mIsCrtOffChecked);
 
-        mCrtMode = (ListPreference) prefSet.findPreference(KEY_POWER_CRT_MODE);
+        mCrtMode = (ListPreference) findPreference(KEY_POWER_CRT_MODE);
         int crtMode = Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.SYSTEM_POWER_CRT_MODE, 0);
         mCrtMode.setValue(String.valueOf(crtMode));
