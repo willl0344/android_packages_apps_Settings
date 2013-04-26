@@ -48,9 +48,16 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_POWER_CRT_SCREEN_ON = "system_power_crt_screen_on";
+    private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off"
 
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
+
+    private CheckBoxPreference mCrtOff;
+    private CheckBoxPreference mCrtOn;
+
+    private boolean mIsCrtOffChecked = false;
 
     private String mCustomLabelText = null;
     private int newDensityValue;
@@ -72,6 +79,26 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
+
+        // respect device default configuration
+        // true fades while false animates
+        boolean electronBeamFadesConfig = mContext.getResources().getBoolean(
+                com.android.internal.R.bool.config_animateScreenLights);
+
+        // use this to enable/disable crt on feature
+        // crt only works if crt off is enabled
+        // total system failure if only crt on is enabled
+        mIsCrtOffChecked = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                electronBeamFadesConfig ? 0 : 1) == 1;
+
+        mCrtOff = (CheckBoxPreference) findPreference(KEY_POWER_CRT_SCREEN_OFF);
+        mCrtOff.setChecked(mIsCrtOffChecked);
+
+        mCrtOn = (CheckBoxPreference) findPreference(KEY_POWER_CRT_SCREEN_ON);
+        mCrtOn.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0) == 1);
+        mCrtOn.setEnabled(mIsCrtOffChecked);
 
     }
 
@@ -100,7 +127,25 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mCustomLabel) {
+        if (preference == mCrtOff) {
+            mIsCrtOffChecked = mCrtOff.isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_OFF,
+                    mIsCrtOffChecked  ? 1 : 0);
+            // if crt off gets turned off, crt on gets turned off and disabled
+            if (!mIsCrtOffChecked) {
+                Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.SYSTEM_POWER_ENABLE_CRT_ON, 0);
+                mCrtOn.setChecked(false);
+            }
+            mCrtOn.setEnabled(mIsCrtOffChecked);
+            return true;
+        } else if (preference == mCrtOn) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.SYSTEM_POWER_ENABLE_CRT_ON,
+                    mCrtOn.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mCustomLabel) {
             AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
             alert.setTitle(R.string.custom_carrier_label_title);
             alert.setMessage(R.string.custom_carrier_label_explain);
