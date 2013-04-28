@@ -54,9 +54,6 @@
 
     <dimen name="pager_tabs_padding">0dp</dimen>
 
-    <!-- Notification Shortcuts -->
-    <dimen name="notification_shortcut_picker_left_padding">36dip</dimen>
-
     <!-- Size of AppWidget previews in KeyguardAppWidgetPickActivity -->
     <dimen name="appwidget_preview_width">140dip</dimen>
     <dimen name="appwidget_preview_height">80dip</dimen>
