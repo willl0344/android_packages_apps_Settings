@@ -777,6 +777,11 @@
     <string name="system_power_crt_mode_vertical">Portrait vertical</string>
     <string name="system_power_crt_mode_both">Orientation dependent</string>
 
+    <!-- Shortcut picker -->
+    <string name="use_custom_app_title">Use custom application</string>
+    <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
+    <string name="group_applications">Applications</string>
+
     <!-- Change Log strings -->
     <string name="changelog_title">View changelog</string>
     <string name="changelog_loading">Loading changelog\u2026</string>
