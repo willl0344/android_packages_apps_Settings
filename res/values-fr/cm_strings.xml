@@ -438,8 +438,6 @@
     <string name="cm_sound_mode_soundVibrate">Son &amp; Vibreur</string>
     <string name="pref_flash_mode_title">Mode lampe</string>
     <string name="expanded_haptic_feedback_title">Vibrer au toucher</string>
-    <string name="kill_app_longpress_back">Tuer avec bouton Retour</string>
-    <string name="kill_app_longpress_back_summary">Permet de forcer la fermeture de l\'application en cours en appuyant longuement sur le bouton Retour</string>
     <string name="changelog_title">Voir le rapport de version</string>
     <string name="changelog_loading">Chargement du rapport de version\u2026</string>
     <string name="changelog_error">Impossible de charger le rapport de version</string>

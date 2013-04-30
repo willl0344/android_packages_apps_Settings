@@ -441,8 +441,6 @@
     <string name="cm_sound_mode_soundVibrate">Lyd + Vibrer</string>
     <string name="pref_flash_mode_title">Lommelygte</string>
     <string name="expanded_haptic_feedback_title">Berøringsvibration</string>
-    <string name="kill_app_longpress_back">Luk app på knappen Tilbage</string>
-    <string name="kill_app_longpress_back_summary">Luk kørende app ved langt tryk på knappen Tilbage</string>
     <string name="changelog_title">Vis ændringslog</string>
     <string name="changelog_loading">Indlæser ændringslog...</string>
     <string name="changelog_error">Kunne ikke indlæse ændringsloggen</string>

@@ -427,8 +427,6 @@
     <string name="cm_sound_mode_soundVibrate">Hang + Rezgés</string>
     <string name="pref_flash_mode_title">Zseblámpa kapcsoló</string>
     <string name="expanded_haptic_feedback_title">Érintési visszajelzés</string>
-    <string name="kill_app_longpress_back">Alkalmazás bezárás</string>
-    <string name="kill_app_longpress_back_summary">Alkalmazás bezárása nyomva tartott vissza gombbal</string>
     <string name="changelog_title">Változások megtekintése</string>
     <string name="changelog_loading">Változások betöltése\u2026</string>
     <string name="changelog_error">Nem lehet betölteni a változásokat</string>

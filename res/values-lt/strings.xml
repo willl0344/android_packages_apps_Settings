@@ -2349,10 +2349,6 @@
     <string name="pref_flash_mode_title">Žibintuvėlio režimas</string>
     <string name="expanded_haptic_feedback_title">Vibruoti palietus</string>
 
-    <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">Uždaryti prog. Atgal mygtuku</string>
-    <string name="kill_app_longpress_back_summary">Uždaryti programą ilgai spaudžiant Agal mygtuką</string>
-
     <!-- Change Log strings -->
     <string name="changelog_title">Žiūrėti pakeitimus</string>
     <string name="changelog_loading">Ruošiamas sąrašas\u2026</string>

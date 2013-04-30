@@ -412,8 +412,6 @@
     <string name="cm_sound_mode_soundVibrate">Klank en vibrasie</string>
     <string name="pref_flash_mode_title">Flits mode</string>
     <string name="expanded_haptic_feedback_title">Haptiese terugvoer</string>
-    <string name="kill_app_longpress_back">Beëindig met Terug-knoppie</string>
-    <string name="kill_app_longpress_back_summary">Beëindig die voorgrond program deur \'n lang-druk op die Terug-knoppie</string>
     <string name="changelog_title">Bekyk Veranderinge-log</string>
     <string name="changelog_loading">Laai Veranderinge-log\u2026</string>
     <string name="changelog_error">Kan nie Veranderinge-log laai nie</string>

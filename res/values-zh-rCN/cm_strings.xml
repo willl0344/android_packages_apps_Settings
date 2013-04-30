@@ -428,8 +428,6 @@
     <string name="cm_sound_mode_soundVibrate">铃声 &amp; 震动</string>
     <string name="pref_flash_mode_title">手电筒切换模式</string>
     <string name="expanded_haptic_feedback_title">触动反馈</string>
-    <string name="kill_app_longpress_back">使用返回键强制关闭程序</string>
-    <string name="kill_app_longpress_back_summary">长按返回键将终止前台应用程序</string>
     <string name="changelog_title">查看更改记录</string>
     <string name="changelog_loading">正在读取更改记录\u2026</string>
     <string name="changelog_error">无法读取更改记录</string>

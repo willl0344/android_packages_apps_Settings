@@ -541,10 +541,6 @@
     <string name="pref_flash_mode_title">Taschenlampe</string>
     <string name="expanded_haptic_feedback_title">Haptisches Feedback</string>
 
-    <!-- Kill app long-press back -->
-    <string name="kill_app_longpress_back">App beenden</string>
-    <string name="kill_app_longpress_back_summary">Gedrückt halten der Zurück-Taste beendet die Anwendung im Vordergrund</string>
-
     <!-- Change log strings -->
     <string name="changelog_title">Changelog anzeigen</string>
     <string name="changelog_loading">Changelog wird geladen\u2026</string>

@@ -403,8 +403,6 @@
     <string name="cm_sound_mode_soundVibrate">Som+Vibrar</string>
     <string name="pref_flash_mode_title">Modo de flash</string>
     <string name="expanded_haptic_feedback_title">Vibrar ao tocar</string>
-    <string name="kill_app_longpress_back">Matar app com botão voltar</string>
-    <string name="kill_app_longpress_back_summary">Matar o aplicativo mantendo pressionado o botão voltar</string>
     <string name="changelog_title">Visualizar alterações</string>
     <string name="changelog_loading">Carregando registro de mudanças\u2026</string>
     <string name="changelog_error">Não foi possível carregar as mudanças</string>

@@ -2183,8 +2183,6 @@
     <string name="cm_sound_mode_soundVibrate">Äänet + Värinä</string>
     <string name="pref_flash_mode_title">Valaisimen tilat</string>
     <string name="expanded_haptic_feedback_title">Haptinen palaute</string>
-    <string name="kill_app_longpress_back">Tapa sovellus</string>
-    <string name="kill_app_longpress_back_summary">Tappaa etualalla olevan sovelluksen takaisin-painikkeella</string>
     <string name="changelog_title">Näytä muutosloki</string>
     <string name="changelog_loading">Ladataan muutoslokia</string>
     <string name="changelog_error">Muutoslokin lataus ei onnistu</string>

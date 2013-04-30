@@ -444,8 +444,6 @@
     <string name="cm_sound_mode_soundVibrate">Ήχος &amp; Δόνηση</string>
     <string name="pref_flash_mode_title">Φακός</string>
     <string name="expanded_haptic_feedback_title">Απτική ανάδραση</string>
-    <string name="kill_app_longpress_back">Τερμ. με πλήκτρο back</string>
-    <string name="kill_app_longpress_back_summary">Το κουμπί back τερματίζει την τρέχουσα εφαρμογή</string>
     <string name="changelog_title">Εμφάνιση αρχείου αλλαγών</string>
     <string name="changelog_loading">Φόρτωση αρχείου αλλαγών\u2026</string>
     <string name="changelog_error">Δεν είναι δυνατή η φόρτωση του αρχείου αλλαγών</string>
