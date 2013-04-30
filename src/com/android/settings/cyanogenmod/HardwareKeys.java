@@ -448,7 +448,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         return false;
     }
 
-       @override
+    @Override
     public void shortcutPicked(String uri, String friendlyName, boolean isApplication) {
         Preference preference = mCustomAppPreference;
         if (preference == mHomePressAction) {
