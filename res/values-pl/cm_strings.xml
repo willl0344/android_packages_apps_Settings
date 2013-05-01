@@ -899,6 +899,29 @@ dwa nowe, odpowiadające kolejnym punktom kontrolnym. \'Usuń\' kasuje wybrany p
     <string name="clock_date_string_edittext_title">Musi być w DateFormat eg. MM/dd/rr</string>
     <string name="clock_date_string_edittext_summary">Wpisz ciąg znaków</string>
     <string name="status_bar_clock">Zegar i data</string>
+    <string name="pref_low_battery_warning_policy_title">Ostrzeżenie o niskim poziomie baterii</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Ostrzeż o niskim poziomie baterii za pomocą</string>
+    <string name="low_battery_warning_policy_popup_sound">Okienka i dźwięku</string>
+    <string name="low_battery_warning_policy_notif_sound">Powiadomienia i dźwięku</string>
+    <string name="low_battery_warning_policy_popup">Tylko okienka</string>
+    <string name="low_battery_warning_policy_notif">Tylko powiadomienia</string>
+    <string name="low_battery_warning_policy_sound">Tylko dźwięku</string>
+    <string name="low_battery_warning_policy_disabled">Wyłączona</string>
+    <string name="display_category_animation_options_title">Opcje animacji</string>
+    <string name="system_power_crt_screen_off_title">Animacja CRT wyłączania ekranu</string>
+    <string name="system_power_crt_screen_off_summary">Animacja \"Electron Beam\" przy wyłączaniu ekranu</string>
+    <string name="system_power_crt_mode_title">Tryb animacji CRT</string>
+    <string name="system_power_crt_mode_dialog_title">Pokaż animację CRT</string>
+    <string name="system_power_crt_mode_horizontal">Ekran poziomy</string>
+    <string name="system_power_crt_mode_vertical">Ekran pionowy</string>
+    <string name="system_power_crt_mode_both">Zależny od orientacji</string>
+    <string name="nfc_polling_mode_title">Tryb cyklicznego przeglądania NFC</string>
+    <string name="nfc_polling_mode_screen_off">Wyłącz ekran</string>
+    <string name="nfc_polling_mode_screen_locked">Ekran włączony, zablokowany</string>
+    <string name="nfc_polling_mode_screen_unlocked">Ekran włączony, odblokowany (domyślnie)</string>
+    <string name="hardware_keys_action_last_app">Ostatnia aplikacja</string>
+    <string name="hardware_keys_action_power">Wyłącz ekran</string>
+    <string name="hardware_keys_action_custom_app">Niestandardowa aplikacja</string>
 
 
     <string name="power_notifications_category_title">Dźwięki ładowania</string>
