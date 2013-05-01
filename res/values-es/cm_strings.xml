@@ -807,6 +807,30 @@ podrá crear una nueva línea con el fin de insertar puntos de control adicional
     <string name="clock_date_string_edittext_title">Debe ser en formato de fechas ej: MM/dd/aa</string>
     <string name="clock_date_string_edittext_summary">Entrar cadena</string>
     <string name="status_bar_clock">Reloj y fecha</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Indicar la advertencia de batería baja con</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-up y sonido</string>
+    <string name="low_battery_warning_policy_notif_sound">Notificación y sonido</string>
+    <string name="low_battery_warning_policy_popup">Cuadro de diálogo emergente sólo</string>
+    <string name="low_battery_warning_policy_notif">Notificación sólamente</string>
+    <string name="low_battery_warning_policy_sound">Sólo sonido</string>
+    <string name="low_battery_warning_policy_disabled">Inhabilitada</string>
+    <string name="display_category_animation_options_title">Opciones de animación</string>
+    <string name="system_power_crt_screen_off_title">Apagado de pantalla CRT</string>
+    <string name="system_power_crt_screen_off_summary">Pantalla mostrará un haz de electrones cuando apagague</string>
+    <string name="system_power_crt_mode_title">Modo de animación tipo CRT</string>
+    <string name="system_power_crt_mode_dialog_title">Ver animación tipo CRT</string>
+    <string name="system_power_crt_mode_horizontal">Retrato horizontal</string>
+    <string name="system_power_crt_mode_vertical">Retrato vertical</string>
+    <string name="system_power_crt_mode_both">Dependiente de la orientación</string>
+    <string name="notif_alpha_title">Transparencia de las filas de notificaciones</string>
+    <string name="nfc_polling_mode_title">Modo de votación del NFC</string>
+    <string name="nfc_polling_mode_screen_off">Pantalla apagada</string>
+    <string name="nfc_polling_mode_screen_locked">Pantalla encendida, bloqueado</string>
+    <string name="nfc_polling_mode_screen_unlocked">Pantalla encendida, desbloqueado (por defecto)</string>
+    <string name="hardware_keys_action_last_app">Última aplicación</string>
+    <string name="hardware_keys_action_power">Pantalla apagada</string>
+    <string name="hardware_keys_action_custom_app">Aplicación personalizada</string>
+
 
     <string name="power_notifications_category_title">Notificación de carga/descarga</string>
     <string name="power_notifications_enable_title">Habilitada</string>
