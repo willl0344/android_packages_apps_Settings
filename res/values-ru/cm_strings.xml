@@ -979,6 +979,30 @@
     <string name="clock_date_string_edittext_title">Формат даты: ММ/дд/гг</string>
     <string name="clock_date_string_edittext_summary">Введите строку</string>
     <string name="status_bar_clock">Время и дата</string>
+    <string name="pref_low_battery_warning_policy_title">Низкий заряд батареи</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Предупреждение о низком заряде</string>
+    <string name="low_battery_warning_policy_popup_sound">Сообщение и звук</string>
+    <string name="low_battery_warning_policy_notif_sound">Уведомление и звук</string>
+    <string name="low_battery_warning_policy_popup">Только сообщение</string>
+    <string name="low_battery_warning_policy_notif">Только уведомление</string>
+    <string name="low_battery_warning_policy_sound">Только звук</string>
+    <string name="low_battery_warning_policy_disabled">Отключено</string>
+    <string name="display_category_animation_options_title">Настройки анимации</string>
+    <string name="system_power_crt_screen_off_title">Анимация отключения</string>
+    <string name="system_power_crt_screen_off_summary">Анимация выключения ЭЛТ-монитора при отключении экрана</string>
+    <string name="system_power_crt_mode_title">Режим анимации</string>
+    <string name="system_power_crt_mode_dialog_title">Показывать анимацию</string>
+    <string name="system_power_crt_mode_horizontal">Горизонтально в портретном режиме</string>
+    <string name="system_power_crt_mode_vertical">Вертикально в портретном режиме</string>
+    <string name="system_power_crt_mode_both">В зависимости от поворота экрана</string>
+    <string name="nfc_polling_mode_title">Режим работы NFC</string>
+    <string name="nfc_polling_mode_screen_off">Экран выключен</string>
+    <string name="nfc_polling_mode_screen_locked">Экран включен и заблокирован</string>
+    <string name="nfc_polling_mode_screen_unlocked">Экран включен и разблокирован (по умолчанию)</string>
+    <string name="hardware_keys_action_last_app">Предыдущее приложение</string>
+    <string name="hardware_keys_action_power">Отключить экран</string>
+    <string name="hardware_keys_action_custom_app">Заданное приложение</string>
+
 
     <!-- Category title for power sound notification specific Settings.
          [CHAR LIMIT=40] -->
