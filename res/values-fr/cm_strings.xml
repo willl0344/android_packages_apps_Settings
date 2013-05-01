@@ -796,6 +796,31 @@ Des options supplémentaires sont disponibles en appuyant longtemps sur une lign
     <string name="clock_date_string_edittext_title">Doit être dans DateFormat par exemple. MM/dd/AA</string>
     <string name="clock_date_string_edittext_summary">Entrez la valeur</string>
     <string name="status_bar_clock">Horloge et date</string>
+    <string name="pref_low_battery_warning_policy_title">Avertissement de batterie faible</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Indiquer l\'avertissement de batterie faible avec</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-up et son</string>
+    <string name="low_battery_warning_policy_notif_sound">Notification et son</string>
+    <string name="low_battery_warning_policy_popup">Pop-up de dialogue uniquement</string>
+    <string name="low_battery_warning_policy_notif">Notification uniquement</string>
+    <string name="low_battery_warning_policy_sound">Son seulement</string>
+    <string name="low_battery_warning_policy_disabled">Désactivé</string>
+    <string name="display_category_animation_options_title">Options d\'animation</string>
+    <string name="system_power_crt_screen_off_title">CRT à l\'extinction de l\'écran</string>
+    <string name="system_power_crt_screen_off_summary">Animation \"Electron Beam\" lors de l\'extinction de l\'écran</string>
+    <string name="system_power_crt_mode_title">Mode animation CRT</string>
+    <string name="system_power_crt_mode_dialog_title">Voir l\'animation CRT</string>
+    <string name="system_power_crt_mode_horizontal">Portrait horizontal</string>
+    <string name="system_power_crt_mode_vertical">Portrait vertical</string>
+    <string name="system_power_crt_mode_both">Dépend de l\'orientation</string>
+    <string name="notif_alpha_title">Transparence des lignes de notification</string>
+    <string name="nfc_polling_mode_title">Mode d\'interrogation de la puce NFC</string>
+    <string name="nfc_polling_mode_screen_off">Écran éteint</string>
+    <string name="nfc_polling_mode_screen_locked">Écran allumé, verrouillé</string>
+    <string name="nfc_polling_mode_screen_unlocked">Écran allumé, déverrouillé (par défaut)</string>
+    <string name="hardware_keys_action_last_app">Dernière application</string>
+    <string name="hardware_keys_action_power">Écran éteint</string>
+    <string name="hardware_keys_action_custom_app">Application personnalisée</string>
+
 
     <string name="power_notifications_category_title">Son d\'alimentation</string>
     <string name="power_notifications_enable_title">Activer</string>
