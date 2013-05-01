@@ -980,6 +980,31 @@ Mittels \"Entfernen\" kann die ausgewählte Stützstelle aus dem Helligkeitsverl
     <string name="clock_date_format">Format</string>
     <string name="clock_date_string_edittext_title">Muss in einem Datumsformat wie z.B. MM/dd/yy sein</string>
     <string name="clock_date_string_edittext_summary">String eingeben</string>
+    <string name="pref_low_battery_warning_policy_title">Warnung niedriger Akkustand</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Aktion bei niedriger Akkukapazität festlegen mit</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-up Fenster und Sound</string>
+    <string name="low_battery_warning_policy_notif_sound">Benachrichtigung und Sound</string>
+    <string name="low_battery_warning_policy_popup">Nur Pop-up Fenster</string>
+    <string name="low_battery_warning_policy_notif">Nur Benachrichtigung</string>
+    <string name="low_battery_warning_policy_sound">Nur Sound</string>
+    <string name="low_battery_warning_policy_disabled">Deaktiviert</string>
+    <string name="display_category_animation_options_title">Animationseinstellungen</string>
+    <string name="system_power_crt_screen_off_title">CRT Display aus</string>
+    <string name="system_power_crt_screen_off_summary">Animation (Elektron-Strahl) ausführen wenn der Bildschirm ausgeschaltet wird</string>
+    <string name="system_power_crt_mode_title">CRT Animationen</string>
+    <string name="system_power_crt_mode_dialog_title">Zeige CRT-Animation</string>
+    <string name="system_power_crt_mode_horizontal">Porträt horizontal</string>
+    <string name="system_power_crt_mode_vertical">Porträt vertikal</string>
+    <string name="system_power_crt_mode_both">Ausrichtung abhängig</string>
+    <string name="notif_alpha_title">Reihen Transparnz</string>
+    <string name="nfc_polling_mode_title">NFC Polling-Modus</string>
+    <string name="nfc_polling_mode_screen_off">Display aus</string>
+    <string name="nfc_polling_mode_screen_locked">Display an, gesperrt</string>
+    <string name="nfc_polling_mode_screen_unlocked">Display an, entsperrt (Standard)</string>
+    <string name="hardware_keys_action_last_app">Zur letzten App wechseln</string>
+    <string name="hardware_keys_action_power">Ausschalten</string>
+    <string name="hardware_keys_action_custom_app">Eigene App</string>
+
 
     <!-- Pie control -->
     <string name="pie_control_title">Pie-Navigation</string>
