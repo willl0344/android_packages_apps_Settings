@@ -389,8 +389,6 @@
     <string name="cm_sound_mode_soundVibrate">"Sunet + Vibrare"</string>
     <string name="pref_flash_mode_title">"Mod bliţ"</string>
     <string name="expanded_haptic_feedback_title">"Vibrare la atingere"</string>
-    <string name="kill_app_longpress_back">"Butonul Înapoi opreşte aplicaţia"</string>
-    <string name="kill_app_longpress_back_summary">"Opriţi aplicaţia din prim-plan la apăsarea lungă a tastei Înapoi"</string>
     <string name="changelog_title">"Jurnal schimbări"</string>
     <string name="changelog_loading">"Se încarcă\u2026"</string>
     <string name="changelog_error">"Imposibil de încărcat jurnalul schimbărilor"</string>

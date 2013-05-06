@@ -408,8 +408,6 @@
     <string name="cm_sound_mode_soundVibrate">Skambės ir Vibruos</string>
     <string name="pref_flash_mode_title">Žibintuvėlio režimas</string>
     <string name="expanded_haptic_feedback_title">Vibruoti palietus</string>
-    <string name="kill_app_longpress_back">Uždaryti prog. Atgal mygtuku</string>
-    <string name="kill_app_longpress_back_summary">Uždaryti programą ilgai spaudžiant Agal mygtuką</string>
     <string name="changelog_title">Žiūrėti pakeitimus</string>
     <string name="changelog_loading">Ruošiamas sąrašas\u2026</string>
     <string name="changelog_error">Nepavyko parodyti sąrašo</string>

@@ -393,8 +393,6 @@
     <string name="cm_sound_mode_soundVibrate">Звук+Вібро</string>
     <string name="pref_flash_mode_title">Режими ліхтарика</string>
     <string name="expanded_haptic_feedback_title">Реакція на натиск</string>
-    <string name="kill_app_longpress_back">Закрити програму</string>
-    <string name="kill_app_longpress_back_summary">Довгий настиск на кнопку Назад закриє запущену прогаму</string>
     <string name="changelog_title">Список змін</string>
     <string name="changelog_loading">Завантаження списку змін\u2026</string>
     <string name="changelog_error">Помилка завантаження списку змін</string>

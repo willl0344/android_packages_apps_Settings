@@ -399,8 +399,6 @@
     <string name="adb_over_network">ADBオーバーネットワーク</string>
     <string name="adb_over_network_summary">ネットワークインタフェース(Wi-FiやUSB)越しのTCP/IPデバッグを有効にする(この設定は再起動でリセットされます)</string>
     <string name="adb_over_network_warning">警告: ADBオーバーネットワークを有効にするとあなたの端末は、GSMを含むすべての接続可能なネットワークからの侵入を許します！\n\n信頼できるネットワークに接続している場合にのみ有効にしてください。\n\n本当にこの機能を有効にしますか？</string>
-    <string name="kill_app_longpress_back">戻るボタンでアプリ終了</string>
-    <string name="kill_app_longpress_back_summary">戻るボタンを長押ししてフォアグラウンドアプリを終了する</string>
     <string name="display_category_wakeup_options_title">復帰オプション</string>
     <string name="pref_volume_wake_title">音量ボタンで復帰</string>
     <string name="pref_volume_wake_summary">音量アップ/ダウンボタンで端末を復帰する</string>
