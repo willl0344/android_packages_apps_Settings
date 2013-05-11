@@ -1641,6 +1641,8 @@
 
         <activity android:name=".UserInterface" />
 
+        <activity android:name=".cyanogenmod.KeyboardInputSettings" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
