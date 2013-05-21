@@ -51,6 +51,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
 
+    private Preference mLcdDensity;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
 
@@ -62,6 +63,8 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private String mCustomLabelText = null;
     private int newDensityValue;
 
+    DensityChanger densityFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -72,6 +75,16 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
+
+        mLcdDensity = findPreference("lcd_density_setup");
+        mLcdDensity.setOnPreferenceChangeListener(this);
+        String currentProperty = SystemProperties.get("ro.sf.lcd_density");
+        try {
+            newDensityValue = Integer.parseInt(currentProperty);
+        } catch (Exception e) {
+            getPreferenceScreen().removePreference(mLcdDensity);
+        }
+        mLcdDensity.setSummary(getResources().getString(R.string.current_lcd_density) + currentProperty);
 
         mLowBatteryWarning = (ListPreference) findPreference(KEY_LOW_BATTERY_WARNING_POLICY);
         int lowBatteryWarning = Settings.System.getInt(getActivity().getContentResolver(),
