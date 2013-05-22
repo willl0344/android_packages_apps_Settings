@@ -50,6 +50,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
+    private static final String KEY_DUAL_PANE = "dual_pane";
 
     private Preference mLcdDensity;
     private Preference mCustomLabel;
@@ -57,6 +58,8 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     private ListPreference mCrtMode;
     private CheckBoxPreference mCrtOff;
+
+    private CheckBoxPreference mDualPane;
 
     private boolean mIsCrtOffChecked = false;
 
@@ -92,6 +95,14 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
+
+        mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
+        mDualPane.setOnPreferenceChangeListener(this);
+        boolean preferDualPane = getResources().getBoolean(
+                com.android.internal.R.bool.preferences_prefer_dual_pane);
+        boolean dualPaneMode = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.DUAL_PANE_PREFS, (preferDualPane ? 1 : 0)) == 1;
+        mDualPane.setChecked(dualPaneMode);
 
         // respect device default configuration
         // true fades while false animates
@@ -140,6 +151,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.SYSTEM_POWER_CRT_MODE, crtMode);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
+            return true;
+        } else if (preference == mDualPane) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.DUAL_PANE_PREFS,
+                    (Boolean) newValue ? 1 : 0);
             return true;
         }
         return false;
