@@ -75,9 +75,6 @@ public class QuickSettingsUtil {
         TILES.put(TILE_EXPANDEDDESKTOP, new QuickSettingsUtil.TileInfo(
                 TILE_EXPANDEDDESKTOP, R.string.title_tile_expanded_desktop,
                 "com.android.systemui:drawable/ic_qs_expanded_desktop_off"));
-        TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
-                TILE_SLEEP, R.string.title_tile_power,
-                "com.android.systemui:drawable/ic_qs_power", true));
         TILES.put(TILE_GPS, new QuickSettingsUtil.TileInfo(
                 TILE_GPS, R.string.title_tile_gps,
                 "com.android.systemui:drawable/ic_qs_gps_neutral"));
@@ -99,6 +96,9 @@ public class QuickSettingsUtil {
         TILES.put(TILE_AUTOROTATE, new QuickSettingsUtil.TileInfo(
                 TILE_AUTOROTATE, R.string.title_tile_autorotate,
                 "com.android.systemui:drawable/ic_qs_auto_rotate"));
+        TILES.put(TILE_SLEEP, new QuickSettingsUtil.TileInfo(
+                TILE_SLEEP, R.string.title_tile_power,
+                "com.android.systemui:drawable/ic_qs_power"));
         TILES.put(TILE_PROFILE, new QuickSettingsUtil.TileInfo(
                 TILE_PROFILE, R.string.title_tile_profile,
                 "com.android.systemui:drawable/ic_qs_profiles"));
