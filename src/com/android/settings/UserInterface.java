@@ -51,6 +51,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
     private static final String KEY_POWER_CRT_SCREEN_OFF = "system_power_crt_screen_off";
     private static final String KEY_DUAL_PANE = "dual_pane";
+    private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
 
     private Preference mLcdDensity;
     private Preference mCustomLabel;
@@ -59,6 +60,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private ListPreference mCrtMode;
     private CheckBoxPreference mCrtOff;
 
+    private Preference mRamBar;
     private CheckBoxPreference mDualPane;
 
     private boolean mIsCrtOffChecked = false;
@@ -95,6 +97,9 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mLowBatteryWarning.setValue(String.valueOf(lowBatteryWarning));
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
+
+        mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
+        updateRamBar();
 
         mDualPane = (CheckBoxPreference) findPreference(KEY_DUAL_PANE);
         mDualPane.setOnPreferenceChangeListener(this);
@@ -134,6 +139,27 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
         }
+    }
+
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateRamBar();
+    }
+
+    @Override
+    public void onPause() {
+        super.onResume();
+        updateRamBar();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {

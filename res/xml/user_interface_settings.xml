@@ -29,6 +29,11 @@
             android:title="@string/dual_pane"
             android:summary="@string/dual_pane_summary" />
 
+        <PreferenceScreen
+            android:key="recents_ram_bar"
+            android:fragment="com.android.settings.RamBar"
+            android:title="@string/ram_bar" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

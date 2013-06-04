@@ -1643,12 +1643,25 @@
 
         <activity android:name=".cyanogenmod.KeyboardInputSettings" />
 
+        <activity android:name=".RamBar" />
+
         <activity
             android:name=".DensityChanger"
             android:label="@string/lcd_density_wizard" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
+        </activity>
+
+        <!-- Pseudo-activity used to provide an intent-filter entry point to ass display rotation config -->
+        <activity android:name="Settings$ASSRamBarActivity"
+                android:label="@string/ram_bar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.RamBar" />
         </activity>
 
         <activity android:name=".profiles.NFCProfile"
