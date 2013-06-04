@@ -48,9 +48,12 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
+    private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
 
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
+
+    private Preference mRamBar;
 
     private String mCustomLabelText = null;
     private int newDensityValue;
@@ -73,6 +76,8 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntry());
         mLowBatteryWarning.setOnPreferenceChangeListener(this);
 
+        mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
+        updateRamBar();
     }
 
     private void updateCustomLabelTextSummary() {
@@ -83,6 +88,27 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         } else {
             mCustomLabel.setSummary(mCustomLabelText);
         }
+    }
+
+    private void updateRamBar() {
+        int ramBarMode = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.RECENTS_RAM_BAR_MODE, 0);
+        if (ramBarMode != 0)
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_enabled));
+        else
+            mRamBar.setSummary(getResources().getString(R.string.ram_bar_color_disabled));
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateRamBar();
+    }
+
+    @Override
+    public void onPause() {
+        super.onResume();
+        updateRamBar();
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
