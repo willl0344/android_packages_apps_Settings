@@ -72,7 +72,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String ON_SCREEN_BUTTONS_HEIGHT = "on_screen_buttons_height";
     private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
-    private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -98,8 +97,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private WifiDisplayStatus mWifiDisplayStatus;
     private Preference mWifiDisplayPreference;
-
-    private CheckBoxPreference mScreenOffAnimation;
 
     private ContentObserver mAccelerometerRotationObserver =
             new ContentObserver(new Handler()) {
@@ -176,14 +173,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mVolumeWake.setChecked(Settings.System.getInt(resolver,
                         Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
             }
-        }
-
-        mScreenOffAnimation = (CheckBoxPreference) findPreference(KEY_SCREEN_OFF_ANIMATION);
-        if(getResources().getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
-            mScreenOffAnimation.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.SCREEN_OFF_ANIMATION, 1) == 1);
-        } else {
-            getPreferenceScreen().removePreference(mScreenOffAnimation);
         }
 
     }
@@ -420,10 +409,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (preference == mVolumeWake) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                     mVolumeWake.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mScreenOffAnimation) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_ANIMATION,
-                    mScreenOffAnimation.isChecked() ? 1 : 0);
             return true;
         }
 
