@@ -1648,6 +1648,8 @@
 
         <activity android:name=".RamBar" />
 
+        <activity android:name=".cyanogenmod.NavBarStyle" />
+
         <activity
             android:name=".DensityChanger"
             android:label="@string/lcd_density_wizard" >
