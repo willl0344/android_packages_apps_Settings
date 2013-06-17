@@ -1721,6 +1721,8 @@
 
         <activity android:name=".UserInterface" />
 
+        <activity android:name=".cyanogenmod.NavBarStyle" />
+
         <activity android:name=".cyanogenmod.StatusBarStyle" />
 
         <activity android:name=".profiles.NFCProfile"
