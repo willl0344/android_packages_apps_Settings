@@ -62,6 +62,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String KEY_HALO_HIDE = "halo_hide";
     private static final String KEY_HALO_REVERSED = "halo_reversed";
     private static final String KEY_HALO_PAUSE = "halo_pause";
+    private static final String KEY_WE_WANT_POPUPS = "show_popup";
 
     private Preference mLcdDensity;
     private Preference mCustomLabel;
@@ -78,6 +79,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private CheckBoxPreference mHaloHide;
     private CheckBoxPreference mHaloReversed;
     private CheckBoxPreference mHaloPause;
+    private CheckBoxPreference mWeWantPopups;
 
     private boolean mIsCrtOffChecked = false;
 
@@ -122,6 +124,12 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mHaloPause = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_PAUSE);
         mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_PAUSE, isLowRAM) == 1);
+
+        int showPopups = Settings.System.getInt(getContentResolver(), Settings.System.WE_WANT_POPUPS, 1);
+
+        mWeWantPopups = (CheckBoxPreference) findPreference(KEY_WE_WANT_POPUPS);
+        mWeWantPopups.setOnPreferenceChangeListener(this);
+        mWeWantPopups.setChecked(showPopups > 0);
 
         mCustomLabel = findPreference(PREF_CUSTOM_CARRIER_LABEL);
         updateCustomLabelTextSummary();
@@ -244,6 +252,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             } catch (android.os.RemoteException ex) {
                 // System dead
             }          
+            return true;
+        } else if (preference == mWeWantPopups) {
+            boolean checked = (Boolean) newValue;
+                        Settings.System.putBoolean(getActivity().getContentResolver(),
+                                Settings.System.WE_WANT_POPUPS, checked);
             return true;
             }
         return false;
