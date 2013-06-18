@@ -254,9 +254,9 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
             }          
             return true;
         } else if (preference == mWeWantPopups) {
-            boolean checked = (Boolean) newValue;
-                        Settings.System.putBoolean(getActivity().getContentResolver(),
-                                Settings.System.WE_WANT_POPUPS, checked);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.WE_WANT_POPUPS,
+                    (Boolean) newValue ? 1 : 0);
             return true;
             }
         return false;
