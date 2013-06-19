@@ -23,7 +23,7 @@
     <PreferenceCategory
         android:title="@string/nav_bar_background_style">
 
-        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
             android:key="nav_bar_color"
             android:title="@string/nav_bar_color_title"
             android:defaultValue="#000000" />
