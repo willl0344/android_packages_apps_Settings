@@ -709,4 +709,3 @@ controle adicionais. \'Remover\' apaga a linha selecionada.
     <string name="profile_trigger_filter_bluetooth">Disparadores bluetooth</string>
     <string name="power_notifications_enable_summary">Reproduzir um som de alerta quando conectando ou desconectando do carregador</string>
 </resources>
->>>>>>> 4c564f53ad3c31267703457b771b5da12f6c88fe
