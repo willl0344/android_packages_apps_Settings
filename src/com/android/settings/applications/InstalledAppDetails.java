@@ -1320,6 +1320,7 @@ public class InstalledAppDetails extends Fragment
         } catch (android.os.RemoteException ex) {
             mHaloState.setChecked(!state); // revert
         }
+    }
 
     private void setPrivacyGuard(boolean enabled) {
         String packageName = mAppEntry.info.packageName;
