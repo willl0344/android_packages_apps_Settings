@@ -897,9 +897,6 @@
     <string name="popups_title">Allow floating windows</string>
     <string name="popups_summary">Controls whether you want floating windows from notification panel</string>
 
-    <!-- TRDS Settings -->
-    <string name="trds_settings_title">Dark TEMASEK</string>
-
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>
