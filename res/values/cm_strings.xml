@@ -899,10 +899,6 @@
     <string name="popups_title">Allow floating windows</string>
     <string name="popups_summary">Controls whether you want floating windows from notification panel</string>
 
-    <!-- Statusbar Quick Peek -->
-    <string name="statusbar_quick_peek_title">Quick Peek</string>
-    <string name="statusbar_quick_peek_summary">Peek at statusbar by swiping from top edge of screen</string>
-
     <!-- Shortcut picker -->
     <string name="use_custom_app_title">Use custom application</string>
     <string name="use_custom_app_summary">Use custom application instead of the recent applications dialog</string>

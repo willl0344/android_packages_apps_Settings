@@ -47,7 +47,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String PREF_BATT_BAR_COLOR = "battery_bar_color";
     private static final String PREF_BATT_BAR_WIDTH = "battery_bar_thickness";
     private static final String PREF_BATT_ANIMATE = "battery_bar_animate";
-    private static final String STATUS_BAR_QUICK_PEEK = "status_bar_quick_peek";
 
     private ListPreference mStatusBarBattery;
     private ListPreference mStatusBarCmSignal;
@@ -60,7 +59,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private PreferenceCategory mPrefCategoryGeneral;
     private ColorPickerPreference mBatteryBarColor;
     private PreferenceScreen mClockStyle;
-    private CheckBoxPreference mStatusBarQuickPeek;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -92,10 +90,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarBattery.setValue(String.valueOf(statusBarBattery));
         mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
         mStatusBarBattery.setOnPreferenceChangeListener(this);
-
-        mStatusBarQuickPeek = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_QUICK_PEEK);
-        mStatusBarQuickPeek.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.STATUSBAR_PEEK, 0) == 1));
 
         int signalStyle = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_SIGNAL_TEXT, 0);
@@ -211,11 +205,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarQuickPeek) {
-            value = mStatusBarQuickPeek.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUSBAR_PEEK, value ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
