@@ -637,7 +637,7 @@
     <string name="title_toggle_media_previous">Media: Skip to Previous</string>
     <string name="title_toggle_media_next">Media: Skip to Next</string>
     <string name="title_toggle_lte">Toggle LTE</string>
-    <string name="title_toggle_reboot">Toggle Reboot (LongPress to Recovery)</string>
+    <string name="title_toggle_reboot">Toggle Reboot</string>
     <string name="title_toggle_wimax">Toggle WiMAX</string>
     <string name="title_button_modes">Button modes</string>
     <string name="pref_brightness_mode_title">Brightness modes</string>
@@ -961,6 +961,7 @@
     <string name="title_tile_wimax">WiMAX</string>
     <string name="title_tile_user">User switcher</string>
     <string name="title_tile_networkmode">Network mode</string>
+    <string name="title_tile_reboot">Reboot</string>
     <string name="title_tile_nfc">NFC</string>
     <string name="title_tile_screen_timeout">Screen timeout</string>
     <string name="title_tile_usb_tether">USB Tether</string>
