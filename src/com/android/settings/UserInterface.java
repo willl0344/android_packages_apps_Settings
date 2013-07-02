@@ -138,7 +138,7 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
         mHaloPause.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_PAUSE, isLowRAM) == 1);
 
-        mHaloColors = (CheckBoxPreference) prefSet.findPreference(KEY_HALO_COLORS);
+        mHaloColors = (CheckBoxPreference) prefSet.findPreference(PREF_HALO_COLORS);
         mHaloColors.setChecked(Settings.System.getInt(mContext.getContentResolver(),
                 Settings.System.HALO_COLORS, 0) == 1);
 
