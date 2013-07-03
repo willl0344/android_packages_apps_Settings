@@ -98,7 +98,6 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
         setHasOptionsMenu(true);
     }
 
-
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         super.onCreateOptionsMenu(menu, inflater);
