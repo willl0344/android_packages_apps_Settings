@@ -1670,8 +1670,6 @@
                 android:value="com.android.settings.RamBar" />
         </activity>
 
-        <activity android:name=".cyanogenmod.privacyguard.PrivacyGuardManager" />
-
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>
