@@ -697,6 +697,7 @@
     <string name="clock_enabled">Enabled</string>
     <string name="clock_disabled">Disabled</string>
     <string name="clock_color_title">Clock color</string>
+    <string name="status_bar_clock_style_reset">Reset color</string>
     <string name="status_bar_show_clock_title">Show clock</string>
     <string name="status_bar_am_pm_title">AM/PM style</string>
     <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
@@ -1071,14 +1072,15 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
         
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Color Picker</string>
-    <string name="press_color_to_apply">Press on Color to apply</string>
-    <string name="arrow_right">→</string>
-    <string name="arrow_down">↓</string>
-    <string name="hex">Hex:</string>
-    <string name="hex_hint">#FF000000</string>
+    <string name="dialog_color_picker">Color picker</string>
+    <string name="press_color_to_apply">Tap on color to apply</string>
+    <string name="arrow_right" translatable="false">\u2192</string>
+    <string name="arrow_down" translatable="false">\u2193</string>
+    <string name="hex_hint" translatable="false">#ff000000</string>
+    <string name="ics_color" translatable="false">!!!</string>
     <string name="set">Set</string>
-    <string name="ics_color">!!!</string> 
+    <string name="hex">Hex:</string>
+    <string name="color_default">Default</string> 
 
     <!-- Force dual panel -->
     <string name="force_dualpanel_title">Force dual panel in settings</string>
