@@ -585,25 +585,7 @@
     <string name="navigation_bar_save_message">Navigation bar settings saved</string>
     <string name="navigation_bar_reset_toast">Navigation bar reset to default</string>
     <string name="navigation_bar_menu_editable">Editable</string>
-    <string name="navigation_bar_menu_locked">Locked</string>
-
-    <!-- Battery bar -->
-    <string name="battery_bar">Battery bar location</string>
-    <string name="battery_bar_color">Battery bar color</string>
-    <string name="battery_bar_cat">Battery bar options</string>
-    <string name="battery_bar_style_title">Battery bar style</string>
-    <string name="battery_bar_thickness_title">Battery bar thickness</string>
-    <string name="battery_bar_animate_title">Charging animation</string>
-    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
-
-    <string name="dialog_color_picker">Color picker</string>
-    <string name="press_color_to_apply">Tap on color to apply</string>
-    <string name="arrow_right" translatable="false">\u2192</string>
-    <string name="arrow_down" translatable="false">\u2193</string>
-    <string name="hex_hint" translatable="false">#ff000000</string>
-    <string name="ics_color" translatable="false">!!!</string>
-    <string name="set">Set</string>
-    <string name="hex">Hex:</string>
+    <string name="navigation_bar_menu_locked">Locked</string> 
 
     <!-- Power Widget  -->
     <string name="power_widget_title">Power widget</string>
@@ -1195,6 +1177,26 @@ both edit the ambient brightness level of the control point as well as manually 
 desired screen brightness. Selecting \'Split\' allows you to to duplicate one line into
 two in order to insert additional control points. \'Remove\' deletes the selected line.
     </string>
+
+    <!-- Battery bar -->
+    <string name="battery_bar">Battery bar location</string>
+    <string name="battery_bar_color">Battery bar color</string>
+    <string name="battery_bar_cat">Battery bar options</string>
+    <string name="battery_bar_style_title">Battery bar style</string>
+    <string name="battery_bar_thickness_title">Battery bar thickness</string>
+    <string name="battery_bar_animate_title">Charging animation</string>
+    <string name="battery_bar_animate_summary">The charging animation may result in a poor user experience. Enable at your own discretion.</string>
+
+    <!-- Color Picker -->
+    <string name="dialog_color_picker">Color picker</string>
+    <string name="press_color_to_apply">Tap on color to apply</string>
+    <string name="arrow_right" translatable="false">\u2192</string>
+    <string name="arrow_down" translatable="false">\u2193</string>
+    <string name="hex_hint" translatable="false">#ff000000</string>
+    <string name="ics_color" translatable="false">!!!</string>
+    <string name="set">Set</string>
+    <string name="hex">Hex:</string>
+    <string name="color_default">Default</string>
 
     <string name="auto_brightness_sensitivity_title">Adjustment sensitivity</string>
     <string name="auto_brightness_sensitivity_verylow">Very low</string>
