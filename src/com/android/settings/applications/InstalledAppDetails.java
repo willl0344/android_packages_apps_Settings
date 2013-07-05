@@ -45,7 +45,6 @@ import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.res.Resources;
-import android.content.SharedPreferences;
 import android.hardware.usb.IUsbManager;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -406,24 +405,10 @@ public class InstalledAppDetails extends Fragment
     }
 
     private void initPrivacyGuardButton() {
-        if (mPrivacyGuardSwitch == null) {
-            return;
-        }
-
-        SharedPreferences preferences =
-            getActivity().getSharedPreferences("privacy_guard_manager", Activity.MODE_PRIVATE);
-        final boolean disabledForAllSystemApps = !preferences.getBoolean("show_system_apps", false);
-        final boolean isSystemApp = (mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0;
-
-        mPrivacyGuardSwitch.setChecked(mPm.getPrivacyGuardSetting(mAppEntry.info.packageName));
-
-        // disable privacy guard switch if it's a system app and the user wants to hide those
-        // or if the app is signed with the platform certificate
-        if ((disabledForAllSystemApps && isSystemApp) || isThisASystemPackage()) {
-            mPrivacyGuardSwitch.setEnabled(false);
-        } else {
-            mPrivacyGuardSwitch.setOnCheckedChangeListener(this);
-        }
+        // TODO: We probably want to disable this optional for the built-in apps
+        boolean enabled = mPm.getPrivacyGuardSetting(mAppEntry.info.packageName);
+        mPrivacyGuardSwitch.setChecked(enabled);
+        mPrivacyGuardSwitch.setOnCheckedChangeListener(this);
     }
 
     /** Called when the activity is first created. */
