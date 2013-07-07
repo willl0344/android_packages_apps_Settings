@@ -104,6 +104,12 @@
                 android:summary="@string/pref_volume_wake_summary"
                 android:defaultValue="false" />
 
+            <CheckBoxPreference
+                android:key="wakeup_when_plugged_unplugged"
+                android:title="@string/wakeup_when_plugged_unplugged_title"
+                android:summary="@string/wakeup_when_plugged_unplugged_summary"
+                android:defaultValue="true" />
+
         </PreferenceCategory>
 
 </PreferenceScreen>

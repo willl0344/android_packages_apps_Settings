@@ -71,6 +71,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_HOME_WAKE = "pref_home_wake";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String ON_SCREEN_BUTTONS_HEIGHT = "on_screen_buttons_height";
     private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
 
@@ -86,6 +87,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mHomeWake;
     private CheckBoxPreference mVolumeWake;
+    private CheckBoxPreference mWakeUpWhenPluggedOrUnplugged;
     private PreferenceScreen mDisplayRotationPreference;
     private WarnedListPreference mFontSizePref;
 
@@ -193,6 +195,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 removeWakeupCategory = false;
             }
         }
+
+        mWakeUpWhenPluggedOrUnplugged = (CheckBoxPreference) findPreference(KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED);
+        mWakeUpWhenPluggedOrUnplugged.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                        Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED, 1) == 1);
 
     }
 
@@ -432,6 +438,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else if (preference == mVolumeWake) {
             Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
                     mVolumeWake.isChecked() ? 1 : 0);
+            return true;
+        } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
+                    mWakeUpWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
             return true;
         }
 

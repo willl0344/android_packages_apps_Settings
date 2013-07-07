@@ -983,6 +983,8 @@
     <string name="pref_home_wake_summary">Pressing the home button will wake your device</string>
     <string name="pref_volume_wake_title">Volume rocker</string>
     <string name="pref_volume_wake_summary">Pressing the volume rocker up or down will wake your device</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
 
     <!-- Setting checkbox summary for displaying USB debugging notification -->
     <string name="adb_notify">USB debugging notify</string>
