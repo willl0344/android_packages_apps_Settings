@@ -135,7 +135,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         mDynamicBugReport.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DYNAMIC_BUGREPORT, 1) == 1);
         mDynamicDockBattery = (CheckBoxPreference) prefSet.findPreference(DYNAMIC_DOCK_BATTERY);
         if (mDynamicDockBattery != null) {
-            if (deviceSupportsDockBattery(getActivity())) {
+            if (QSUtils.deviceSupportsDockBattery(getActivity())) {
                 mDynamicDockBattery.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DYNAMIC_DOCK_BATTERY, 1) == 1);
             } else {
                 mDynamicTiles.removePreference(mDynamicDockBattery);
@@ -144,7 +144,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         }
         mDynamicIme = (CheckBoxPreference) prefSet.findPreference(DYNAMIC_IME);
         if (mDynamicIme != null) {
-            if (deviceSupportsImeSwitcher(getActivity())) {
+            if (QSUtils.deviceSupportsImeSwitcher(getActivity())) {
                 mDynamicIme.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DYNAMIC_IME, 1) == 1);
             } else {
                 mDynamicTiles.removePreference(mDynamicIme);
@@ -153,7 +153,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         }
         mDynamicUsbTether = (CheckBoxPreference) prefSet.findPreference(DYNAMIC_USBTETHER);
         if (mDynamicUsbTether != null) {
-            if (deviceSupportsUsbTether(getActivity())) {
+            if (QSUtils.deviceSupportsUsbTether(getActivity())) {
                 mDynamicUsbTether.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DYNAMIC_USBTETHER, 1) == 1);
             } else {
                 mDynamicTiles.removePreference(mDynamicUsbTether);
@@ -162,7 +162,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         }
         mDynamicWifi = (CheckBoxPreference) prefSet.findPreference(DYNAMIC_WIFI);
         if (mDynamicWifi != null) {
-            if (deviceSupportsWifiDisplay(getActivity())) {
+            if (QSUtils.deviceSupportsWifiDisplay(getActivity())) {
                 mDynamicWifi.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DYNAMIC_WIFI, 1) == 1);
             } else {
                 mDynamicTiles.removePreference(mDynamicWifi);
