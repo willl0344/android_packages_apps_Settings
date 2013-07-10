@@ -100,6 +100,28 @@
             android:summary="@string/halo_pause_summary"
             android:dependency="halo_enabled" />
 
+    <PreferenceCategory
+        android:key="halo_color"
+        android:title="@string/halo_color_title" />
+
+        <PreferenceScreen
+            android:key="halo_button_color"
+            android:title="@string/halo_button_color_title"
+            android:dependency="halo_enabled" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="halo_text_bubble_color"
+            android:title="@string/halo_text_bubble_color_title"
+            android:dependency="halo_enabled" />
+        </PreferenceScreen>
+
+        <PreferenceScreen
+            android:key="halo_ping_color"
+            android:title="@string/halo_ping_color_title"
+            android:dependency="halo_enabled" />
+        </PreferenceScreen>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
