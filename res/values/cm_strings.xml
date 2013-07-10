@@ -885,6 +885,8 @@
     <string name="halo_ping_color_title">HALO ping color</string>
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
+    <string name="halo_gone_title">HALO notification visibility</string>
+    <string name="halo_gone_summary">Completely hide HALO when there are no notifications</string>
 
     <!-- We want HALO popups -->
     <string name="popups_title">Allow floating windows</string>
