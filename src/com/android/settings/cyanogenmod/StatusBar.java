@@ -42,6 +42,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private static final String STATUS_BAR_BATTERY = "status_bar_battery";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     private static final String STATUS_BAR_TRAFFIC = "status_bar_traffic";
+    private static final String STATUS_BAR_AUTO_HIDE = "status_bar_auto_hide";
     private static final String STATUS_BAR_SIGNAL = "status_bar_signal";
     private static final String STATUS_BAR_NOTIF_COUNT = "status_bar_notif_count";
     private static final String STATUS_BAR_CATEGORY_GENERAL = "status_bar_general";
@@ -64,6 +65,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private ColorPickerPreference mBatteryBarColor; 
     private CheckBoxPreference mStatusBarTraffic;
     private PreferenceScreen mClockStyle;
+    private CheckBoxPreference mStatusBarAutoHide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -111,6 +113,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarTraffic = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_TRAFFIC);
         mStatusBarTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_TRAFFIC, 0) == 1));
+
+        mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
+        mStatusBarAutoHide.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1));
 
         mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
@@ -224,6 +230,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             value = mStatusBarTraffic.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
+        } else if (preference == mStatusBarAutoHide) {
+            value = mStatusBarAutoHide.isChecked();
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.AUTO_HIDE_STATUSBAR, value ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);

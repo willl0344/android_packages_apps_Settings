@@ -1021,6 +1021,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="screen_off_animation_title">Screen-off animation</string>
     <string name="screen_off_animation_summary">Show the electron beam animation when the screen is turned off</string>
 
+    <!-- Auto-Hide Status Bar -->
+    <string name="auto_hide_statusbar">Auto Hide statusbar</string>
+    <string name="auto_hide_statusbar_summary">Statusbar hides itself when there are no notifications</string>
+
     <!-- Delete apn confirmation dialog message -->
     <string name="confirm_delete_apn">The APN will be deleted.</string>
 
