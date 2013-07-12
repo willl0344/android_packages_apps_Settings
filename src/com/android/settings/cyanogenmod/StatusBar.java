@@ -65,7 +65,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     private ColorPickerPreference mBatteryBarColor; 
     private CheckBoxPreference mStatusBarTraffic;
     private PreferenceScreen mClockStyle;
-    private CheckBoxPreference mStatusBarAutoHide;
+    private ListPreference mStatusBarAutoHide;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -114,9 +114,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         mStatusBarTraffic.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                 Settings.System.STATUS_BAR_TRAFFIC, 0) == 1));
 
-        mStatusBarAutoHide = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
-        mStatusBarAutoHide.setChecked((Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.AUTO_HIDE_STATUSBAR, 0) == 1));
+        mStatusBarAutoHide = (ListPreference) prefSet.findPreference(STATUS_BAR_AUTO_HIDE);
+        int statusBarAutoHideValue = Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
+                Settings.System.AUTO_HIDE_STATUSBAR, 0);
+        mStatusBarAutoHide.setValue(String.valueOf(statusBarAutoHideValue));
+        updateStatusBarAutoHideSummary(statusBarAutoHideValue);
+        mStatusBarAutoHide.setOnPreferenceChangeListener(this);
 
         mBatteryBar = (ListPreference) findPreference(PREF_BATT_BAR);
         mBatteryBar.setOnPreferenceChangeListener(this);
@@ -213,6 +216,12 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
             boolean value = (Boolean) newValue;
             Settings.System.putInt(resolver, Settings.System.STATUS_BAR_NOTIF_COUNT, value ? 1 : 0);
             return true;
+        } else if (preference == mStatusBarAutoHide) {
+            int statusBarAutoHideValue = Integer.valueOf((String) newValue);
+            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.System.AUTO_HIDE_STATUSBAR, statusBarAutoHideValue);
+            updateStatusBarAutoHideSummary(statusBarAutoHideValue);
+            return true;
         }
 
         return false;
@@ -229,12 +238,7 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         } else if (preference == mStatusBarTraffic) {
             value = mStatusBarTraffic.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
-        } else if (preference == mStatusBarAutoHide) {
-            value = mStatusBarAutoHide.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.AUTO_HIDE_STATUSBAR, value ? 1 : 0);
-            return true;
+                    Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0); 
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -246,6 +250,17 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         } else {
             mClockStyle.setSummary(getString(R.string.clock_disabled));
          }
+    }
+
+    private void updateStatusBarAutoHideSummary(int value) {
+        if (value == 0) {
+            /* StatusBar AutoHide deactivated */
+            mStatusBarAutoHide.setSummary(getResources().getString(R.string.auto_hide_statusbar_off));
+        } else {
+            mStatusBarAutoHide.setSummary(getResources().getString(value == 1
+                    ? R.string.auto_hide_statusbar_summary_nonperm
+                    : R.string.auto_hide_statusbar_summary_all));
+        }
     }
 
     @Override

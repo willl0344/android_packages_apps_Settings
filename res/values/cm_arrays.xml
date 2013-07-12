@@ -630,6 +630,19 @@
         <item>25</item>
     </integer-array>
 
+    <!-- AutoHide StatusBar -->
+    <string-array name="entries_auto_hide_statusbar">
+        <item>@string/auto_hide_statusbar_off</item>
+        <item>@string/auto_hide_statusbar_nonperm</item>
+        <item>@string/auto_hide_statusbar_all</item>
+    </string-array>
+
+    <string-array name="values_auto_hide_statusbar" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
     <!-- Status bar auto-collapse behaviour -->
     <string-array name="notification_drawer_collapse_on_dismiss_entries" translatable="false">
         <item>@string/collapse_on_dismiss_never</item>
