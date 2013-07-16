@@ -775,7 +775,7 @@
 
     <!-- Network speed -->
     <string name="show_network_speed">Network speed indicator</string>
-    <string name="show_network_speed_summary">Show network speed in statsbar</string>
+    <string name="show_network_speed_summary">Show network speed in statusbar</string>
 
     <!-- Network speed color style -->
     <string name="network_speed_color_title">Network speed color</string>
