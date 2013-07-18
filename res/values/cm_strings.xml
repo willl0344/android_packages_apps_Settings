@@ -855,6 +855,10 @@
     <string name="status_bar_notif_count_title">Show notification count</string>
     <string name="status_bar_notif_count_summary">Display number of pending notifications</string>
 
+    <!-- Option to disable wallpaper service -->
+    <string name="pref_disable_wallpaperservice_title">Disable wallpaper service</string>
+    <string name="pref_disable_wallpaperservice_summary">Disable wallpaper to reduce SystemUI memory usage (requires reboot)</string>
+
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wake-up options</string>
     <string name="pref_home_wake_title">Home button</string>
