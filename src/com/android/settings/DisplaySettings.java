@@ -70,6 +70,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String ON_SCREEN_BUTTONS_HEIGHT = "on_screen_buttons_height";
     private static final String ON_SCREEN_BUTTONS_WIDTH = "on_screen_buttons_width";
+    private static final String KEY_DUAL_PANEL = "force_dualpanel"; 
 
     // Strings used for building the summary
     private static final String ROTATION_ANGLE_0 = "0";
@@ -83,6 +84,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mHomeWake;
     private CheckBoxPreference mVolumeWake;
+
+    private CheckBoxPreference mDualPanel; 
+
     private PreferenceScreen mDisplayRotationPreference;
     private WarnedListPreference mFontSizePref;
 
@@ -214,7 +218,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             getPreferenceScreen().removePreference(mScreenOffAnimation);
         }
-    }
+
+	mDualPanel = (CheckBoxPreference) findPreference(KEY_DUAL_PANEL);
+        mDualPanel.setChecked(Settings.System.getBoolean(getContentResolver(), Settings.System.FORCE_DUAL_PANEL, false));
+    } 
 
     private void updateDisplayRotationPreferenceDescription() {
         if (mDisplayRotationPreference == null) {
@@ -457,7 +464,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_ANIMATION,
                     mScreenOffAnimation.isChecked() ? 1 : 0);
             return true;
-        }
+        } else if (preference == mDualPanel) {
+            Settings.System.putBoolean(getContentResolver(), Settings.System.FORCE_DUAL_PANEL, ((CheckBoxPreference) preference).isChecked());
+            return true; 
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }

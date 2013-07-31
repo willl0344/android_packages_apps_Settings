@@ -102,4 +102,10 @@
             android:entries="@array/on_screen_buttons_width_entries"
             android:entryValues="@array/on_screen_buttons_width_values" />
 
+	<CheckBoxPreference
+            android:key="force_dualpanel"
+            android:title="@string/force_dualpanel_title"
+            android:summary="@string/force_dualpanel_summary"
+            android:defaultValue="false" /> 
+
 </PreferenceScreen>
