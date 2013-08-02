@@ -1140,4 +1140,14 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
 
+    <!-- Pie colors -->
+    <string name="pie_control_color_settings">Pie Color Settings</string>
+    <string name="pie_control_color_normal">Normal background</string>
+    <string name="pie_control_color_selected">Selected background</string>
+    <string name="pie_control_color_longpressed">Long pressed background</string>
+    <string name="pie_control_color_icon">Icon color</string>
+    <string name="pie_control_outline">Show outline</string>
+    <string name="pie_control_color_title">Edit color setting</string>
+    <string name="pie_control_color_reset">Reset</string>   
+
 </resources>
