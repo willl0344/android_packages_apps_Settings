@@ -1308,5 +1308,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_size_large">Large</string>
     <string name="halo_size_gigantic">Gigantic</string>
     <string name="halo_size_monster">Monster</string>
+    <string name="halo_enabled_title">Enable HALO</string>
+    <string name="halo_enabled_summary">Completely enable or disable HALO</string> 
 
 </resources>
