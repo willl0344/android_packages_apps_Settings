@@ -1175,19 +1175,12 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="combined_navigation_bar_title">@string/navigation_bar_title</string>
     <string name="navigation_bar_title">Navigation bar</string>
     <string name="navigation_bar_show">Show Navigation Bar</string>
-    <string name="navigation_bar_summary1">Toggle Navigation Bar On/Off</string>
+    <string name="navigation_bar_summary">Toggle Navigation Bar On/Off</string>
     <string name="hw_keys_title">Hardware Keys</string>
     <string name="key_menu_enabled">Menu Key Enabled</string>
     <string name="key_back_enabled">Back Key Enabled</string>
     <string name="key_home_enabled">Home Key Enabled</string>
     <string name="navigation_bar_reboot_message">Reboot required</string>
-
-    <!-- On-Screen Buttons -->
-    <string name="on_screen_buttons_height_title">Change height in portrait mode</string>
-    <string name="on_screen_buttons_height_summary">Real-time change</string>
-    <string name="display_category_on_screen_buttons_height_title">Navigation Bar</string>
-    <string name="on_screen_buttons_width_title">Change width in landscape mode</string>
-    <string name="on_screen_buttons_width_summary">Real-time change</string>
 
     <!-- Privacy Guard -->
     <string name="privacy_guard_switch_label">Enable Privacy Guard</string>
