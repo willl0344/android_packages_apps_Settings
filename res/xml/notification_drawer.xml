@@ -83,6 +83,13 @@
             android:title="@string/brightness_location_title"
             android:dependency="expanded_widget" />
 
+        <!-- Notification drawer behaviour -->
+        <ListPreference
+	    android:key="notifications_behaviour"
+            android:title="@string/notification_behaviour_title"
+            android:entries="@array/notifs_beh_entries"
+            android:entryValues="@array/notifs_beh_values" /> 
+
     </PreferenceCategory>
 
     <PreferenceCategory

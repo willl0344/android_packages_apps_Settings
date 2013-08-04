@@ -185,6 +185,10 @@
     <string name="notification_background_default_wallpaper">Default background</string>
     <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
     <string name="notif_wallpaper_alpha_title">Notification background transparency</string>
+
+    <!-- Notification Behavior -->
+    <string name="notification_behaviour_title">Notification behavior</string>
+    <string name="additional_options_title">Notification behavior options</string>
     
     <string name="lock_screen_title">Lock screen</string>
 

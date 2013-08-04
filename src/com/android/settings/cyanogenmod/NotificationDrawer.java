@@ -61,6 +61,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private static final String TAG = "PowerWidget";
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
+    private static final String UI_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
     private static final String UI_EXP_WIDGET = "expanded_widget";
     private static final String UI_EXP_WIDGET_HIDE_ONCHANGE = "expanded_hide_onchange";
     private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
@@ -74,6 +75,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private CheckBoxPreference mPowerWidgetHideScrollBar;
     private ListPreference mPowerWidgetHapticFeedback;
     private ListPreference mBrightnessLocation;
+    private ListPreference mNotificationsBehavior;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -122,6 +124,12 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
                     .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
             mBrightnessLocation.setSummary(mBrightnessLocation.getEntry());
 
+            int CurrentBehavior = Settings.System.getInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR, 0);
+            mNotificationsBehavior = (ListPreference) findPreference(UI_NOTIFICATION_BEHAVIOUR);
+            mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
+            mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
+            mNotificationsBehavior.setOnPreferenceChangeListener(this);
+
         }
     }
 
@@ -169,6 +177,13 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
             Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
             mBrightnessLocation.setSummary(mBrightnessLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mNotificationsBehavior) {
+            String val = (String) newValue;
+                     Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR,
+            Integer.valueOf(val));
+            int index = mNotificationsBehavior.findIndexOfValue(val);
+            mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
             return true;
         }
 
