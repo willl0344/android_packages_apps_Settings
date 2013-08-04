@@ -128,12 +128,10 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
             }
         }
 
-        /**
         mNavigationBar = (PreferenceScreen) findPreference(KEY_NAVIGATION_BAR);
         if (mNavigationBar != null) {
             getPreferenceScreen().removePreference(mNavigationBar);
         }
-        
 
         // Pie controls
         mPieControl = (PreferenceScreen) findPreference(KEY_PIE_CONTROL);
@@ -142,7 +140,6 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
             prefScreen.removePreference(mPieControl);
             mPieControl = null;
         }
-        */
 
         // Expanded desktop
         mExpandedDesktopPref = (ListPreference) findPreference(KEY_EXPANDED_DESKTOP);

@@ -106,6 +106,10 @@
             android:entries="@array/on_screen_buttons_height_entries"
             android:entryValues="@array/on_screen_buttons_height_values" />
 
+        <PreferenceCategory
+            android:key="category_on_screen_buttons_options"
+            android:title="@string/display_category_on_screen_buttons_width_title"/>
+
         <ListPreference
             android:key="on_screen_buttons_width"
             android:title="@string/on_screen_buttons_width_title"
