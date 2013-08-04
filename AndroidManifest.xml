@@ -1725,6 +1725,10 @@
 
         <activity android:name=".cyanogenmod.StatusBarStyle" />
 
+        <activity android:name=".cyanogenmod.NavBarDimen" />
+
+        <activity android:name=".cyanogenmod.NavBarSettings" />
+
         <activity android:name=".profiles.NFCProfile"
                 android:theme="@android:style/Theme.NoDisplay">
             <intent-filter>

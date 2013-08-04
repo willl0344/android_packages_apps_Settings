@@ -29,6 +29,7 @@ import android.preference.Preference;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
@@ -36,8 +37,10 @@ import android.view.WindowManagerGlobal;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class SystemSettings extends SettingsPreferenceFragment  implements
-        Preference.OnPreferenceChangeListener {
+import java.util.regex.Matcher;
+import java.util.regex.Pattern; 
+
+public class SystemSettings extends SettingsPreferenceFragment implements Preference.OnPreferenceChangeListener {
     private static final String TAG = "SystemSettings";
 
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
@@ -75,16 +78,16 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         boolean removeKeys = false;
         boolean removeNavbar = false;
 
-        PreferenceCategory navbarCategory =
-                (PreferenceCategory) findPreference(KEY_NAVIGATION_BAR_CATEGORY);
+        // PreferenceCategory navbarCategory =
+        //        (PreferenceCategory) findPreference(KEY_NAVIGATION_BAR_CATEGORY);
 
         IWindowManager windowManager = IWindowManager.Stub.asInterface(
                 ServiceManager.getService(Context.WINDOW_SERVICE));
         try {
             if (windowManager.hasNavigationBar()) {
                 removeKeys = true;
-            } else {
-                removeNavbar = true;
+            // } else {
+                // removeNavbar = true;
             }
         } catch (RemoteException e) {
             // Do nothing
@@ -93,9 +96,9 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
         if (removeKeys) {
             prefScreen.removePreference(findPreference(KEY_HARDWARE_KEYS));
         }
-        if (removeNavbar) {
-            prefScreen.removePreference(navbarCategory);
-        }
+        // if (removeNavbar) {
+        //     prefScreen.removePreference(navbarCategory);
+        // }
 
         // Determine which user is logged in
         mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
@@ -148,9 +151,15 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
                 updateExpandedDesktop(expandedDesktopValue);
                 prefScreen.removePreference(mExpandedDesktopNoNavbarPref);
             } else {
-                mExpandedDesktopNoNavbarPref.setOnPreferenceChangeListener(this);
-                mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
-                prefScreen.removePreference(mExpandedDesktopPref);
+		// enable "Status bar visible" mode on devices without navbar
+		// even in devices with no nav bar support by default
+		mExpandedDesktopPref.setOnPreferenceChangeListener(this);
+                mExpandedDesktopPref.setValue(String.valueOf(expandedDesktopValue));
+                updateExpandedDesktop(expandedDesktopValue);
+                prefScreen.removePreference(mExpandedDesktopNoNavbarPref);
+                //mExpandedDesktopNoNavbarPref.setOnPreferenceChangeListener(this);
+                //mExpandedDesktopNoNavbarPref.setChecked(expandedDesktopValue > 0);
+                //prefScreen.removePreference(mExpandedDesktopPref);
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
@@ -188,10 +197,12 @@ public class SystemSettings extends SettingsPreferenceFragment  implements
             int expandedDesktopValue = Integer.valueOf((String) objValue);
             updateExpandedDesktop(expandedDesktopValue);
             return true;
+        /*
         } else if (preference == mExpandedDesktopNoNavbarPref) {
             boolean value = (Boolean) objValue;
             updateExpandedDesktop(value ? 2 : 0);
             return true;
+        */
         }
 
         return false;

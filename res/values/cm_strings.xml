@@ -1215,6 +1215,34 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="force_dualpanel_title">Force dual panel in settings</string>
     <string name="force_dualpanel_summary">This will enable/disable dual panel in settings (Need Reboot!)"</string> 
 
+    <!-- Navigation bar custom options -->
+    <string name="navbar_cat">Navigation bar settings</string>
+    <string name="navbar_style_dimen_title">Navigation bar dimensions</string>
+    <string name="navbar_restart_systemui_summary">Change this option will restart SystemUI</string>
+    <string name="menu_nav_bar_style_reset">Reset navbar style</string>
+    <string name="menu_nav_bar_dimen_reset">Reset navbar dimens</string>
+    <string name="navbar_dimen_cat">Navigation bar dimens</string>
+    <string name="navigation_bar">Navigation bar settings</string>
+    <string name="navigation_bar_option">Enable/Disable Navigation bar</string>
+    <string name="navigation_bar_background">Navigation bar background</string> 
+    <string name="navbar_enable_bar">Enable bar</string>
+    <string name="navigation_bar_height_title">Navigation bar height</string>
+    <string name="navigation_bar_height_summary">Navigation Bar height while in portrait.</string>
+    <string name="navigation_bar_height_landscape_title">Navigation bar height landscape</string>
+    <string name="navigation_bar_height_landscape_summary">Navigation Bar height while in landscape.</string>
+    <string name="navigation_bar_width_title">Navigation bar width</string>
+    <string name="navigation_bar_width_summary">Navigation Bar height if the bar is along a side.</string>
+    <string name="size_42_dp_default">42 dp (default)</string>
+    <string name="size_36_dp">36 dp</string>
+    <string name="size_30_dp">30 dp</string>
+    <string name="size_32_dp">32 dp</string>
+    <string name="size_24_dp">24 dp</string>
+    <string name="size_48_dp_default">48 dp (default)</string>
+    <string name="size_48_dp">48 dp</string>
+    <string name="size_56_dp">56 dp</string>
+    <string name="size_42_dp">42 dp</string>
+    <string name="size_0_dp">0 dp (off)</string>
+
     <!-- Blacklist preferences -->
     <string name="blacklist_title">Blacklist</string>
     <string name="blacklist_edit_dialog_title">Edit blacklist entry</string>
