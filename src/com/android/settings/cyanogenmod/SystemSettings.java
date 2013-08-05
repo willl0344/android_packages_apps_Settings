@@ -73,6 +73,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
         addPreferencesFromResource(R.xml.system_settings);
         PreferenceScreen prefScreen = getPreferenceScreen();
 
+        /*   
         // Only show the hardware keys config on a device that does not have a navbar
         // and the navigation bar config on phones that has a navigation bar
         boolean removeKeys = false;
@@ -117,6 +118,7 @@ public class SystemSettings extends SettingsPreferenceFragment implements Prefer
             // Secondary user is logged in, remove all primary user specific preferences
             prefScreen.removePreference(findPreference(KEY_BATTERY_LIGHT));
         }
+        */
 
         // Preferences that applies to all users
         // Notification lights
