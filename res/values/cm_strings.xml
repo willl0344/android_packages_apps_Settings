@@ -765,6 +765,11 @@
     <string name="nav_bar_alpha_mode_always">always</string>
     <string name="nav_bar_style_reset">Reset</string>
 
+    <string name="hw_keys_title">Hardware Keys</string>
+    <string name="key_menu_enabled">Menu Key Enabled</string>
+    <string name="key_back_enabled">Back Key Enabled</string>
+    <string name="key_home_enabled">Home Key Enabled</string>
+
     <!-- Network speed -->
     <string name="show_network_speed">Network speed indicator</string>
     <string name="show_network_speed_summary">Show network speed in statsbar</string>
