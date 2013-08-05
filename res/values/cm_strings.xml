@@ -1352,6 +1352,10 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="halo_pause_title">HALO pause active app</string>
     <string name="halo_pause_summary">When opening an app with HALO the underlying app will get paused (enabled by default on low memory devices)</string>
 
+    <!-- We want HALO popups -->
+    <string name="popups_title">Allow floating windows</string>
+    <string name="popups_summary">Controls whether you want floating windows from notification panel</string> 
+
     <!-- Quick puldown modes -->
     <string name="no_notifications_pulldown_summary_nonperm">Pulldown quick settings if no non-permanent notifications are present</string>
     <string name="no_notifications_pulldown_summary_all">Pulldown quick settings if no notifications are present</string>
