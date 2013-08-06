@@ -117,6 +117,7 @@
     <string name="mod_version_default">Unknown</string>
     <!-- About phone screen,  setting option name-->
     <string name="temasek_version">Temasek unofficial version</string>
+    <string name="temasek_version_default">V1</string>
     <!-- About phone screen, build date of ROM -->
     <string name="build_date">Build date</string>
     <string name="build_date_default" translatable="false">2013-01-01-0000</string>
