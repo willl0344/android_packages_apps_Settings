@@ -154,7 +154,7 @@ public class VibratorIntensity extends DialogPreference implements SeekBar.OnSee
     }
 
     public static void restore(Context context) {
-        if (isSupported()) {
+        if (!isSupported()) {
             return;
         }
 
