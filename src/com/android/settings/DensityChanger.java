@@ -26,7 +26,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.util.CMDProcessor;
 import com.android.settings.util.CMDProcessor.CommandResult;
-import com.android.settings.util.Helpers;
 
 public class DensityChanger extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -71,6 +70,7 @@ public class DensityChanger extends SettingsPreferenceFragment implements
 
         mReboot = findPreference("reboot");
         mClearMarketData = findPreference("clear_market_data");
+        mRebootClearData = findPreference("reboot_cleardata");
         mOpenMarket = findPreference("open_market");
 
         mCustomDensity = (ListPreference) findPreference("lcd_density");
@@ -218,10 +218,10 @@ public class DensityChanger extends SettingsPreferenceFragment implements
     }
 
     private void setLcdDensity(int newDensity) {
-        Helpers.getMount("rw");
+        CMDProcessor.getMount("rw");
         new CMDProcessor().su.runWaitFor("busybox sed -i 's|ro.sf.lcd_density=.*|"
                 + "ro.sf.lcd_density" + "=" + newDensity + "|' " + "/system/build.prop");
-        Helpers.getMount("ro");
+        CMDProcessor.getMount("ro");
     }
 
     class ClearUserDataObserver extends IPackageDataObserver.Stub {
