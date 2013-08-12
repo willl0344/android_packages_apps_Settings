@@ -1454,7 +1454,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="trigger_top_title">Trigger position</string>
     <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
-    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>      
+    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
+
+    <!-- Option to force keyboard to show enter key -->
+    <string name="show_enter_key_title">Show enter key</string>
+    <string name="show_enter_key_summary">Force keyboard to show enter instead of emoticon key</string>   
  
     <!-- Hardware tunables - Vibrator intensity -->
     <string name="vibrator_intensity_title">Vibrator intensity</string>
