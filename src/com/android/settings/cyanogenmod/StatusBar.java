@@ -151,10 +151,10 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
         mBatteryBarThickness = (ListPreference) findPreference(PREF_BATT_BAR_WIDTH);
         mBatteryBarThickness.setOnPreferenceChangeListener(this);
-        mBatteryBarThickness.setValue((Settings.System.getInt(getActivity()
-                .getContentResolver(),
-                Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1))
-                + ""); 
+        int batteryBarThickness = Settings.System.getInt(getActivity().getContentResolver(),
+                Settings.System.STATUSBAR_BATTERY_BAR_THICKNESS, 1);
+        mBatteryBarThickness.setValue(String.valueOf(batteryBarThickness));
+        mBatteryBarThickness.setSummary(mBatteryBarThickness.getEntry()); 
 
         PreferenceCategory generalCategory =
                 (PreferenceCategory) findPreference(STATUS_BAR_CATEGORY_GENERAL);
@@ -235,7 +235,6 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         boolean value;
         if (preference == mBatteryBarChargingAnimation) {
-
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUSBAR_BATTERY_BAR_ANIMATE,
                     ((CheckBoxPreference) preference).isChecked() ? 1 : 0);
@@ -243,7 +242,8 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
         } else if (preference == mStatusBarTraffic) {
             value = mStatusBarTraffic.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0); 
+                    Settings.System.STATUS_BAR_TRAFFIC, value ? 1 : 0);
+            return true;
         } else if (preference == mStatusBarQuickPeek) {
             value = mStatusBarQuickPeek.isChecked();
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
