@@ -49,6 +49,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final String HARDWARE_KEYS_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String HARDWARE_KEYS_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String HARDWARE_KEYS_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
+    private static final String HARDWARE_KEYS_CAMERA_PRESS = "hardware_keys_camera_press";
+    private static final String HARDWARE_KEYS_CAMERA_LONG_PRESS = "hardware_keys_camera_long_press";
     private static final String HARDWARE_KEYS_SHOW_OVERFLOW = "hardware_keys_show_overflow";
 
     // Available custom actions to perform on a key press.
@@ -66,6 +68,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final int ACTION_KILL_APP = 9;
     private static final int ACTION_LAST_APP = 10;
     private static final int ACTION_CUSTOM_APP = 11;
+    private static final int ACTION_CAMERA = 12;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -74,6 +77,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private static final int KEY_MASK_MENU = 0x04;
     private static final int KEY_MASK_ASSIST = 0x08;
     private static final int KEY_MASK_APP_SWITCH = 0x10;
+    private static final int KEY_MASK_CAMERA = 0x20;
 
     private CheckBoxPreference mEnableCustomBindings;
     private ListPreference mHomePressAction;
@@ -86,6 +90,8 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
+    private ListPreference mCameraPressAction;
+    private ListPreference mCameraLongPressAction;
     private CheckBoxPreference mShowActionOverflow;
 
     private ShortcutPickerHelper mPicker;
@@ -102,6 +108,7 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
 
         addPreferencesFromResource(R.xml.hardware_keys);
         PreferenceScreen prefSet = getPreferenceScreen();
@@ -130,6 +137,10 @@ public class HardwareKeys extends SettingsPreferenceFragment implements
                 HARDWARE_KEYS_APP_SWITCH_PRESS);
         mAppSwitchLongPressAction = (ListPreference) prefSet.findPreference(
                 HARDWARE_KEYS_APP_SWITCH_LONG_PRESS);
+        mCameraPressAction = (ListPreference) prefSet.findPreference(
+                HARDWARE_KEYS_CAMERA_PRESS);
+        mCameraLongPressAction = (ListPreference) prefSet.findPreference(
+                HARDWARE_KEYS_CAMERA_LONG_PRESS);
         mShowActionOverflow = (CheckBoxPreference) prefSet.findPreference(
                 HARDWARE_KEYS_SHOW_OVERFLOW);
         PreferenceCategory bindingsCategory = (PreferenceCategory) prefSet.findPreference(
