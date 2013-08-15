@@ -41,7 +41,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
-    private static final String KEY_HOME_WAKE = "pref_home_wake";
+    private static final String KEY_BUTTON_WAKE = "pref_wakeon_button";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_SHOW_OVERFLOW = "hardware_keys_show_overflow";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
@@ -72,7 +72,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mEnableCustomBindings;
     private ListPreference mHomeLongPressAction;
-    private CheckBoxPreference mHomeWake;
+    private ListPreference mButtonWake;
     private ListPreference mMenuPressAction;
     private ListPreference mMenuLongPressAction;
     private ListPreference mAssistPressAction;
@@ -112,14 +112,18 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final PreferenceCategory volumeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);
 
-        if (hasHomeKey) {
-            mHomeWake = (CheckBoxPreference) findPreference(KEY_HOME_WAKE);
+        mButtonWake = (ListPreference) findPreference(KEY_BUTTON_WAKE);
+        if (mButtonWake != null) {
 
             if (!res.getBoolean(R.bool.config_show_homeWake)) {
-                homeCategory.removePreference(mHomeWake);
+                //no home button, don't allow user to disable power button either
+                homeCategory.removePreference(mButtonWake);
             } else {
-                mHomeWake.setChecked(Settings.System.getInt(resolver,
-                        Settings.System.HOME_WAKE_SCREEN, 1) == 1);
+                int buttonWakeValue = Settings.System.getInt(resolver,
+                        Settings.System.BUTTON_WAKE_SCREEN, 2);
+                mButtonWake.setValue(String.valueOf(buttonWakeValue));
+                mButtonWake.setSummary(getResources().getString(R.string.pref_wakeon_button_summary, mButtonWake.getEntry()));
+                mButtonWake.setOnPreferenceChangeListener(this);
             }
 
             int longPressAction = Settings.System.getInt(resolver,
@@ -259,6 +263,15 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             handleActionListChange(mAppSwitchLongPressAction, newValue,
                     Settings.System.KEY_APP_SWITCH_LONG_PRESS_ACTION);
             return true;
+        } else if (preference == mButtonWake) {
+            handleActionListChange(mButtonWake, newValue,
+                    Settings.System.BUTTON_WAKE_SCREEN);	
+	    //int buttonWakeValue = Integer.valueOf((String) objValue);
+            //int index = mButtonWake.findIndexOfValue((String) objValue);
+            //Settings.System.putInt(getActivity().getContentResolver(),
+            //        Settings.System.BUTTON_WAKE_SCREEN, buttonWakeValue);
+            //mButtonWake.setSummary(getResources().getString(R.string.pref_wakeon_button_summary, mButtonWake.getEntries()[index]));
+            return true;
         }
 
         return false;
@@ -266,10 +279,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mHomeWake) {
-            handleCheckboxClick(mHomeWake, Settings.System.HOME_WAKE_SCREEN);
-            return true;
-        } else if (preference == mVolumeWake) {
+        if (preference == mVolumeWake) {
             handleCheckboxClick(mVolumeWake, Settings.System.VOLUME_WAKE_SCREEN);
             return true;
         } else if (preference == mVolBtnMusicCtrl) {
