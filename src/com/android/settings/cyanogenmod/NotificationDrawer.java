@@ -67,7 +67,6 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
     private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
-    private static final String PREF_NOTIFICATION_QUICK_SETTINGS = "quick_settings_panel"; 
 
     private ListPreference mCollapseOnDismiss;
 
@@ -77,7 +76,6 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private ListPreference mPowerWidgetHapticFeedback;
     private ListPreference mBrightnessLocation;
     private ListPreference mNotificationsBehavior;
-    private Preference mQuickSettings;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -132,26 +130,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
             mNotificationsBehavior.setOnPreferenceChangeListener(this);
 
-	    mQuickSettings = findPreference(PREF_NOTIFICATION_QUICK_SETTINGS);
-            if (mQuickSettings != null) {
-                 updateQuickSettingsDescription();
-            } 
         }
-    }
-
-    private void updateQuickSettingsDescription() {
-        if (Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.QS_DISABLE_PANEL, 0) == 0) {
-            mQuickSettings.setSummary(getString(R.string.quick_settings_enabled));
-        } else {
-            mQuickSettings.setSummary(getString(R.string.quick_settings_disabled));
-        }
-    } 
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        updateQuickSettingsDescription(); 
     }
 
     private void updateCollapseBehaviourSummary(int setting) {
