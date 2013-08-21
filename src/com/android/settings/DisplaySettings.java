@@ -29,6 +29,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.database.ContentObserver;
@@ -41,6 +42,7 @@ import android.os.UserHandle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceManager;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
@@ -49,10 +51,11 @@ import android.text.Spannable;
 import android.util.Log;
 
 import com.android.internal.view.RotationPolicy;
-import com.android.settings.cyanogenmod.DisplayColor;
 import com.android.settings.cyanogenmod.DisplayRotation;
 import com.android.settings.Utils;
 import android.widget.EditText;
+
+import org.cyanogenmod.hardware.AdaptiveBacklight;
 
 import java.util.ArrayList;
 
@@ -72,6 +75,8 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_SCREEN_OFF_ANIMATION = "screen_off_animation";
     private static final String KEY_WAKEUP_WHEN_PLUGGED_UNPLUGGED = "wakeup_when_plugged_unplugged";
     private static final String KEY_DUAL_PANEL = "force_dualpanel"; 
+    private static final String KEY_ADAPTIVE_BACKLIGHT = "adaptive_backlight";
+
     private static final String CATEGORY_LIGHTS = "lights_prefs";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_BATTERY_LIGHT = "battery_light";
@@ -100,7 +105,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private WifiDisplayStatus mWifiDisplayStatus;
     private Preference mWifiDisplayPreference;
 
-    private CheckBoxPreference mScreenOffAnimation;
+    private CheckBoxPreference mAdaptiveBacklight;
 
     private PreferenceScreen mNotificationPulse;
     private PreferenceScreen mBatteryPulse;
@@ -169,12 +174,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWifiDisplayPreference = null;
         }
 
-        mScreenOffAnimation = (CheckBoxPreference) findPreference(KEY_SCREEN_OFF_ANIMATION);
-        if (res.getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
-            mScreenOffAnimation.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.SCREEN_OFF_ANIMATION, 1) == 1);
-        } else {
-            getPreferenceScreen().removePreference(mScreenOffAnimation);
+        mAdaptiveBacklight = (CheckBoxPreference) findPreference(KEY_ADAPTIVE_BACKLIGHT);
+        if (!AdaptiveBacklight.isSupported()) {
+            getPreferenceScreen().removePreference(mAdaptiveBacklight);
+            mAdaptiveBacklight = null;
+        }
+
+        if (!res.getBoolean(com.android.internal.R.bool.config_screenOffAnimation)) {
+            getPreferenceScreen().removePreference(
+                    findPreference(Settings.System.SCREEN_OFF_ANIMATION));
         }
 
 	mDualPanel = (CheckBoxPreference) findPreference(KEY_DUAL_PANEL);
@@ -367,6 +375,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mWifiDisplayStatus = mDisplayManager.getWifiDisplayStatus();
         }
 
+        if (mAdaptiveBacklight != null) {
+            mAdaptiveBacklight.setChecked(AdaptiveBacklight.isEnabled());
+        }
+
         updateState();
     }
 
@@ -464,17 +476,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mScreenOffAnimation) {
-            Settings.System.putInt(getContentResolver(), Settings.System.SCREEN_OFF_ANIMATION,
-                    mScreenOffAnimation.isChecked() ? 1 : 0);
-            return true;
-        } else if (preference == mDualPanel) {
+        if (preference == mDualPanel) {
             Settings.System.putBoolean(getContentResolver(), Settings.System.FORCE_DUAL_PANEL, ((CheckBoxPreference) preference).isChecked());
             return true;
         } else if (preference == mWakeUpWhenPluggedOrUnplugged) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.WAKEUP_WHEN_PLUGGED_UNPLUGGED,
                     mWakeUpWhenPluggedOrUnplugged.isChecked() ? 1 : 0);
+        } else if (preference == mAdaptiveBacklight) {
+            return AdaptiveBacklight.setEnabled(mAdaptiveBacklight.isChecked());
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -519,5 +529,21 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             }
         }
         return false;
+    }
+
+    /**
+     * Restore the properties associated with this preference on boot
+     * @param ctx A valid context
+     */
+    public static void restore(Context ctx) {
+        if (AdaptiveBacklight.isSupported()) {
+            final SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(ctx);
+            final boolean enabled = prefs.getBoolean(KEY_ADAPTIVE_BACKLIGHT, true);
+            if (!AdaptiveBacklight.setEnabled(enabled)) {
+                Log.e(TAG, "Failed to restore adaptive backlight settings.");
+            } else {
+                Log.d(TAG, "Adaptive backlight settings restored.");
+            }
+        }
     }
 }

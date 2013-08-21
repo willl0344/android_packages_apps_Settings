@@ -46,7 +46,7 @@
             android:entryValues="@array/values_status_bar_battery" />
 
         <!-- Network Speed Indicator -->
-        <CheckBoxPreference
+        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="status_bar_traffic"
             android:title="@string/show_network_speed"
             android:summary="@string/show_network_speed_summary"
@@ -66,7 +66,7 @@
             android:entryValues="@array/values_auto_hide_statusbar"
             android:persistent="false" />
 
-        <CheckBoxPreference
+        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="status_bar_quick_peek"
             android:title="@string/statusbar_quick_peek_title"
             android:summary="@string/statusbar_quick_peek_summary"
@@ -79,13 +79,13 @@
             android:entries="@array/entries_status_bar_signal"
             android:entryValues="@array/values_status_bar_signal" />
 
-        <CheckBoxPreference
+        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="status_bar_brightness_control"
             android:title="@string/status_bar_toggle_brightness"
             android:summary="@string/status_bar_toggle_brightness_summary"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="status_bar_notif_count"
             android:title="@string/status_bar_notif_count_title"
             android:summary="@string/status_bar_notif_count_summary"
@@ -108,7 +108,7 @@
       android:entries="@array/battery_bar_style_entries"
       android:entryValues="@array/battery_bar_style_values" />
 
-    <CheckBoxPreference
+    <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
       android:key="battery_bar_animate"
       android:title="@string/battery_bar_animate_title"
       android:summary="@string/battery_bar_animate_summary" />

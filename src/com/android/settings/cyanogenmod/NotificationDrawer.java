@@ -16,6 +16,7 @@
 
 package com.android.settings.cyanogenmod;
 
+import java.io.File; 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -62,75 +63,49 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
     private static final String UI_COLLAPSE_BEHAVIOUR = "notification_drawer_collapse_on_dismiss";
     private static final String UI_NOTIFICATION_BEHAVIOUR = "notifications_behaviour";
-    private static final String UI_EXP_WIDGET = "expanded_widget";
-    private static final String UI_EXP_WIDGET_HIDE_ONCHANGE = "expanded_hide_onchange";
-    private static final String UI_EXP_WIDGET_HIDE_SCROLLBAR = "expanded_hide_scrollbar";
+    private static final String UI_BRIGHTNESS_LOC = "brightness_location"; 
     private static final String UI_EXP_WIDGET_HAPTIC_FEEDBACK = "expanded_haptic_feedback";
-    private static final String PREF_BRIGHTNESS_LOC = "brightness_location";
 
     private ListPreference mCollapseOnDismiss;
-
-    private CheckBoxPreference mPowerWidget;
-    private CheckBoxPreference mPowerWidgetHideOnChange;
-    private CheckBoxPreference mPowerWidgetHideScrollBar;
     private ListPreference mPowerWidgetHapticFeedback;
-    private ListPreference mBrightnessLocation;
     private ListPreference mNotificationsBehavior;
-
+    private ListPreference mBrightnessLocation;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if (getPreferenceManager() != null) {
-            addPreferencesFromResource(R.xml.notification_drawer);
+        addPreferencesFromResource(R.xml.notification_drawer);
 
-            ContentResolver resolver = getActivity().getContentResolver();
-            PreferenceScreen prefSet = getPreferenceScreen();
+        ContentResolver resolver = getActivity().getContentResolver();
+        PreferenceScreen prefSet = getPreferenceScreen();
 
-            int collapseBehaviour = Settings.System.getInt(resolver,
-                    Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS,
-                    Settings.System.STATUS_BAR_COLLAPSE_IF_NO_CLEARABLE);
-            mCollapseOnDismiss = (ListPreference) prefSet.findPreference(UI_COLLAPSE_BEHAVIOUR);
-            mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
-            mCollapseOnDismiss.setOnPreferenceChangeListener(this);
-            updateCollapseBehaviourSummary(collapseBehaviour);
+        int collapseBehaviour = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS,
+                Settings.System.STATUS_BAR_COLLAPSE_IF_NO_CLEARABLE);
+        mCollapseOnDismiss = (ListPreference) prefSet.findPreference(UI_COLLAPSE_BEHAVIOUR);
+        mCollapseOnDismiss.setValue(String.valueOf(collapseBehaviour));
+        mCollapseOnDismiss.setOnPreferenceChangeListener(this);
+        updateCollapseBehaviourSummary(collapseBehaviour);
 
-            mPowerWidget = (CheckBoxPreference) prefSet.findPreference(UI_EXP_WIDGET);
-            mPowerWidget.setOnPreferenceChangeListener(this);
-            mPowerWidgetHideOnChange = (CheckBoxPreference) prefSet
-                    .findPreference(UI_EXP_WIDGET_HIDE_ONCHANGE);
-            mPowerWidgetHideOnChange.setOnPreferenceChangeListener(this);
-            mPowerWidgetHideScrollBar = (CheckBoxPreference) prefSet
-                    .findPreference(UI_EXP_WIDGET_HIDE_SCROLLBAR);
-            mPowerWidgetHideScrollBar.setOnPreferenceChangeListener(this);
+        mPowerWidgetHapticFeedback = (ListPreference)
+                prefSet.findPreference(UI_EXP_WIDGET_HAPTIC_FEEDBACK);
+        mPowerWidgetHapticFeedback.setOnPreferenceChangeListener(this);
+        mPowerWidgetHapticFeedback.setSummary(mPowerWidgetHapticFeedback.getEntry());
+        mPowerWidgetHapticFeedback.setValue(Integer.toString(Settings.System.getInt(
+                resolver, Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2))); 
 
-            mPowerWidgetHapticFeedback = (ListPreference) prefSet
-                    .findPreference(UI_EXP_WIDGET_HAPTIC_FEEDBACK);
-            mPowerWidgetHapticFeedback.setOnPreferenceChangeListener(this);
-            mPowerWidgetHapticFeedback.setSummary(mPowerWidgetHapticFeedback.getEntry());
+	int CurrentBehavior = Settings.System.getInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR, 0);
+        mNotificationsBehavior = (ListPreference) findPreference(UI_NOTIFICATION_BEHAVIOUR);
+        mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
+        mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
+        mNotificationsBehavior.setOnPreferenceChangeListener(this); 
 
-            mPowerWidget.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.EXPANDED_VIEW_WIDGET, 0) == 1);
-            mPowerWidgetHideOnChange.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.EXPANDED_HIDE_ONCHANGE, 0) == 1);
-            mPowerWidgetHideScrollBar.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.EXPANDED_HIDE_SCROLLBAR, 0) == 1);
-            mPowerWidgetHapticFeedback.setValue(Integer.toString(Settings.System.getInt(
-                    resolver, Settings.System.EXPANDED_HAPTIC_FEEDBACK, 2)));
-
-            mBrightnessLocation = (ListPreference) findPreference(PREF_BRIGHTNESS_LOC);
-            mBrightnessLocation.setOnPreferenceChangeListener(this);
-            mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
-                    .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
-            mBrightnessLocation.setSummary(mBrightnessLocation.getEntry());
-
-            int CurrentBehavior = Settings.System.getInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR, 0);
-            mNotificationsBehavior = (ListPreference) findPreference(UI_NOTIFICATION_BEHAVIOUR);
-            mNotificationsBehavior.setValue(String.valueOf(CurrentBehavior));
-            mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntry());
-            mNotificationsBehavior.setOnPreferenceChangeListener(this);
-
-        }
+	mBrightnessLocation = (ListPreference) findPreference(UI_BRIGHTNESS_LOC);
+        mBrightnessLocation.setOnPreferenceChangeListener(this);
+        mBrightnessLocation.setValue(Integer.toString(Settings.System.getInt(getActivity()
+               .getContentResolver(), Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, 3)));
+        mBrightnessLocation.setSummary(mBrightnessLocation.getEntry());
     }
 
     private void updateCollapseBehaviourSummary(int setting) {
@@ -149,21 +124,6 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
                     Settings.System.STATUS_BAR_COLLAPSE_ON_DISMISS, value);
             updateCollapseBehaviourSummary(value);
             return true;
-        } else if (preference == mPowerWidget) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.EXPANDED_VIEW_WIDGET, value ? 1 : 0);
-            return true;
-        } else if (preference == mPowerWidgetHideOnChange) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.EXPANDED_HIDE_ONCHANGE, value ? 1 : 0);
-            return true;
-        } else if (preference == mPowerWidgetHideScrollBar) {
-            boolean value = (Boolean) newValue;
-            Settings.System.putInt(resolver,
-                    Settings.System.EXPANDED_HIDE_SCROLLBAR, value ? 1 : 0);
-            return true;
         } else if (preference == mPowerWidgetHapticFeedback) {
             int intValue = Integer.parseInt((String) newValue);
             int index = mPowerWidgetHapticFeedback.findIndexOfValue((String) newValue);
@@ -171,20 +131,20 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
                     Settings.System.EXPANDED_HAPTIC_FEEDBACK, intValue);
             mPowerWidgetHapticFeedback.setSummary(mPowerWidgetHapticFeedback.getEntries()[index]);
             return true;
-        } else if (preference == mBrightnessLocation) {
-            int val = Integer.parseInt((String) newValue);
-            int index = mBrightnessLocation.findIndexOfValue((String) newValue);
-            Settings.System.putInt(getActivity().getContentResolver(),
-            Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
-            mBrightnessLocation.setSummary(mBrightnessLocation.getEntries()[index]);
-            return true;
-        } else if (preference == mNotificationsBehavior) {
+	} else if (preference == mNotificationsBehavior) {
             String val = (String) newValue;
                      Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATIONS_BEHAVIOUR,
             Integer.valueOf(val));
             int index = mNotificationsBehavior.findIndexOfValue(val);
             mNotificationsBehavior.setSummary(mNotificationsBehavior.getEntries()[index]);
-            return true;
+            return true; 
+	} else if (preference == mBrightnessLocation) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mBrightnessLocation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+            Settings.System.STATUSBAR_TOGGLES_BRIGHTNESS_LOC, val);
+            mBrightnessLocation.setSummary(mBrightnessLocation.getEntries()[index]);
+            return true; 
         }
 
         return false;
@@ -228,15 +188,11 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
 
             PreferenceScreen prefSet = getPreferenceScreen();
             PackageManager pm = getPackageManager();
+            final ContentResolver resolver = getContentResolver();
 
-            if (getActivity().getApplicationContext() == null) {
-                return;
-            }
-
-            mBrightnessMode = (MultiSelectListPreference) prefSet
-                    .findPreference(EXP_BRIGHTNESS_MODE);
-            String storedBrightnessMode = Settings.System.getString(getActivity()
-                    .getApplicationContext().getContentResolver(),
+            mBrightnessMode = (MultiSelectListPreference)
+                    prefSet.findPreference(EXP_BRIGHTNESS_MODE);
+            String storedBrightnessMode = Settings.System.getString(resolver,
                     Settings.System.EXPANDED_BRIGHTNESS_MODE);
             if (storedBrightnessMode != null) {
                 String[] brightnessModeArray = TextUtils.split(storedBrightnessMode, SEPARATOR);
@@ -249,8 +205,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             mScreenTimeoutMode = (ListPreference) prefSet.findPreference(EXP_SCREENTIMEOUT_MODE);
             mScreenTimeoutMode.setOnPreferenceChangeListener(this);
             mRingMode = (MultiSelectListPreference) prefSet.findPreference(EXP_RING_MODE);
-            String storedRingMode = Settings.System.getString(getActivity()
-                    .getApplicationContext().getContentResolver(),
+            String storedRingMode = Settings.System.getString(resolver,
                     Settings.System.EXPANDED_RING_MODE);
             if (storedRingMode != null) {
                 String[] ringModeArray = TextUtils.split(storedRingMode, SEPARATOR);
@@ -284,8 +239,8 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             mCheckBoxPrefs.clear();
 
             // get our list of buttons
-            ArrayList<String> buttonList = PowerWidgetUtil.getButtonListFromString(PowerWidgetUtil
-                    .getCurrentButtons(getActivity().getApplicationContext()));
+            ArrayList<String> buttonList = PowerWidgetUtil.getButtonListFromString(
+                    PowerWidgetUtil.getCurrentButtons(getActivity()));
 
             // Don't show WiMAX option if not supported
             boolean isWimaxEnabled = WimaxHelper.isWimaxSupported(getActivity());
@@ -304,8 +259,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
             // fill that checkbox map!
             for (PowerWidgetUtil.ButtonInfo button : PowerWidgetUtil.BUTTONS.values()) {
                 // create a checkbox
-                CheckBoxPreference cb = new CheckBoxPreference(getActivity()
-                        .getApplicationContext());
+                CheckBoxPreference cb = new CheckBoxPreference(getActivity());
 
                 // set a dynamic key based on button id
                 cb.setKey(SELECT_BUTTON_KEY_PREFIX + button.getId());
@@ -332,17 +286,16 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
                 } else if (PowerWidgetUtil.BUTTON_NETWORKMODE.equals(button.getId())) {
                     // some phones run on networks not supported by this button,
                     // so disable it
-                    int network_state = -99;
+                    int networkState = -99;
 
                     try {
-                        network_state = Settings.Global.getInt(getActivity()
-                                .getApplicationContext().getContentResolver(),
+                        networkState = Settings.Global.getInt(getContentResolver(),
                                 Settings.Global.PREFERRED_NETWORK_MODE);
                     } catch (Settings.SettingNotFoundException e) {
                         Log.e(TAG, "Unable to retrieve PREFERRED_NETWORK_MODE", e);
                     }
 
-                    switch (network_state) {
+                    switch (networkState) {
                     // list of supported network modes
                         case Phone.NT_MODE_WCDMA_PREF:
                         case Phone.NT_MODE_WCDMA_ONLY:
@@ -378,11 +331,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
 
             if (buttonWasModified) {
                 // now we do some wizardry and reset the button list
-                PowerWidgetUtil.saveCurrentButtons(getActivity().getApplicationContext(),
+                PowerWidgetUtil.saveCurrentButtons(getActivity(),
                         PowerWidgetUtil.mergeInNewButtonString(
-                                PowerWidgetUtil.getCurrentButtons(getActivity()
-                                        .getApplicationContext()), PowerWidgetUtil
-                                        .getButtonStringFromList(buttonList)));
+                                PowerWidgetUtil.getCurrentButtons(getActivity()),
+                                PowerWidgetUtil.getButtonStringFromList(buttonList)));
                 return true;
             }
 
@@ -404,36 +356,34 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         }
 
         public boolean onPreferenceChange(Preference preference, Object newValue) {
+            ContentResolver resolver = getContentResolver();
+
             if (preference == mBrightnessMode) {
                 ArrayList<String> arrValue = new ArrayList<String>((Set<String>) newValue);
                 Collections.sort(arrValue, new MultiSelectListPreferenceComparator(mBrightnessMode));
-                Settings.System.putString(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.EXPANDED_BRIGHTNESS_MODE, TextUtils.join(SEPARATOR, arrValue));
-                updateSummary(TextUtils.join(SEPARATOR, arrValue),
-                        mBrightnessMode, R.string.pref_brightness_mode_summary);
+                String value = TextUtils.join(SEPARATOR, arrValue);
+                Settings.System.putString(resolver, Settings.System.EXPANDED_BRIGHTNESS_MODE, value);
+                updateSummary(value, mBrightnessMode, R.string.pref_brightness_mode_summary);
             } else if (preference == mNetworkMode) {
                 int value = Integer.valueOf((String) newValue);
                 int index = mNetworkMode.findIndexOfValue((String) newValue);
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.EXPANDED_NETWORK_MODE, value);
+                Settings.System.putInt(resolver, Settings.System.EXPANDED_NETWORK_MODE, value);
                 mNetworkMode.setSummary(mNetworkMode.getEntries()[index]);
             } else if (preference == mScreenTimeoutMode) {
                 int value = Integer.valueOf((String) newValue);
                 int index = mScreenTimeoutMode.findIndexOfValue((String) newValue);
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.EXPANDED_SCREENTIMEOUT_MODE, value);
+                Settings.System.putInt(resolver, Settings.System.EXPANDED_SCREENTIMEOUT_MODE, value);
                 mScreenTimeoutMode.setSummary(mScreenTimeoutMode.getEntries()[index]);
             } else if (preference == mRingMode) {
                 ArrayList<String> arrValue = new ArrayList<String>((Set<String>) newValue);
                 Collections.sort(arrValue, new MultiSelectListPreferenceComparator(mRingMode));
-                Settings.System.putString(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.EXPANDED_RING_MODE, TextUtils.join(SEPARATOR, arrValue));
-                updateSummary(TextUtils.join(SEPARATOR, arrValue), mRingMode, R.string.pref_ring_mode_summary);
+                String value = TextUtils.join(SEPARATOR, arrValue);
+                Settings.System.putString(resolver, Settings.System.EXPANDED_RING_MODE, value);
+                updateSummary(value, mRingMode, R.string.pref_ring_mode_summary);
             } else if (preference == mFlashMode) {
                 int value = Integer.valueOf((String) newValue);
                 int index = mFlashMode.findIndexOfValue((String) newValue);
-                Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                        Settings.System.EXPANDED_FLASH_MODE, value);
+                Settings.System.putInt(resolver, Settings.System.EXPANDED_FLASH_MODE, value);
                 mFlashMode.setSummary(mFlashMode.getEntries()[index]);
             }
             return true;
@@ -479,7 +429,6 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         private ListView mButtonList;
         private ButtonAdapter mButtonAdapter;
         View mContentView = null;
-        Context mContext;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -494,11 +443,10 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         @Override
         public void onActivityCreated(Bundle savedInstanceState) {
             super.onActivityCreated(savedInstanceState);
-            mContext = getActivity().getApplicationContext();
 
             mButtonList = getListView();
             ((TouchInterceptor) mButtonList).setDropListener(mDropListener);
-            mButtonAdapter = new ButtonAdapter(mContext);
+            mButtonAdapter = new ButtonAdapter(getActivity());
             setListAdapter(mButtonAdapter);
         }
 
@@ -513,14 +461,16 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
         public void onResume() {
             super.onResume();
             // reload our buttons and invalidate the views for redraw
-            mButtonList.invalidateViews(); 
+            mButtonAdapter.reloadButtons();
+            mButtonList.invalidateViews();
         }
 
         private TouchInterceptor.DropListener mDropListener = new TouchInterceptor.DropListener() {
             public void drop(int from, int to) {
+                final Context context = getActivity();
                 // get the current button list
                 ArrayList<String> buttons = PowerWidgetUtil.getButtonListFromString(
-                        PowerWidgetUtil.getCurrentButtons(mContext));
+                        PowerWidgetUtil.getCurrentButtons(context));
 
                 // move the button
                 if (from < buttons.size()) {
@@ -530,7 +480,7 @@ public class NotificationDrawer extends SettingsPreferenceFragment implements
                         buttons.add(to, button);
 
                         // save our buttons
-                        PowerWidgetUtil.saveCurrentButtons(mContext,
+                        PowerWidgetUtil.saveCurrentButtons(context,
                                 PowerWidgetUtil.getButtonStringFromList(buttons));
 
                         // tell our adapter/listview to reload
