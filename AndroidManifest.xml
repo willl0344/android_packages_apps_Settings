@@ -1716,9 +1716,6 @@
                 android:label="@string/blacklist_title"
                 android:taskAffinity=""
                 android:excludeFromRecents="true">
-
-        <activity android:name=".cyanogenmod.StatusBarTrafficStyle" />
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -1732,6 +1729,8 @@
         <activity android:name=".cyanogenmod.StatusBar" />
 
         <activity android:name=".cyanogenmod.StatusBarClockStyle" />
+
+        <activity android:name=".cyanogenmod.StatusBarTrafficStyle" />
 
         <activity android:name=".cyanogenmod.NotificationDrawerSettings" />
 
