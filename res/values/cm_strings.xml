@@ -1427,4 +1427,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="title_quick_access_linked">Linked layout</string>
     <string name="summary_quick_access_linked">Use the same tiles and layout as the Quick Settings panel</string>
 
+    <!-- OnClick Fliptile animation -->
+    <string name="flip_qs_tiles_title">Flip tiles</string>
+    <string name="flip_qs_tiles_summary">Flips the tiles on touch</string> 
+
 </resources>
