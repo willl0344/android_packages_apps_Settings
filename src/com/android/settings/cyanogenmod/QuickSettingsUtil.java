@@ -44,7 +44,6 @@ import static com.android.internal.util.cm.QSConstants.TILE_USER;
 import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFI;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFIAP;
-import static com.android.internal.util.cm.QSConstants.TILE_REBOOT;
 import static com.android.internal.util.cm.QSConstants.TILE_HALO;
 
 import android.content.ContentResolver;
@@ -148,9 +147,6 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_WIFIAP, R.string.title_tile_wifiap,
                 "com.android.systemui:drawable/ic_qs_wifi_ap_neutral"));
-        registerTile(new QuickSettingsUtil.TileInfo(
-                TILE_REBOOT, R.string.title_tile_reboot,
-                "com.android.systemui:drawable/ic_qs_reboot"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_NETWORKADB, R.string.title_tile_network_adb,
                 "com.android.systemui:drawable/ic_qs_network_adb_off"));
