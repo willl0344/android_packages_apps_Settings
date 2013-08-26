@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2012 The CyanogenMod Project
+ * Copyright (C) 2011 The CyanogenMod Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,15 +16,20 @@
 
 package com.android.settings.cyanogenmod;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashSet;
+import java.util.Set;
+
 import android.content.ContentResolver;
-import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.MultiSelectListPreference;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
@@ -36,14 +41,9 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashSet;
-import java.util.Set;
-
-public class QuickSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class QuickSettings extends SettingsPreferenceFragment implements
+        Preference.OnPreferenceChangeListener {
+    private static final String TAG = "QuickSettingsPanel";
 
     private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
     private static final String EXP_RING_MODE = "pref_ring_mode";
@@ -57,21 +57,22 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
     private static final String FLOATING_WINDOW ="floating_window";
     private static final String DISABLE_PANEL = "disable_quick_settings";  
 
-    MultiSelectListPreference mRingMode;
-    ListPreference mNetworkMode;
-    ListPreference mScreenTimeoutMode;
-    ListPreference mNoNotificationsPulldown;    
-    CheckBoxPreference mFloatingWindow; 
-    ListPreference mQuickPulldown;
-    PreferenceCategory mGeneralSettings;
-    PreferenceCategory mStaticTiles;
-    PreferenceCategory mDynamicTiles;
-    CheckBoxPreference mDisablePanel; 
+    private MultiSelectListPreference mRingMode;
+    private ListPreference mNetworkMode;
+    private ListPreference mScreenTimeoutMode;
+    private ListPreference mQuickPulldown;
+    private PreferenceCategory mGeneralSettings;
+    private PreferenceCategory mStaticTiles;
+    private PreferenceCategory mDynamicTiles; 
+
+    private ListPreference mNoNotificationsPulldown;    
+    private CheckBoxPreference mFloatingWindow; 
+    private CheckBoxPreference mDisablePanel;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        addPreferencesFromResource(R.xml.quick_settings_panel_settings);
+        addPreferencesFromResource(R.xml.quick_settings_panel);
     }
 
     @Override
@@ -85,14 +86,14 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
         mDynamicTiles = (PreferenceCategory) prefSet.findPreference(DYNAMIC_TILES);
         mQuickPulldown = (ListPreference) prefSet.findPreference(QUICK_PULLDOWN);
 	mNoNotificationsPulldown = (ListPreference) prefSet.findPreference(NO_NOTIFICATIONS_PULLDOWN);
-	mDisablePanel = (CheckBoxPreference) prefSet.findPreference(DISABLE_PANEL);  
+	mDisablePanel = (CheckBoxPreference) prefSet.findPreference(DISABLE_PANEL);    
         
   	if (!Utils.isPhone(getActivity())) { 
-            if(mQuickPulldown != null)
+            if (mQuickPulldown != null)
                 mGeneralSettings.removePreference(mQuickPulldown);
-	    if(mDisablePanel != null)
-                mGeneralSettings.removePreference(mDisablePanel); 
-	if(mNoNotificationsPulldown != null)
+	    if (mDisablePanel != null)
+                mGeneralSettings.removePreference(mDisablePanel);  
+	if (mNoNotificationsPulldown != null)
                 mGeneralSettings.removePreference(mNoNotificationsPulldown);  
         } else {
             mQuickPulldown.setOnPreferenceChangeListener(this);
@@ -100,15 +101,19 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             mQuickPulldown.setValue(String.valueOf(quickPulldownValue));
             updatePulldownSummary(quickPulldownValue);
 
+	    boolean disablePanel = Settings.System.getInt(resolver,
+                Settings.System.QS_DISABLE_PANEL, 0) == 0;
+            mDisablePanel.setChecked(disablePanel);
+
 	    mNoNotificationsPulldown.setOnPreferenceChangeListener(this);
             int noNotificationsPulldownValue = Settings.System.getInt(resolver, Settings.System.QS_NO_NOTIFICATION_PULLDOWN, 0);
             mNoNotificationsPulldown.setValue(String.valueOf(noNotificationsPulldownValue));
             updateNoNotificationsPulldownSummary(noNotificationsPulldownValue);
 
-            mDisablePanel.setChecked(Settings.System.getInt(resolver, Settings.System.QS_DISABLE_PANEL, 0) == 0); 
+	    setEnablePreferences(disablePanel);   
         }
 
-	mFloatingWindow = (CheckBoxPreference) prefSet.findPreference(FLOATING_WINDOW);
+        mFloatingWindow = (CheckBoxPreference) prefSet.findPreference(FLOATING_WINDOW);
         mFloatingWindow.setChecked(Settings.System.getInt(resolver, Settings.System.QS_FLOATING_WINDOW, 0) == 1);
 
         // Add the sound mode
@@ -124,7 +129,7 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
 
         // Add the network mode preference
         mNetworkMode = (ListPreference) prefSet.findPreference(EXP_NETWORK_MODE);
-        if(mNetworkMode != null){
+        if (mNetworkMode != null) {
             mNetworkMode.setSummary(mNetworkMode.getEntry());
             mNetworkMode.setOnPreferenceChangeListener(this);
         }
@@ -171,7 +176,8 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             return true;
 	} else if (preference == mDisablePanel) {
             Settings.System.putInt(resolver, Settings.System.QS_DISABLE_PANEL,
-                    mDisablePanel.isChecked() ? 0 : 1);    
+                    mDisablePanel.isChecked() ? 0 : 1);
+            setEnablePreferences(mDisablePanel.isChecked());  
 	}
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -234,13 +240,12 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             final int length = values.length;
             final CharSequence[] entries = pref.getEntries();
             StringBuilder summary = new StringBuilder();
-            for (int i = 0; i < (length); i++) {
+            for (int i = 0; i < length; i++) {
                 CharSequence entry = entries[Integer.parseInt(values[i])];
-                if ((length - i) > 1) {
-                    summary.append(entry).append(" | ");
-                } else {
-                    summary.append(entry);
+                if (i != 0) {
+                    summary.append(" | ");
                 }
+                summary.append(entry);
             }
             pref.setSummary(summary);
         } else {
@@ -280,4 +285,6 @@ public class QuickSettings extends SettingsPreferenceFragment implements OnPrefe
             return val.toString().split(SEPARATOR);
         }
     }
+
+    private void setEnablePreferences(boolean status) {}
 }

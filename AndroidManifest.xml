@@ -1708,6 +1708,8 @@
 
 	<activity android:name=".cyanogenmod.HaloSettings" />  
 	
+        <activity android:name=".cyanogenmod.NotificationDrawer" />
+
         <activity android:name=".cyanogenmod.MoreDeviceSettings" />
 
         <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
