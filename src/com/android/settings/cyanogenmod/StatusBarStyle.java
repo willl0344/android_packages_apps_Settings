@@ -46,10 +46,12 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
     private static final String PREF_STATUS_BAR_ALPHA = "status_bar_alpha";
     private static final String PREF_STATUS_BAR_ALPHA_MODE = "status_bar_alpha_mode";
     private static final String PREF_STATUS_BAR_COLOR = "status_bar_color";
+    private static final String PREF_STATUS_BAR_COLOR_MODE = "status_bar_color_mode"; 
 
     private SeekBarPreference mStatusbarTransparency;
     private ColorPickerPreference mStatusBarColor;
     private ListPreference mAlphaMode;
+    private CheckBoxPreference mColorMode; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -90,10 +92,16 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
 
         mAlphaMode = (ListPreference) prefs.findPreference(PREF_STATUS_BAR_ALPHA_MODE);
         int alphaMode = Settings.System.getInt(getActivity().getContentResolver(),
-                Settings.System.STATUS_BAR_ALPHA_MODE, 1);
+                Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
         mAlphaMode.setValue(String.valueOf(alphaMode));
         mAlphaMode.setSummary(mAlphaMode.getEntry());
         mAlphaMode.setOnPreferenceChangeListener(this);
+
+	mColorMode = (CheckBoxPreference) findPreference(PREF_STATUS_BAR_COLOR_MODE);
+        mColorMode.setChecked(Settings.System.getInt(
+                getActivity().getContentResolver(),
+                Settings.System.STATUS_NAV_BAR_COLOR_MODE, 1) == 1);
+        mColorMode.setOnPreferenceChangeListener(this);
 
         setHasOptionsMenu(true);
     }
@@ -110,10 +118,11 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
         switch (item.getItemId()) {
             case R.id.reset:
                 Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUS_BAR_ALPHA_MODE, 1);
+                        Settings.System.STATUS_NAV_BAR_ALPHA_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.STATUS_BAR_COLOR, 0xff000000);
-
+		Settings.System.putInt(getActivity().getContentResolver(),
+                        Settings.System.STATUS_NAV_BAR_COLOR_MODE, 1); 
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.STATUS_BAR_ALPHA, 0.0f);
 
@@ -150,9 +159,14 @@ public class StatusBarStyle extends SettingsPreferenceFragment implements
             int alphaMode = Integer.valueOf((String) newValue);
             int index = mAlphaMode.findIndexOfValue((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_ALPHA_MODE, alphaMode);
+                    Settings.System.STATUS_NAV_BAR_ALPHA_MODE, alphaMode);
             mAlphaMode.setSummary(mAlphaMode.getEntries()[index]);
             return true;
+	} else if (preference == mColorMode) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_NAV_BAR_COLOR_MODE,
+                    mColorMode.isChecked() ? 0 : 1);
+            return true; 
         }
         return false;
     }
