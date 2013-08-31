@@ -48,12 +48,10 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
     private static final String PREF_NAV_BAR_ALPHA = "nav_bar_alpha";
     private static final String PREF_NAV_BAR_ALPHA_MODE = "nav_bar_alpha_mode";
     private static final String PREF_NAV_BAR_COLOR = "nav_bar_color";
-    private static final String PREF_NAV_BAR_COLOR_MODE = "nav_bar_color_mode"; 
 
     private SeekBarPreference mNavBarTransparency;
     private ColorPickerPreference mNavBarColor;
     private ListPreference mAlphaMode;
-    private CheckBoxPreference mColorMode; 
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -98,12 +96,6 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
         mAlphaMode.setSummary(mAlphaMode.getEntry());
         mAlphaMode.setOnPreferenceChangeListener(this);
 
-	mColorMode = (CheckBoxPreference) findPreference(PREF_NAV_BAR_COLOR_MODE);
-        mColorMode.setChecked(Settings.System.getInt(
-                getActivity().getContentResolver(),
-                Settings.System.STATUS_NAV_BAR_COLOR_MODE, 1) == 1);
-        mColorMode.setOnPreferenceChangeListener(this); 
-
         setHasOptionsMenu(true);
     }
 
@@ -122,8 +114,7 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
                         Settings.System.NAV_BAR_ALPHA_MODE, 1);
                 Settings.System.putInt(getActivity().getContentResolver(),
                         Settings.System.NAVIGATION_BAR_COLOR, 0xff000000);
-		Settings.System.putInt(getActivity().getContentResolver(),
-                        Settings.System.STATUS_NAV_BAR_COLOR_MODE, 1); 
+
                 Settings.System.putFloat(getActivity().getContentResolver(),
                        Settings.System.NAVIGATION_BAR_ALPHA, 0.0f);
 
@@ -163,11 +154,6 @@ public class NavBarStyle extends SettingsPreferenceFragment implements
                     Settings.System.NAV_BAR_ALPHA_MODE, alphaMode);
             mAlphaMode.setSummary(mAlphaMode.getEntries()[index]);
             return true;
-	} else if (preference == mColorMode) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_NAV_BAR_COLOR_MODE,
-                    mColorMode.isChecked() ? 0 : 1);
-            return true; 
         }
         return false;
     }
