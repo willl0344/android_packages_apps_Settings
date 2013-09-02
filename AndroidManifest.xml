@@ -1744,9 +1744,13 @@
 
         <activity android:name=".cyanogenmod.StatusBarStyle" />
 
-        <activity android:name=".cyanogenmod.NavBarDimen" />
+        <activity android:name=".cyanogenmod.NavbarSettings" />
 
-        <activity android:name=".cyanogenmod.NavBarSettings" />
+        <activity android:name=".cyanogenmod.NavRingTargets" />
+
+        <activity android:name=".cyanogenmod.NavbarButtonSettings" />
+
+        <activity android:name=".cyanogenmod.NavbarStyleDimenSettings" />
 
         <activity android:name=".RamBar" />
 
