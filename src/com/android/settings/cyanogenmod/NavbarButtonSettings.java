@@ -77,6 +77,9 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     CheckBoxPreference mEnableNavbarLong;
 
     Preference mPendingPreference;
+
+    Resources mSystemUiResources;
+
     private ShortcutPickerHelper mPicker;
     private int mPendingIconIndex = -1;
     private NavBarCustomAction mPendingNavBarCustomAction = null;
@@ -94,7 +97,7 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-         refreshSettings();
+        refreshSettings();
         setHasOptionsMenu(true);
     }
 
@@ -400,20 +403,10 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 File f = new File(Uri.parse(customIconUri).getPath());
                 if (f.exists())
                     pAction.setIcon(resize(new BitmapDrawable(res, f.getAbsolutePath())));
-            }
-
-            if (customIconUri != null && !customIconUri.equals("")
-                    && customIconUri.startsWith("file")) {
-                // it's an icon the user chose from the gallery here
-                File icon = new File(Uri.parse(customIconUri).getPath());
-                if (icon.exists())
-                    pAction.setIcon(resize(new BitmapDrawable(getResources(), icon
-                            .getAbsolutePath())));
-
             } else if (customIconUri != null && !customIconUri.equals("")) {
                 // here they chose another app icon
                 try {
-                    pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(customIconUri, 0))));
+                    pAction.setIcon(resize(pm.getActivityIcon(Intent.parseUri(uri, 0))));
                 } catch (NameNotFoundException e) {
                     e.printStackTrace();
                 } catch (URISyntaxException e) {
@@ -440,32 +433,44 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
         String uri = Settings.System.getString(getActivity().getContentResolver(),
                 Settings.System.NAVIGATION_CUSTOM_ACTIVITIES[index]);
 
+        int resId = 0;
+        PackageManager pm = mContext.getPackageManager();
+
+        if (pm != null) {
+            try {
+                mSystemUiResources = pm.getResourcesForApplication("com.android.systemui");
+            } catch (Exception e) {
+                mSystemUiResources = null;
+                Log.e("Navbar buttons:", "can't access systemui resources",e);
+            }
+        }
+
         if (uri == null)
             return getResources().getDrawable(R.drawable.ic_sysbar_null);
 
         if (uri.startsWith("**")) {
             if (uri.equals("**home**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_home);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_home", null, null);
             } else if (uri.equals("**back**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_back);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_back", null, null);
             } else if (uri.equals("**recents**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_recent);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_recent", null, null);
             } else if (uri.equals("**search**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_search);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_search", null, null);
             } else if (uri.equals("**screenshot**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_screenshot);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_screenshot", null, null);
             } else if (uri.equals("**menu**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_menu_big);
-            } else if (uri.equals("**ime**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_ime_switcher);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_menu_big", null, null);
+             } else if (uri.equals("**ime**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_ime_switcher", null, null);
             } else if (uri.equals("**kill**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_killtask);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_killtask", null, null);
             } else if (uri.equals("**power**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_power);
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_power", null, null);
             } else if (uri.equals("**notifications**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_notifications);
-	    } else if (uri.equals("**lastapp**")) {
-                return getResources().getDrawable(R.drawable.ic_sysbar_lastapp); 
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_notifications", null, null);
+            } else if (uri.equals("**lastapp**")) {
+                resId = mSystemUiResources.getIdentifier("com.android.systemui:drawable/ic_sysbar_lastapp", null, null);
             }
         } else {
             try {
@@ -473,6 +478,14 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
             } catch (NameNotFoundException e) {
                 e.printStackTrace();
             } catch (URISyntaxException e) {
+                e.printStackTrace();
+            }
+        }
+
+        if (resId > 0) {
+            try {
+                return mSystemUiResources.getDrawable(resId);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -512,8 +525,8 @@ public class NavbarButtonSettings extends SettingsPreferenceFragment implements
                 return getResources().getString(R.string.navbar_action_power);
             else if (uri.equals("**notifications**"))
                 return getResources().getString(R.string.navbar_action_notifications);
-	    else if (uri.equals("**lastapp**"))
-                return getResources().getString(R.string.navbar_action_lastapp); 
+            else if (uri.equals("**lastapp**"))
+                return getResources().getString(R.string.navbar_action_lastapp);
             else if (uri.equals("**null**"))
                 return getResources().getString(R.string.navbar_action_none);
         } else {

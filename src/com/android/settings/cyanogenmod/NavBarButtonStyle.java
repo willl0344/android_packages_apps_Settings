@@ -39,7 +39,7 @@ import com.android.settings.Utils;
 import com.android.settings.util.Helpers;
 import com.android.settings.widget.SeekBarPreference;
 
-import com.android.settings.cyanogemod.colorpicker.ColorPickerPreference;
+import com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference;
 
 public class NavBarButtonStyle extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
