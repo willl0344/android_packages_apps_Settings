@@ -105,9 +105,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         }
 
         // don't allow devices that must use a navigation bar to disable it
-        if (hasNavBarByDefault) {
-            prefs.removePreference(mEnableNavigationBar);
-        }
+        //if (hasNavBarByDefault) {
+        //    prefs.removePreference(mEnableNavigationBar);
+        //}
 
 	mNavigationBarCanMove = (CheckBoxPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
         if (!Utils.isPhone(getActivity())) {
