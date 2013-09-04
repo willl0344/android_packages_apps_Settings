@@ -57,7 +57,8 @@ public class SystemUiSettings extends SettingsPreferenceFragment implements Pref
     private static final String KEY_SCREEN_ON_NOTIFICATION_LED = "screen_on_notification_led";
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
     private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
-    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";  
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
+    private static final String KEY_PIE_SETTINGS = "pie_settings";   
 
     private PreferenceScreen mPieControl;
     private ListPreference mExpandedDesktopPref;
@@ -161,7 +162,15 @@ public class SystemUiSettings extends SettingsPreferenceFragment implements Pref
             }
         } catch (RemoteException e) {
             Log.e(TAG, "Error getting navigation bar status");
-        }	
+        }
+
+	final boolean hasSlimPieByDefault = getResources().getBoolean(
+                com.android.internal.R.bool.config_slimPie);
+
+        if (!hasSlimPieByDefault) {
+            // remove SlimPie entry if not supported
+            getPreferenceScreen().removePreference(findPreference(KEY_PIE_SETTINGS));
+        } 	
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
