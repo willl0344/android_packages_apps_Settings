@@ -1294,7 +1294,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="open_ime_switcher">Open IME Switcher</string>
     <string name="kill_app">Kill app</string>
     <string name="lastapp">Last app</string> 
-    <string name="power">Power</string>
+    <string name="power">Screen off</string>
+    <string name="quicksettings">Quicksettings panel</string> 	
     <string name="notifications">Notifications</string>
     <string name="custom_app">Custom app</string>
     <string name="menu_power">Power menu</string>

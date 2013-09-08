@@ -1323,7 +1323,8 @@
         <item>@string/shortcut_action_lastapp</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_ime</item>
-	<item>@string/shortcut_action_power_menu</item> 
+	<item>@string/shortcut_action_power_menu</item>
+	<item>@string/shortcut_action_qs</item> 
         <item>@string/shortcut_action_recent</item>
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
@@ -1341,7 +1342,8 @@
         <item>**lastapp**</item>
         <item>**notifications**</item>
         <item>**ime**</item>
-	<item>**power_menu**</item> 
+	<item>**power_menu**</item>
+	<item>**quicksettings**</item> 
         <item>**recents**</item>
         <item>**power**</item>
         <item>**screenshot**</item>
@@ -1357,7 +1359,8 @@
         <item>@string/shortcut_action_lastapp</item>
         <item>@string/shortcut_action_notifications</item>
         <item>@string/shortcut_action_ime</item>
-	<item>@string/shortcut_action_power_menu</item> 
+	<item>@string/shortcut_action_power_menu</item>
+	<item>@string/shortcut_action_qs</item> 
         <item>@string/shortcut_action_ring_silent</item>
         <item>@string/shortcut_action_ring_vib</item>
         <item>@string/shortcut_action_ring_vib_silent</item>
@@ -1375,7 +1378,8 @@
         <item>**lastapp**</item>
         <item>**notifications**</item>
         <item>**ime**</item>
-	<item>**power_menu**</item> 
+	<item>**power_menu**</item>
+	<item>**quicksettings**</item> 
         <item>**ring_silent**</item>
         <item>**ring_vib**</item>
         <item>**ring_vib_silent**</item>
