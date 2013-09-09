@@ -583,11 +583,10 @@
     <string name="status_bar_transparency_title">Status bar transparency</string>
     <string name="status_bar_color_title">Status bar color</string>
     <string name="status_bar_background_style">Status bar background style</string>
-    <string name="status_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
-    <string name="status_bar_alpha_mode_text_title">Transparency mode</string>
-    <string name="status_bar_alpha_mode_home">on launcher</string>
-    <string name="status_bar_alpha_mode_default">on launcher and lockscreen</string>
-    <string name="status_bar_alpha_mode_always">always</string>
+    <string name="status_nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
+    <string name="status_nav_bar_alpha_mode_text_title">Transparency mode</string>
+    <string name="status_nav_bar_alpha_mode_home">on launcher</string>
+    <string name="status_nav_bar_alpha_mode_default">on launcher and lock screen</string>
     <string name="status_bar_style_reset">Reset</string>
 
     <!-- Notification Shortcuts -->
@@ -675,11 +674,6 @@
     <string name="nav_bar_transparency_title">Navigation bar transparency</string>
     <string name="nav_bar_color_title">Navigation bar color</string>
     <string name="nav_bar_background_style">Navigation bar background style</string>
-    <string name="nav_bar_alpha_mode_dialog_text_title">Show navigation and status bar transparency</string>
-    <string name="nav_bar_alpha_mode_text_title">Transparency mode</string>
-    <string name="nav_bar_alpha_mode_home">on launcher</string>
-    <string name="nav_bar_alpha_mode_default">on launcher and lockscreen</string>
-    <string name="nav_bar_alpha_mode_always">always</string>
 
     <string name="hw_keys_title">Hardware Keys</string>
     <string name="key_menu_enabled">Menu Key Enabled</string>
@@ -1408,8 +1402,6 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="shortcut_action_warning">Warning</string>
     <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
     <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app</string>
-    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string> 
 
     <string name="shortcut_action_help_shortcut">shortcut</string>
     <string name="shortcut_action_help_button">button</string>
