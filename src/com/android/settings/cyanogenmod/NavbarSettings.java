@@ -34,7 +34,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
 
     private static final String TAG = "NavBar";
     private static final String PREF_MENU_UNLOCK = "pref_menu_display";
-    private static final String PREF_GLOW_TIMES = "glow_times";
     private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
     private static final String PREF_BUTTON = "navbar_button_settings";
@@ -46,13 +45,12 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_BACK_ENABLED = "key_back_enabled";
     private static final String KEY_HOME_ENABLED = "key_home_enabled";
 
-    private boolean mHasNavBarByDefault; 
+    private boolean mHasNavBarByDefault;
 
     ListPreference menuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     CheckBoxPreference mEnableNavigationBar;
-    CheckBoxPreference mNavigationBarCanMove; 
-    ListPreference mGlowTimes;
+    CheckBoxPreference mNavigationBarCanMove;
     PreferenceScreen mButtonPreference;
     PreferenceScreen mRingPreference;
     PreferenceScreen mStyleDimenPreference;
@@ -85,21 +83,16 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
                 0) + "");
 
-        mGlowTimes = (ListPreference) findPreference(PREF_GLOW_TIMES);
-        mGlowTimes.setOnPreferenceChangeListener(this);
-
-        updateGlowTimesSummary();
-
         mButtonPreference = (PreferenceScreen) findPreference(PREF_BUTTON);
         mRingPreference = (PreferenceScreen) findPreference(PREF_RING);
         mStyleDimenPreference = (PreferenceScreen) findPreference(PREF_STYLE_DIMEN);
 
-        mHasNavBarByDefault = mContext.getResources().getBoolean( 
+        mHasNavBarByDefault = mContext.getResources().getBoolean(
                 com.android.internal.R.bool.config_showNavigationBar);
-	boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
+        boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_SHOW, mHasNavBarByDefault ? 1 : 0) == 1; 
         mEnableNavigationBar = (CheckBoxPreference) findPreference(ENABLE_NAVIGATION_BAR);
-        mEnableNavigationBar.setChecked(enableNavigationBar); 
+        mEnableNavigationBar.setChecked(enableNavigationBar);
 
         if (mEnableNavigationBar.isChecked()) {
             enableKeysPrefs();
@@ -107,25 +100,18 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             resetKeys();
         }
 
-        // don't allow devices that must use a navigation bar to disable it
-        //if (hasNavBarByDefault) {
-        //    prefs.removePreference(mEnableNavigationBar);
-        //}
-
-	mNavigationBarCanMove = (CheckBoxPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
+        mNavigationBarCanMove = (CheckBoxPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
         if (!Utils.isPhone(getActivity())) {
             PreferenceCategory additionalCategory = (PreferenceCategory) findPreference(KEY_ADVANCED_OPTIONS);
-            Preference mPref = (Preference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
-            if (mPref != null)
+            if (mNavigationBarCanMove != null)
                 additionalCategory.removePreference(mNavigationBarCanMove);
         } else {
             mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
-        } 	
+        }
 
-        updateNavbarPreferences(enableNavigationBar); 
+        updateNavbarPreferences(enableNavigationBar);
     }
-
 
     private void updateNavbarPreferences(boolean show) {
         if (mHasNavBarByDefault) {
@@ -133,7 +119,6 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                     Settings.System.UI_FORCE_OVERFLOW_BUTTON,
                     show ? 0 : 1);
         } 
-        mGlowTimes.setEnabled(show);
         mNavBarMenuDisplay.setEnabled(show);
         menuDisplayLocation.setEnabled(show);
         mButtonPreference.setEnabled(show);
@@ -194,11 +179,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.KEY_HOME_ENABLED, value ? 1 : 0);
             return true;
-	} else if (preference == mNavigationBarCanMove) {
+        } else if (preference == mNavigationBarCanMove) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE,
                     ((CheckBoxPreference) preference).isChecked() ? 0 : 1);
-            return true; 
+            return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -213,43 +198,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MENU_VISIBILITY, Integer.parseInt((String) newValue));
             return true;
-        } else if (preference == mGlowTimes) {
-            // format is (on|off) both in MS
-            String value = (String) newValue;
-            String[] breakIndex = value.split("\\|");
-            int onTime = Integer.valueOf(breakIndex[0]);
-            int offTime = Integer.valueOf(breakIndex[1]);
-
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[0], offTime);
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_GLOW_DURATION[1], onTime);
-            updateGlowTimesSummary();
-            return true;
         }
         return false;
-    }
-
-    private void updateGlowTimesSummary() {
-        int resId;
-        String combinedTime = Settings.System.getString(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_GLOW_DURATION[1]) + "|" +
-                Settings.System.getString(getContentResolver(),
-                        Settings.System.NAVIGATION_BAR_GLOW_DURATION[0]);
-
-        String[] glowArray = getResources().getStringArray(R.array.glow_times_values);
-
-        if (glowArray[0].equals(combinedTime)) {
-            resId = R.string.glow_times_superquick;
-            mGlowTimes.setValueIndex(0);
-        } else if (glowArray[1].equals(combinedTime)) {
-            resId = R.string.glow_times_quick;
-            mGlowTimes.setValueIndex(1);
-        } else {
-            resId = R.string.glow_times_normal;
-            mGlowTimes.setValueIndex(2);
-        }
-        mGlowTimes.setSummary(getResources().getString(resId));
     }
 
     @Override
