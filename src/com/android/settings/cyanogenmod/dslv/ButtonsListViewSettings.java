@@ -53,8 +53,8 @@ import android.widget.Toast;
 import com.android.internal.util.cm.ButtonConfig;
 import com.android.internal.util.cm.ButtonsConstants;
 import com.android.internal.util.cm.ButtonsHelper;
-import com.android.internal.util.slim.DeviceSupportUtils;
-import com.android.internal.util.slim.DeviceSupportUtils.FilteredDeviceFeaturesArray; 
+import com.android.internal.util.cm.DeviceSupportUtils;
+import com.android.internal.util.cm.DeviceSupportUtils.FilteredDeviceFeaturesArray; 
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
