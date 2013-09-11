@@ -33,8 +33,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String TAG = "NavBar";
-    private static final String PREF_MENU_UNLOCK = "pref_menu_display";
-    private static final String PREF_NAVBAR_MENU_DISPLAY = "navbar_menu_display";
+    private static final String PREF_MENU_LOCATION = "pref_navbar_menu_location";
+    private static final String PREF_NAVBAR_MENU_DISPLAY = "pref_navbar_menu_display";
     private static final String ENABLE_NAVIGATION_BAR = "enable_nav_bar";
     private static final String PREF_BUTTON = "navbar_button_settings";
     private static final String PREF_RING = "navbar_targets_settings";
@@ -46,8 +46,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String KEY_HOME_ENABLED = "key_home_enabled";
 
     private boolean mHasNavBarByDefault;
+    private int mNavBarMenuDisplayValue;
 
-    ListPreference menuDisplayLocation;
+    ListPreference mMenuDisplayLocation;
     ListPreference mNavBarMenuDisplay;
     CheckBoxPreference mEnableNavigationBar;
     CheckBoxPreference mNavigationBarCanMove;
@@ -71,17 +72,18 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         mBackKeyEnabled = (CheckBoxPreference) findPreference(KEY_BACK_ENABLED);
         mHomeKeyEnabled = (CheckBoxPreference) findPreference(KEY_HOME_ENABLED);
 
-        menuDisplayLocation = (ListPreference) findPreference(PREF_MENU_UNLOCK);
-        menuDisplayLocation.setOnPreferenceChangeListener(this);
-        menuDisplayLocation.setValue(Settings.System.getInt(getActivity()
+        mMenuDisplayLocation = (ListPreference) findPreference(PREF_MENU_LOCATION);
+        mMenuDisplayLocation.setOnPreferenceChangeListener(this);
+        mMenuDisplayLocation.setValue(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_LOCATION,
                 0) + "");
 
         mNavBarMenuDisplay = (ListPreference) findPreference(PREF_NAVBAR_MENU_DISPLAY);
         mNavBarMenuDisplay.setOnPreferenceChangeListener(this);
-        mNavBarMenuDisplay.setValue(Settings.System.getInt(getActivity()
+        mNavBarMenuDisplayValue = Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.MENU_VISIBILITY,
-                0) + "");
+                2);
+        mNavBarMenuDisplay.setValue(mNavBarMenuDisplayValue + "");
 
         mButtonPreference = (PreferenceScreen) findPreference(PREF_BUTTON);
         mRingPreference = (PreferenceScreen) findPreference(PREF_RING);
@@ -120,11 +122,12 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                     show ? 0 : 1);
         } 
         mNavBarMenuDisplay.setEnabled(show);
-        menuDisplayLocation.setEnabled(show);
         mButtonPreference.setEnabled(show);
         mRingPreference.setEnabled(show);
         mStyleDimenPreference.setEnabled(show);
         mNavigationBarCanMove.setEnabled(show);
+        mMenuDisplayLocation.setEnabled(show
+            && mNavBarMenuDisplayValue != 1);
     }
 
     public void enableKeysPrefs() {
@@ -190,13 +193,15 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (preference == menuDisplayLocation) {
+        if (preference == mMenuDisplayLocation) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MENU_LOCATION, Integer.parseInt((String) newValue));
             return true;
         } else if (preference == mNavBarMenuDisplay) {
+            mNavBarMenuDisplayValue = Integer.parseInt((String) newValue);
             Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.MENU_VISIBILITY, Integer.parseInt((String) newValue));
+                    Settings.System.MENU_VISIBILITY, mNavBarMenuDisplayValue);
+            mMenuDisplayLocation.setEnabled(mNavBarMenuDisplayValue != 1);
             return true;
         }
         return false;
