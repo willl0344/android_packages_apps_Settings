@@ -71,6 +71,7 @@ import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.TextView;
 
+import com.android.settings.util.Helpers;
 import com.android.settings.SettingsPreferenceFragment;
 
 import java.util.ArrayList;
@@ -99,6 +100,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private static final String ADB_NOTIFY = "adb_notify";
     private static final String ADB_TCPIP  = "adb_over_network";
     private static final String CLEAR_ADB_KEYS = "clear_adb_keys";
+    private static final String RESTART_SYSTEMUI = "restart_systemui";
     private static final String KEEP_SCREEN_ON = "keep_screen_on";
     private static final String ALLOW_MOCK_LOCATION = "allow_mock_location";
     private static final String ALLOW_MOCK_SMS = "allow_mock_sms";
@@ -176,6 +178,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
     private CheckBoxPreference mEnableAdb;
     private CheckBoxPreference mAdbNotify;
     private Preference mClearAdbKeys;
+    private Preference mRestartSystemUI;
     private Preference mBugreport;
     private CheckBoxPreference mBugreportInPower;
     private CheckBoxPreference mAdbOverNetwork;
@@ -272,6 +275,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                 debugDebuggingCategory.removePreference(mClearAdbKeys);
             }
         }
+
+        mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
 
         mBugreport = findPreference(BUGREPORT);
         mBugreportInPower = findAndInitCheckboxPref(BUGREPORT_IN_POWER_KEY);
@@ -1331,6 +1336,8 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
                         .setPositiveButton(android.R.string.ok, this)
                         .setNegativeButton(android.R.string.cancel, null)
                         .show();
+        } else if (preference == mRestartSystemUI) {
+            Helpers.restartSystemUI(); 
         } else if (preference == mBugreportInPower) {
             Settings.Secure.putInt(getActivity().getContentResolver(),
                     Settings.Secure.BUGREPORT_IN_POWER_MENU, 
