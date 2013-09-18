@@ -50,12 +50,6 @@
             android:title="@string/flip_qs_tiles_title"
             android:summary="@string/flip_qs_tiles_summary" /> 
 
-        <ListPreference
-            android:key="quick_settings_columns"
-            android:title="@string/quick_settings_columns_title"
-            android:entries="@array/quick_settings_columns_entries"
-            android:entryValues="@array/quick_settings_columns_values" />
-
     </PreferenceCategory>
 
     <PreferenceCategory
