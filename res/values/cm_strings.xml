@@ -1760,6 +1760,24 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ad_redisplay_2h">2 hours</string>
     <string name="ad_redisplay_5h">5 hours</string>
 
+    <!-- Animation Controls -->	
+    <string name="title_animation_controls">AOKP Custom System Animations</string>	
+    <string name="activity_open_title">Activity Open Animation</string>	
+    <string name="activity_close_title">Activity Close Animation</string>	
+    <string name="task_open_title">Task Open Animation</string>	
+    <string name="task_close_title">Task Close Animation</string>	
+    <string name="task_move_to_front_title">Move To Front Animation</string>	
+    <string name="task_move_to_back_title">Move To Back Animation</string>	
+    <string name="wallpaper_open_title">Wallpaper Open Animation</string>	
+    <string name="wallpaper_close_title">Wallpaper Close Animation</string>	
+    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>	
+    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>	
+    <string name="animation_duration_title">Animation Duration</string>	
+    <string name="title_animation_no_override">Prevent App Overrides</string>	
+    <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>	
+    <string name="animation_duration_default">Default</string>
+    <string name="header_summary_animation">@null</string>
+
     <!-- Font size sample text. This needs to be a very short string, as it is shown in
     multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Sample</string>
