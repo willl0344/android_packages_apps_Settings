@@ -1765,6 +1765,8 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ad_timeout_15s">15 seconds</string>
     <string name="ad_timeout_25s">25 seconds</string>
     <string name="ad_timeout_60m">1 hour</string>
+    <string name="ad_hide_low_priority_title">Hide low priority</string>
+    <string name="ad_hide_low_priority_summary">Hide low priority notifications such as those from Google Now.</string> 
 
     <!-- Animation Controls -->	
     <string name="title_animation_controls">AOKP Custom System Animations</string>	
