@@ -78,11 +78,13 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_ENABLE_WIDGETS = "lockscreen_enable_widgets";
     private static final String KEY_LOCKSCREEN_ENABLE_CAMERA = "lockscreen_enable_camera";
     private static final String KEY_LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS = "lockscreen_hide_initial_page_hints";
+    private static final String PREF_LOCKSCREEN_ALL_WIDGETS = "lockscreen_all_widgets";
 
     private ListPreference mCustomBackground;
     private ListPreference mBatteryStatus;
     private CheckBoxPreference mEnableWidgets;
     private CheckBoxPreference mEnableCamera;
+    private CheckBoxPreference mLockscreenAllWidgets;
     private CheckBoxPreference mLockscreenHideInitialPageHints;
     private SeekBarPreference mBgAlpha;
 
@@ -148,6 +150,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                 widgetsCategory.removePreference(
                         findPreference(Settings.System.LOCKSCREEN_MAXIMIZE_WIDGETS));
             }
+
+            mLockscreenAllWidgets = (CheckBoxPreference)findPreference(PREF_LOCKSCREEN_ALL_WIDGETS);
+            mLockscreenAllWidgets.setChecked(Settings.System.getBoolean(getActivity().getContentResolver(),
+                Settings.System.LOCKSCREEN_ALL_WIDGETS, false));
 
             mLockscreenHideInitialPageHints = (CheckBoxPreference)findPreference(KEY_LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS);
             if (!Utils.isPhone(getActivity())) {
@@ -235,6 +241,11 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                         Settings.System.LOCKSCREEN_ALWAYS_SHOW_BATTERY, 0);
                 mBatteryStatus.setValueIndex(batteryStatus);
                 mBatteryStatus.setSummary(mBatteryStatus.getEntries()[batteryStatus]);
+            }
+
+            if (mLockscreenAllWidgets != null) {
+                mLockscreenAllWidgets.setChecked(Settings.System.getInt(cr,
+                        Settings.System.LOCKSCREEN_ALL_WIDGETS, 0) == 1);
             }
 
             if (mLockscreenHideInitialPageHints != null) {
@@ -352,6 +363,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
             return true;
         } else if (preference == mEnableWidgets) {
             updateKeyguardState(mEnableCamera.isChecked(), (Boolean) objValue);
+            return true;
+        } else if (preference == mLockscreenAllWidgets) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(cr, Settings.System.LOCKSCREEN_ALL_WIDGETS, value ? 1 : 0);
             return true;
         } else if (preference == mLockscreenHideInitialPageHints) {
             boolean value = (Boolean) objValue;
