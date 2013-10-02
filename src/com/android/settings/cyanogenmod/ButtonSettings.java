@@ -41,6 +41,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_ASSIST_LONG_PRESS = "hardware_keys_assist_long_press";
     private static final String KEY_APP_SWITCH_PRESS = "hardware_keys_app_switch_press";
     private static final String KEY_APP_SWITCH_LONG_PRESS = "hardware_keys_app_switch_long_press";
+    private static final String KEY_CAMERA_PRESS = "hardware_keys_camera_press";
+    private static final String KEY_CAMERA_LONG_PRESS = "hardware_keys_camera_long_press";
     private static final String KEY_BUTTON_WAKE = "pref_wakeon_button";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String KEY_SHOW_OVERFLOW = "hardware_keys_show_overflow";
@@ -52,6 +54,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_MENU = "menu_key";
     private static final String CATEGORY_ASSIST = "assist_key";
     private static final String CATEGORY_APPSWITCH = "app_switch_key";
+    private static final String CATEGORY_CAMERA = "camera_key";
     private static final String CATEGORY_VOLUME = "volume_keys";
     private static final String CATEGORY_BACKLIGHT = "key_backlight";
 
@@ -64,6 +67,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final int ACTION_SEARCH = 3;
     private static final int ACTION_VOICE_SEARCH = 4;
     private static final int ACTION_IN_APP_SEARCH = 5;
+    private static final int ACTION_LAUNCH_CAMERA = 6;
 
     // Masks for checking presence of hardware keys.
     // Must match values in frameworks/base/core/res/res/values/config.xml
@@ -72,6 +76,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     public static final int KEY_MASK_MENU = 0x04;
     public static final int KEY_MASK_ASSIST = 0x08;
     public static final int KEY_MASK_APP_SWITCH = 0x10;
+    public static final int KEY_MASK_CAMERA = 0x20;
 
     private ListPreference mHomeLongPressAction;
     private ListPreference mButtonWake;
@@ -82,6 +87,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private ListPreference mAssistLongPressAction;
     private ListPreference mAppSwitchPressAction;
     private ListPreference mAppSwitchLongPressAction;
+    private ListPreference mCameraPressAction;
+    private ListPreference mCameraLongPressAction;
     private CheckBoxPreference mShowActionOverflow;
     private CheckBoxPreference mSwapVolumeButtons;
 
@@ -101,6 +108,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
         final boolean hasMenuKey = (deviceKeys & KEY_MASK_MENU) != 0;
         final boolean hasAssistKey = (deviceKeys & KEY_MASK_ASSIST) != 0;
         final boolean hasAppSwitchKey = (deviceKeys & KEY_MASK_APP_SWITCH) != 0;
+        final boolean hasCameraKey = (deviceKeys & KEY_MASK_CAMERA) != 0;
 
         boolean hasAnyBindableKey = false;
         final PreferenceCategory homeCategory =
@@ -111,6 +119,8 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
+        final PreferenceCategory cameraCategory =
+                (PreferenceCategory) prefScreen.findPreference(CATEGORY_CAMERA);
         final PreferenceCategory volumeCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_VOLUME);
 
@@ -199,6 +209,20 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             hasAnyBindableKey = true;
         } else {
             prefScreen.removePreference(appSwitchCategory);
+        }
+
+        if (hasCameraKey) {
+            int pressAction = Settings.System.getInt(resolver,
+                    Settings.System.KEY_CAMERA_ACTION, ACTION_NOTHING);
+            mCameraPressAction = initActionList(KEY_CAMERA_PRESS, pressAction);
+
+            int longPressAction = Settings.System.getInt(resolver,
+                    Settings.System.KEY_CAMERA_LONG_PRESS_ACTION, ACTION_LAUNCH_CAMERA);
+            mCameraLongPressAction = initActionList(KEY_CAMERA_LONG_PRESS, longPressAction);
+
+            hasAnyBindableKey = true;
+        } else {
+            prefScreen.removePreference(cameraCategory);
         }
 
         if (hasAnyBindableKey) {
@@ -290,6 +314,14 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
             //Settings.System.putInt(getActivity().getContentResolver(),
             //        Settings.System.BUTTON_WAKE_SCREEN, buttonWakeValue);
             //mButtonWake.setSummary(getResources().getString(R.string.pref_wakeon_button_summary, mButtonWake.getEntries()[index]));
+            return true;
+        } else if (preference == mCameraPressAction) {
+            handleActionListChange(mCameraPressAction, newValue,
+                    Settings.System.KEY_CAMERA_ACTION);
+            return true;
+        } else if (preference == mCameraLongPressAction) {
+            handleActionListChange(mAppSwitchLongPressAction, newValue,
+                    Settings.System.KEY_CAMERA_LONG_PRESS_ACTION);
             return true;
         }
 
