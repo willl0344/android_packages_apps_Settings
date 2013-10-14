@@ -23,6 +23,12 @@
             android:fragment="com.android.settings.RamBar"
             android:title="@string/ram_bar" />
 
+        <CheckBoxPreference
+            android:key="recents_clear_all_on_right"
+            android:title="@string/clear_all_on_right"
+            android:summary="@string/clear_all_on_right_summary"
+            android:defaultValue="false"/>
+
         <PreferenceScreen
             android:key="lcd_density_setup"
             android:fragment="com.android.settings.DensityChanger"

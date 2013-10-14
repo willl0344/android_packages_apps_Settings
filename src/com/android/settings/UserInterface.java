@@ -49,12 +49,14 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
     private static final String PREF_CUSTOM_CARRIER_LABEL = "custom_carrier_label";
     private static final String KEY_LOW_BATTERY_WARNING_POLICY = "pref_low_battery_warning_policy";
     private static final String KEY_RECENTS_RAM_BAR = "recents_ram_bar";
+    private static final String PREF_RECENTS_CLEAR_ALL_ON_RIGHT = "recents_clear_all_on_right";
 
     private Preference mLcdDensity;
     private Preference mCustomLabel;
     private ListPreference mLowBatteryWarning;
 
     private Preference mRamBar;
+    private CheckBoxPreference mClearAll;
 
     private String mCustomLabelText = null;
     private int newDensityValue;
@@ -91,6 +93,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
 
         mRamBar = findPreference(KEY_RECENTS_RAM_BAR);
         updateRamBar();
+
+        mClearAll = (CheckBoxPreference) findPreference(PREF_RECENTS_CLEAR_ALL_ON_RIGHT);
+        mClearAll.setOnPreferenceChangeListener(this);
+        mClearAll.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.RECENTS_CLEAR_ALL_ON_RIGHT, 0) == 1);
     }
 
     private void updateCustomLabelTextSummary() {
@@ -132,6 +139,11 @@ public class UserInterface extends SettingsPreferenceFragment implements OnPrefe
                     Settings.System.POWER_UI_LOW_BATTERY_WARNING_POLICY,
                     lowBatteryWarning);
             mLowBatteryWarning.setSummary(mLowBatteryWarning.getEntries()[index]);
+            return true;
+        } else if (preference == mClearAll) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.RECENTS_CLEAR_ALL_ON_RIGHT,
+                (Boolean) objValue ? 1 : 0);
             return true;
         }
         return false;
