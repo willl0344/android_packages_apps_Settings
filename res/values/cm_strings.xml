@@ -1820,6 +1820,11 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
 
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>	
+
     <!-- Font size sample text. This needs to be a very short string, as it is shown in
     multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Sample</string>
