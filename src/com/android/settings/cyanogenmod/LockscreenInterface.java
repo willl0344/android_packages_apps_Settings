@@ -79,6 +79,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String KEY_LOCKSCREEN_ENABLE_CAMERA = "lockscreen_enable_camera";
     private static final String KEY_LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS = "lockscreen_hide_initial_page_hints";
     private static final String PREF_LOCKSCREEN_ALL_WIDGETS = "lockscreen_all_widgets";
+    private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
 
     private ListPreference mCustomBackground;
     private ListPreference mBatteryStatus;
@@ -87,6 +88,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private CheckBoxPreference mLockscreenAllWidgets;
     private CheckBoxPreference mLockscreenHideInitialPageHints;
     private SeekBarPreference mBgAlpha;
+    private CheckBoxPreference mLockRingBattery;
 
     private boolean mIsScreenLarge;
 
@@ -192,6 +194,10 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
         mEnableWidgets.setChecked((disabledFeatures & DevicePolicyManager.KEYGUARD_DISABLE_WIDGETS_ALL) == 0);
         mEnableCamera.setChecked((disabledFeatures & DevicePolicyManager.KEYGUARD_DISABLE_SECURE_CAMERA) == 0);
 
+        mLockRingBattery = (CheckBoxPreference) findPreference(BATTERY_AROUND_LOCKSCREEN_RING);
+        mLockRingBattery.setChecked(Settings.System.getInt(mContext.getContentResolver(),
+                Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, 0) == 1);
+
         // Remove the camera widget preference if the device doesn't have one
         if (!getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
             widgetsCategory.removePreference(mEnableCamera);
@@ -251,6 +257,17 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
                         Settings.System.LOCKSCREEN_HIDE_INITIAL_PAGE_HINTS, 0) == 1);
             }
         }
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        if (preference == mLockRingBattery) {
+            Settings.System.putInt(mContext.getContentResolver(),
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, mLockRingBattery.isChecked()
+                    ? 1 : 0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
