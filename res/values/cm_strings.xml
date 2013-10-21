@@ -1768,7 +1768,7 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="ad_sunlight_mode_summary">Invert the colors when in areas with bright light such as direct sunlight.</string>
     <string name="ad_customizations_title">Customizations</string> 
     <string name="ad_brightness_title">Notification brightness</string>
-    <string name="ad_brightness_summary">Brightness level</string>
+    <string name="ad_brightness_summary">Brightness level for displaying notifications when automatic brightness is not enabled.</string>
     <string name="ad_show_date_title">Show date</string>
     <string name="ad_show_date_summary">Show the date above the clock</string>
     <string name="ad_show_ampm_title">Show AM/PM</string>
