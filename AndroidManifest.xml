@@ -1781,7 +1781,7 @@
 
         <activity android:name=".cyanogenmod.StatusBarClockStyle" />
 
-        <activity android:name=".cyanogenmod.StatusBarTrafficStyle" />
+        <activity android:name=".cyanogenmod.StatusBarTrafficSettings" />
 
         <activity android:name=".cyanogenmod.NotificationDrawerSettings" />
 
