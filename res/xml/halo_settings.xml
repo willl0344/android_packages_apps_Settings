@@ -111,6 +111,11 @@ limitations under the License.
 	    android:dependency="halo_enabled"
             android:defaultValue="true" />
         
+	<PreferenceScreen
+            android:key="halo_colors"
+            android:fragment="com.android.settings.cyanogenmod.HaloColors"
+            android:title="@string/halo_colors_settings" />
+
     </PreferenceCategory>
 
 </PreferenceScreen> 

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/halo_colors_style">
+
+    <PreferenceCategory
+        android:title="@string/halo_colors_style">
+
+	<CheckBoxPreference
+            android:key="halo_colors"
+            android:title="@string/halo_colors"
+            android:defaultValue="false" /> 
+
+        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+            android:key="halo_circle_color"
+            android:title="@string/halo_circle_color"
+            android:defaultValue="#33b5e5" />
+
+	<com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+            android:key="halo_effect_color"
+            android:title="@string/halo_effect_color"
+            android:defaultValue="#33b5e5" />
+
+	<com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+            android:key="halo_notif_title_color"
+            android:title="@string/halo_notif_title_color"
+            android:defaultValue="#ffffff" />
+
+        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+            android:key="halo_notif_desc_color"
+            android:title="@string/halo_notif_desc_color"
+            android:defaultValue="#999999" />
+
+	<com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+             android:key="halo_speech_bubble_color"
+             android:title="@string/halo_speech_bubble_color"
+             android:defaultValue="#33b5e5" />
+
+        <com.android.settings.cyanogenmod.colorpicker.ColorPickerPreference
+             android:key="halo_text_color"
+             android:title="@string/halo_text_color"
+             android:defaultValue="#999999" />  
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
+

@@ -1801,6 +1801,17 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <!-- QS Power menu -->
     <string name="title_tile_power">Power Menu</string>
 
+    <!-- HALO colors -->
+    <string name="halo_colors">Enable Custom Colors</string>
+    <string name="halo_colors_style">HALO colors settings</string>
+    <string name="halo_colors_settings">HALO Colors</string>
+    <string name="halo_circle_color">Change Circle Color</string>  
+    <string name="halo_effect_color">Change Effect Color</string>
+    <string name="halo_notif_title_color">Notification Title Color</string>
+    <string name="halo_notif_desc_color">Notification Description Color</string> 
+    <string name="halo_speech_bubble_color">Speech Bubble Color</string>
+    <string name="halo_text_color">Text Color</string>
+
     <!-- Font size sample text. This needs to be a very short string, as it is shown in
     multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Sample</string>
