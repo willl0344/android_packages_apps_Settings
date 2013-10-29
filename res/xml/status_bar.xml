@@ -58,12 +58,6 @@
             android:summary="@string/statusbar_quick_peek_summary"
             android:defaultValue="false" /> 
 
-        <!-- Traffic meter Indicator -->
-        <PreferenceScreen
-            android:key="traffic_ring"
-            android:fragment="com.android.settings.cyanogenmod.StatusBarTrafficSettings"
-            android:title="@string/traffic_cat" />  
-
         <ListPreference
             android:key="status_bar_signal"
             android:dialogTitle="@string/status_bar_signal_text_title"
