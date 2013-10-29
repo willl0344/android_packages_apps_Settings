@@ -1796,6 +1796,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="status_bar_network_title">Network traffic</string>
     <string name="status_bar_show_network_stats_title">Show network speeds</string>
     <string name="status_bar_network_stats_update_title">Update frequency</string>
+    <string name="status_bar_network_usage_color_style">Color style</string>
+    <string name="status_bar_network_usage_color_reset">Reset color</string>
+    <string name="status_bar_network_usage_color_reset_message">Reset network stats color to default?</string>
 
     <!-- Font size sample text. This needs to be a very short string, as it is shown in
     multiple font sizes in a limited amount of space. -->
