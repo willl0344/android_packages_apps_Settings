@@ -23,6 +23,12 @@
     <PreferenceCategory
         android:title="@string/status_bar_style_title">
 
+        <!-- Battery style -->
+        <PreferenceScreen
+            android:fragment="com.android.settings.temasek.BatteryIconStyle"
+            android:key="battery_style_pref"
+            android:title="@string/battery_icon_title" />
+
 	<!-- Clock style -->
         <PreferenceScreen
             android:fragment="com.android.settings.temasek.StatusBarClockStyle"
