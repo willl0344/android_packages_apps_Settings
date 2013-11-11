@@ -13,7 +13,13 @@
             android:key="use_alt_resolver"
             android:title="@string/alt_resolver"
             android:summary="@string/alt_resolver_summary"
-            android:defaultValue="false" />     
+            android:defaultValue="false" />
+
+	<!-- CPU info overlay -->
+	<CheckBoxPreference
+            android:key="show_cpu_info"
+            android:title="@string/show_cpu_info"
+            android:summary="@string/show_cpu_info_summary"/>     
 
     </PreferenceCategory>
 

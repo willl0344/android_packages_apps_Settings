@@ -124,6 +124,11 @@
     <string name="system_power_crt_mode_off">Don\'t show</string>
     <string name="system_power_crt_mode_horizontal">Portrait horizontal</string>
     <string name="system_power_crt_mode_vertical">Portrait vertical</string>
-    <string name="system_power_crt_mode_both">Orientation dependent</string>    
+    <string name="system_power_crt_mode_both">Orientation dependent</string>
+
+    <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
+    <string name="show_cpu_info">Show CPU info</string>
+    <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>    
     
 </resources>
