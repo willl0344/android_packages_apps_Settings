@@ -10,7 +10,7 @@
         android:title="@string/notification_drawer_style_title">
 
         <PreferenceScreen
-            android:fragment="com.android.settings.crdroid.NotificationDrawerStyle"
+            android:fragment="com.android.settings.temasek.NotificationDrawerStyle"
             android:key="notification_drawer_style_pref"
             android:title="@string/notification_drawer_background" />
 

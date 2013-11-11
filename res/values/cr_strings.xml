@@ -12,8 +12,8 @@
     <string name="disabled">Disabled</string>
     <string name="default_string">Default</string>
 
-    <!-- crDroid settings screens -->
-    <string name="crdroid_settings_title">crDroid customs</string>
+    <!-- temasek spare parts -->
+    <string name="temasek_settings_title">temasek spare parts</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>

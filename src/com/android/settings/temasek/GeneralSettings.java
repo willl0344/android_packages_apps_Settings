@@ -1,4 +1,4 @@
-package com.android.settings.crdroid;
+package com.android.settings.temasek;
 
 import android.app.ActivityManager;
 import android.content.Context;

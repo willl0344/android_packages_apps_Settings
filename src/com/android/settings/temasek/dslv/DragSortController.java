@@ -16,7 +16,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.crdroid.dslv;
+package com.android.settings.temasek.dslv;
 
 import android.graphics.Point;
 import android.view.GestureDetector;

@@ -1,4 +1,4 @@
-package com.android.settings.crdroid;
+package com.android.settings.temasek;
 
 import android.content.Context;
 import android.content.SharedPreferences;
