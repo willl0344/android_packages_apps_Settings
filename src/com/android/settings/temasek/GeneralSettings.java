@@ -14,15 +14,18 @@ import android.preference.Preference.OnPreferenceChangeListener;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.util.Helpers;
 
 public class GeneralSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
     private static final String PREF_USE_ALT_RESOLVER = "use_alt_resolver";
-    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";  
+    private static final String SHOW_CPU_INFO_KEY = "show_cpu_info";
+    private static final String RESTART_SYSTEMUI = "restart_systemui";
 
     private CheckBoxPreference mUseAltResolver;
     private CheckBoxPreference mShowCpuInfo;
+    private Preference mRestartSystemUI;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,7 +38,9 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
  	mUseAltResolver = (CheckBoxPreference) findPreference(PREF_USE_ALT_RESOLVER);
         mUseAltResolver.setChecked(Settings.System.getInt(
                 getActivity().getContentResolver(),
-                Settings.System.ACTIVITY_RESOLVER_USE_ALT, 0) == 1); 
+                Settings.System.ACTIVITY_RESOLVER_USE_ALT, 0) == 1);
+
+        mRestartSystemUI = findPreference(RESTART_SYSTEMUI)
 
     }
 
@@ -66,6 +71,8 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
             return true;
 	} else if (preference == mShowCpuInfo) {
             writeCpuInfoOptions();
+        } else if (preference == mRestartSystemUI) {
+            Helpers.restartSystemUI();
         }
 
         return super.onPreferenceTreeClick(preferenceScreen, preference);

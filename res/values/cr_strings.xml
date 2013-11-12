@@ -141,6 +141,9 @@
     <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
 
     <!-- TRDS Settings -->
-    <string name="trds_settings_title">Dark UI (TRDS)</string>    
+    <string name="trds_settings_title">Dark UI (TRDS)</string>
+
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Restart SystemUI</string>
     
 </resources>

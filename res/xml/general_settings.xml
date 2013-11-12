@@ -19,7 +19,11 @@
 	<CheckBoxPreference
             android:key="show_cpu_info"
             android:title="@string/show_cpu_info"
-            android:summary="@string/show_cpu_info_summary"/>     
+            android:summary="@string/show_cpu_info_summary"/>
+
+        <!-- Restart SystemUI -->
+        <Preference android:key="restart_systemui"
+            android:title="@string/restart_systemui" />
 
     </PreferenceCategory>
 
