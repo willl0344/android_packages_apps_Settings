@@ -50,11 +50,11 @@ import android.widget.TextView;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.android.internal.util.slim.ButtonConfig;
-import com.android.internal.util.slim.ButtonsConstants;
-import com.android.internal.util.slim.ButtonsHelper;
-import com.android.internal.util.slim.DeviceUtils;
-import com.android.internal.util.slim.DeviceUtils.FilteredDeviceFeaturesArray;
+import com.android.internal.util.temasek.ButtonConfig;
+import com.android.internal.util.temasek.ButtonsConstants;
+import com.android.internal.util.temasek.ButtonsHelper;
+import com.android.internal.util.temasek.DeviceUtils;
+import com.android.internal.util.temasek.DeviceUtils.FilteredDeviceFeaturesArray;
 
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
