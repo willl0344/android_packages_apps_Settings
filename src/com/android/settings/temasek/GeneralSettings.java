@@ -40,7 +40,7 @@ public class GeneralSettings extends SettingsPreferenceFragment implements
                 getActivity().getContentResolver(),
                 Settings.System.ACTIVITY_RESOLVER_USE_ALT, 0) == 1);
 
-        mRestartSystemUI = findPreference(RESTART_SYSTEMUI)
+        mRestartSystemUI = findPreference(RESTART_SYSTEMUI);
 
     }
 
