@@ -3,202 +3,202 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- About phone screen, temasek version -->
-    <string name="temasek_version_title">Versão não oficial Temasek</string>
+    <string name="temasek_version_title">Temasek unofficial version</string>
     <string name="temasek_version_default">V2</string>
 
     <!-- General strings -->
     <string name="reset">Reset</string>
-    <string name="enabled">Ligado</string>
-    <string name="disabled">Desligado</string>
-    <string name="default_string">Por defeito</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="default_string">Default</string>
 
     <!-- temasek spare parts -->
-    <string name="temasek_settings_title">Opções Extra Temasek</string>
+    <string name="temasek_settings_title">Temasek spare parts</string>
 
     <!-- Color Picker -->
-    <string name="dialog_color_picker">Seletor de Cores</string>
-    <string name="press_color_to_apply">Selecione a cor abaixo para aplicar</string>
+    <string name="dialog_color_picker">Color Picker</string>
+    <string name="press_color_to_apply">Press on color below to apply</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
-    <string name="set">Definir</string>
+    <string name="set">Set</string>
 
     <!-- Status bar -->
-    <string name="status_bar_title">Barra de estados</string>
-    <string name="status_bar_style_title">Opções da barra de estados</string>
-    <string name="status_bar_general_title">Geral</string>
+    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_style_title">Status bar options</string>
+    <string name="status_bar_general_title">General</string>
 
     <!-- Status bar | Clock -->
-    <string name="status_bar_clock">Data e Hora</string>
-    <string name="status_bar_clock_title">Estilo de data e hora</string>
-    <string name="clock_title_enable">Alinhamento</string>
-    <string name="clock_enabled">Ligado</string>
-    <string name="clock_disabled">Desligado</string>
-    <string name="clock_color_title">Cor</string>
-    <string name="status_bar_clock_style_reset">Reposição de cor</string>
-    <string name="status_bar_show_clock_title">Mostrar data e hora</string>
+    <string name="status_bar_clock">Clock and date</string>
+    <string name="status_bar_clock_title">Clock and date style</string>
+    <string name="clock_title_enable">Alignment</string>
+    <string name="clock_enabled">Enabled</string>
+    <string name="clock_disabled">Disabled</string>
+    <string name="clock_color_title">Color</string>
+    <string name="status_bar_clock_style_reset">Reset color</string>
+    <string name="status_bar_show_clock_title">Show clock and date</string>
     <string name="status_bar_am_pm_title">AM/PM</string>
-    <string name="status_bar_am_pm_info">Relógio de 24 horas ligado</string>
-    <string name="enable_clock_weekday">Dia da semana</string>
-    <string name="enable_clock_weekday_summary">Dia da semana abreviado antes do relógio</string>
-    <string name="right_clock">Relógio à direita</string>
-    <string name="center_clock">Relógio ao centro</string>
-    <string name="dont_show">Não mostrar</string>
-    <string name="clock_date_display">Data</string>
-    <string name="clock_date_display_summary">Mostrar data personalizada antes do relógio</string>
-    <string name="clock_date_style">Estilo da data</string>
-    <string name="clock_date_format">Formato da data</string>
-    <string name="clock_date_string_edittext_title">Deve estar no seguinte formato: MM/dd/aa</string>
-    <string name="clock_date_string_edittext_summary">Introduza frase</string>
-    <string name="am_pm_clock_normal">Fonte normal</string>
-    <string name="am_pm_clock_small">Fonte pequena</string>
-    <string name="am_pm_clock_none">Não mostrar/string>
-    <string name="clock_date_display_none">Não mostrar</string>
-    <string name="clock_date_display_small">Fonte pequena</string>
-    <string name="clock_date_display_normal"Fonte normal</string>
+    <string name="status_bar_am_pm_info">24-hour clock is enabled</string>
+    <string name="enable_clock_weekday">Day of the week</string>
+    <string name="enable_clock_weekday_summary">Abbreviated day of the week before the time</string>
+    <string name="right_clock">Right clock</string>
+    <string name="center_clock">Center clock</string>
+    <string name="dont_show">Don\'t show</string>
+    <string name="clock_date_display">Date</string>
+    <string name="clock_date_display_summary">Display custom date before the clock</string>
+    <string name="clock_date_style">Date style</string>
+    <string name="clock_date_format">Date format</string>
+    <string name="clock_date_string_edittext_title">Must be in DateFormat eg. MM/dd/yy</string>
+    <string name="clock_date_string_edittext_summary">Enter string</string>
+    <string name="am_pm_clock_normal">Normal font size</string>
+    <string name="am_pm_clock_small">Small font size</string>
+    <string name="am_pm_clock_none">Don\'t show</string>
+    <string name="clock_date_display_none">Don\'t show</string>
+    <string name="clock_date_display_small">Small font size</string>
+    <string name="clock_date_display_normal">Normal font size</string>
     <string name="clock_date_style_normal">Normal</string>
-    <string name="clock_date_style_lowercase">Minúsculas</string>
-    <string name="clock_date_style_uppercase">Maiúsculas</string>
-    <string name="clock_date_format_custom">Formato personalizado</string>
-    <string name="status_bar_clock_style_reset_message">Redefinir cor do relógio?</string>
+    <string name="clock_date_style_lowercase">Lowercase</string>
+    <string name="clock_date_style_uppercase">Uppercase</string>
+    <string name="clock_date_format_custom">Custom java format</string>
+    <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
     <!-- Notification Drawer Settings -->
-    <string name="notification_drawer_title">Painel de notificações</string>
-    <string name="notification_drawer_style_title">Opções do painel de notificações</string>
-    <string name="notification_style_summary">Mude o estilo do seu painel de notificações</string>
-    <string name="notification_drawer_background">Fundo e transparência</string> 
+    <string name="notification_drawer_title">Notification drawer</string>
+    <string name="notification_drawer_style_title">Notification drawer options</string>
+    <string name="notification_style_summary">Change your notification drawer style</string>
+    <string name="notification_drawer_background">Background and transparency</string> 
 
     <!-- Notification drawer background -->
-    <string name="notification_wallpaper_title">Fundo do painel de notificações</string>
-    <string name="notification_wallpaper_landscape_title">Fundo diferente</string>
-    <string name="notification_background_color_fill">Cor de preenchimento</string>
-    <string name="notification_background_custom_image">Imagem personalizada</string>
-    <string name="notification_background_default_wallpaper">Fundo padrão</string>
-    <string name="notification_drawer_custom_background_dialog_title">Escolha a cor</string>
-    <string name="notif_wallpaper_alpha_title">Fundo do painel de notificações</string> 
-    <string name="notif_alpha_title">Transparência da linha de notificações</string>
+    <string name="notification_wallpaper_title">Notification drawer background</string>
+    <string name="notification_wallpaper_landscape_title">Different landscape background</string>
+    <string name="notification_background_color_fill">Color fill</string>
+    <string name="notification_background_custom_image">Custom image</string>
+    <string name="notification_background_default_wallpaper">Default background</string>
+    <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
+    <string name="notif_wallpaper_alpha_title">Notification background transparency</string> 
+    <string name="notif_alpha_title">Notification row transparency</string>
 
     <!-- Advanced low battery indicator options -->  
-    <string name="lights_and_warnings_title">Luzes e avisos</string>
-    <string name="lights_and_warnings_style_title">Opções das luzes e avisos</string>
-    <string name="pref_low_battery_warning_policy_title">Aviso de bateria fraca</string>
-    <string name="pref_low_battery_warning_policy_dialog_title">Aviso de bateria fraca aos</string>
-    <string name="low_battery_warning_policy_popup_sound">Pop-up e som</string>
-    <string name="low_battery_warning_policy_notif_sound">Notificação e som</string>
-    <string name="low_battery_warning_policy_popup">Apenas pop-up</string>
-    <string name="low_battery_warning_policy_notif">Apenas notificação</string>
-    <string name="low_battery_warning_policy_sound">Apenas som</string>
-    <string name="low_battery_warning_policy_disabled">Desligado</string> 
+    <string name="lights_and_warnings_title">Lights and warnings</string>
+    <string name="lights_and_warnings_style_title">Lights and warnings options</string>
+    <string name="pref_low_battery_warning_policy_title">Low battery warning</string>
+    <string name="pref_low_battery_warning_policy_dialog_title">Indicate low battery warning with</string>
+    <string name="low_battery_warning_policy_popup_sound">Pop-up and sound</string>
+    <string name="low_battery_warning_policy_notif_sound">Notification and sound</string>
+    <string name="low_battery_warning_policy_popup">Pop-up dialog only</string>
+    <string name="low_battery_warning_policy_notif">Notification only</string>
+    <string name="low_battery_warning_policy_sound">Sound only</string>
+    <string name="low_battery_warning_policy_disabled">Disabled</string> 
 
     <!-- Screen-On Notification Light -->
-    <string name="screen_on_notification_led_title">Luz de notificação de ecrã ligado</string>
-    <string name="screen_on_notification_led_summary">Ligar luz de notificação mesmo quando o ecrã está ligado/string> 
+    <string name="screen_on_notification_led_title">Screen-On Notification Light</string>
+    <string name="screen_on_notification_led_summary">Enable Notification Light even when screen is on</string> 
 
     <!-- Alternate default app picker -->
-    <string name="general_settings_title">Opções gerais</string>
-    <string name="general_settings_style_title">Opções gerais</string>
-    <string name="display_short">Ecrã</string>
-    <string name="misc_short">Vários</string>
-    <string name="alt_resolver">Usar grelha de aplicações alternativa</string>
-    <string name="alt_resolver_summary">Usar grelha de aplicações alternativa</string>
+    <string name="general_settings_title">General settings</string>
+    <string name="general_settings_style_title">General options</string>
+    <string name="display_short">Display</string>
+    <string name="misc_short">Misc</string>
+    <string name="alt_resolver">Use Alt Default App Grid</string>
+    <string name="alt_resolver_summary">Use Alternate Default App Picker</string>
 
     <!-- Network stats stats -->
-    <string name="status_bar_network_cat">Medidor de tráfego de rede</string>
-    <string name="status_bar_network_header">Medidor de tráfego de rede</string>
-    <string name="status_bar_network_title">Medidor de tráfego de rede</string>
-    <string name="status_bar_show_network_stats_title">Mostrar velocidade de rede</string>
-    <string name="status_bar_network_stats_update_title">Frequência de refrescamento</string>
+    <string name="status_bar_network_cat">Network traffic meter</string>
+    <string name="status_bar_network_header">Network traffic meter</string>
+    <string name="status_bar_network_title">Network traffic</string>
+    <string name="status_bar_show_network_stats_title">Show network speeds</string>
+    <string name="status_bar_network_stats_update_title">Update frequency</string>
 
     <!-- Network stats custm colors -->
-    <string name="status_bar_network_usage_color_style">Cor</string>
-    <string name="status_bar_network_usage_color_reset">Cor por defeito</string>
-    <string name="status_bar_network_usage_color_reset_message">Definir cor de tráfego de rede por defeito?</string>
+    <string name="status_bar_network_usage_color_style">Color style</string>
+    <string name="status_bar_network_usage_color_reset">Reset color</string>
+    <string name="status_bar_network_usage_color_reset_message">Reset network stats color to default?</string>
 
     <!-- Network stats hide if there's no traffic -->
-    <string name="hide_network_speed">Esconder quando não houver tráfego</string>
-    <string name="hide_network_speed_summary">Esconder medidor de tráfego de rede quando não houver tráfego</string>
+    <string name="hide_network_speed">Hide when there is no traffic</string>
+    <string name="hide_network_speed_summary">Hide network stats indicator when there is no traffic</string>
 
     <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Ecrã e animações</string>
-    <string name="display_category_animation_options_title">Opções de ecrã e animações</string>
-    <string name="system_power_crt_mode_title">Animação CRT</string>
-    <string name="system_power_crt_mode_dialog_title">Animação CRT</string>
-    <string name="system_power_crt_mode_off">Nãomostrar/string>
-    <string name="system_power_crt_mode_horizontal">Colapsar horizontalmente</string>
-    <string name="system_power_crt_mode_vertical">Colapsar verticalmente</string>
-    <string name="system_power_crt_mode_both">Colapsar dependendo da orientação do ecrã</string>
-    <string name="system_power_crt_mode_scale">Diminuir escala</string>
+    <string name="screen_and_animations_title">Screen and animations</string>
+    <string name="display_category_animation_options_title">Screen and animation options</string>
+    <string name="system_power_crt_mode_title">CRT animation </string>
+    <string name="system_power_crt_mode_dialog_title">CRT animation</string>
+    <string name="system_power_crt_mode_off">Don\'t show</string>
+    <string name="system_power_crt_mode_horizontal">Collapse horizontal</string>
+    <string name="system_power_crt_mode_vertical">Collapse vertical</string>
+    <string name="system_power_crt_mode_both">Collapse orientation dependent</string>
+    <string name="system_power_crt_mode_scale">Scale down</string>
 
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
-    <string name="show_cpu_info">Mostrar informação do CPU</string>
+    <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
-    <string name="show_cpu_info_summary">Moldura do ecrã a mostrar informação do CPU</string>
+    <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
 
     <!-- Status bar brightness control -->
-    <string name="status_bar_toggle_brightness">Controlo de iluminação</string>
-    <string name="status_bar_toggle_brightness_summary">Ajustar brilho através da barra de estados</string>
-    <string name="status_bar_toggle_info">Brilho automático</string>
+    <string name="status_bar_toggle_brightness">Brightness control</string>
+    <string name="status_bar_toggle_brightness_summary">Adjust brightness by sliding across status bar</string>
+    <string name="status_bar_toggle_info">Automatic brightness is enabled</string>
 
     <!-- TRDS Settings -->
-    <string name="trds_settings_title">Interface escura (TRDS)</string>
+    <string name="trds_settings_title">Dark UI (TRDS)</string>
 
     <!-- Restart SystemUI -->
-    <string name="restart_systemui">Reinciar interface de sistema</string>
+    <string name="restart_systemui">Restart SystemUI</string>
 
     <!-- Button shorcut actions -->
-    <string name="additional_options_title">Opções adicionais</string>
-    <string name="shortcut_action_app">Aplicação personalizada</string>
-    <string name="shortcut_action_home">Início</string>
-    <string name="shortcut_action_back">Voltar</string>
-    <string name="shortcut_action_recent">Recenes</string>
-    <string name="shortcut_action_lastapp">Última aplicação</string>
-    <string name="shortcut_action_search">Pesquisar</string>
-    <string name="shortcut_action_screenshot">Captura de ecrã</string>
+    <string name="additional_options_title">Additional options</string>
+    <string name="shortcut_action_app">Custom app</string>
+    <string name="shortcut_action_home">Home</string>
+    <string name="shortcut_action_back">Back</string>
+    <string name="shortcut_action_recent">Recents</string>
+    <string name="shortcut_action_lastapp">Last app</string>
+    <string name="shortcut_action_search">Search</string>
+    <string name="shortcut_action_screenshot">Screenshot</string>
     <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Abrir seleção de método de introdução</string>
-    <string name="shortcut_action_kill">Fechar aplicação</string>
-    <string name="shortcut_action_power">Desligar ecrã</string>
-    <string name="shortcut_action_notifications">Notificações</string>
-    <string name="shortcut_action_qs">Painel de definições rápidas</string>
-    <string name="shortcut_action_none">Nada</string>
-    <string name="shortcut_action_power_menu">Menú de energia</string>
-    <string name="shortcut_action_torch">Lanterna</string>
-    <string name="shortcut_action_longpress">Pressão longa:</string>
-    <string name="shortcut_action_select_action_longpress">Escolher ação de pressão longa:</string>
-    <string name="shortcut_action_select_action">Escolher ação:</string>
-    <string name="shortcut_action_select_action_newbutton">Escolha novo botão:</string>
-    <string name="shortcut_action_reset">Voltar à escolha padrão</string>
-    <string name="shortcut_action_add">Adicionar</string>
-    <string name="shortcut_action_reset_message">Redefinir todos os registos para padrão?</string>
-    <string name="shortcut_action_max">Foi atingido o máximo de registos</string>
-    <string name="shortcut_action_warning">Aviso</string>
-    <string name="shortcut_action_warning_message">Não é possível remover o último registo</string>
-    <string name="shortcut_action_disable_message">Desativado\nAdicione registo para ativar esta função</string>
-    <string name="shortcut_image_not_valid">A aplicação escolhida não devolveu um ícone válido ou não suporta recorte de imagem. Use outra aplicação.</string>
-    <string name="shortcut_duplicate_entry">A ação não pode ser repetida</string>
+    <string name="shortcut_action_ime">Open IME Switcher</string>
+    <string name="shortcut_action_kill">Kill app</string>
+    <string name="shortcut_action_power">Screen Off</string>
+    <string name="shortcut_action_notifications">Notifications</string>
+    <string name="shortcut_action_qs">Quicksettings panel</string>
+    <string name="shortcut_action_none">None</string>
+    <string name="shortcut_action_power_menu">Power menu</string>
+    <string name="shortcut_action_torch">Torch</string>
+    <string name="shortcut_action_longpress">Longpress:</string>
+    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
+    <string name="shortcut_action_select_action">Choose action:</string>
+    <string name="shortcut_action_select_action_newbutton">Choose new button:</string>
+    <string name="shortcut_action_reset">Reset</string>
+    <string name="shortcut_action_add">Add</string>
+    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
+    <string name="shortcut_action_max">Maximum entries size has been reached</string>
+    <string name="shortcut_action_warning">Warning</string>
+    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
+    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
+    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app</string>
+    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
 
-    <string name="shortcut_action_help_shortcut">atalho</string>
-    <string name="shortcut_action_help_button">botão</string>
-    <string name="shortcut_action_help_icon">, enquanto que selecionando o ícone abrirá uma janela de opções</string>
-    <string name="shortcut_action_help_main">Para adicionar %1$s, selecione o ícone de adicionar.  Quando %1$s é adicionada, selecionar a linha mudará o destino%2$s\n\nPara remover %1$s, deslize o dedo sobre a linha.  Reordenar %1$s na lista arrastando a âncora verticalmente à esquerda.\n\nPara limpar ou voltar às opções por defeito, selecione o ícone limpar.</string>
-    <string name="shortcut_action_help_delete_last_entry">Remover todas %1$s na lista vai desativar a funcionalidade.</string>
-    <string name="shortcut_action_help">Ajuda</string>
+    <string name="shortcut_action_help_shortcut">shortcut</string>
+    <string name="shortcut_action_help_button">button</string>
+    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
+    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon.  Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right.  Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
+    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
+    <string name="shortcut_action_help">Help</string>
 
-    <string name="icon_picker_type">Selecione tipo de ícone:</string>
-    <string name="icon_default">Por defeito</string>
-    <string name="icon_presets">Ícones de sistema/string>
-    <string name="icon_custom">Galeria</string>
-    <string name="shortcuts_icon_picker_alarm">Alarme</string>
+    <string name="icon_picker_type">Select icon type:</string>
+    <string name="icon_default">Default</string>
+    <string name="icon_presets">System icons</string>
+    <string name="icon_custom">Gallery</string>
+    <string name="shortcuts_icon_picker_alarm">Alarm</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
-    <string name="shortcuts_icon_picker_battery">Bateria</string>
-    <string name="shortcuts_icon_picker_browser">Navegador de internet</string>
-    <string name="shortcuts_icon_picker_calendar">Calendário</string>
-    <string name="shortcuts_icon_picker_camera">Câmera</string>
-    <string name="shortcuts_icon_picker_cloud">Núvem</string>
-    <string name="shortcuts_icon_picker_contact">Contacto</string>
-    <string name="shortcuts_icon_picker_directdial">Marcação direta</string>
-    <string name="shortcuts_icon_picker_directmessage">Mensagem direta</string>
+    <string name="shortcuts_icon_picker_battery">Battery</string>
+    <string name="shortcuts_icon_picker_browser">Browser</string>
+    <string name="shortcuts_icon_picker_calendar">Calendar</string>
+    <string name="shortcuts_icon_picker_camera">Camera</string>
+    <string name="shortcuts_icon_picker_cloud">Cloud</string>
+    <string name="shortcuts_icon_picker_contact">Contact</string>
+    <string name="shortcuts_icon_picker_directdial">Direct Dial</string>
+    <string name="shortcuts_icon_picker_directmessage">Direct Message</string>
     <string name="shortcuts_icon_picker_drive">Drive</string>
     <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
     <string name="shortcuts_icon_picker_email">Email</string>
@@ -206,95 +206,95 @@
     <string name="shortcuts_icon_picker_evernote">Evernote</string>
     <string name="shortcuts_icon_picker_facebook">Facebook</string>
     <string name="shortcuts_icon_picker_favorite">Favorite</string>
-    <string name="shortcuts_icon_picker_file_browser">Explorador de ficheiros</string>
-    <string name="shortcuts_icon_picker_file_browser2">Explorador de ficheiros alternativo</string>
+    <string name="shortcuts_icon_picker_file_browser">File Browser</string>
+    <string name="shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
     <string name="shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="shortcuts_icon_picker_gallery">Galeria</string>
+    <string name="shortcuts_icon_picker_gallery">Gallery</string>
     <string name="shortcuts_icon_picker_gears">Gears</string>
     <string name="shortcuts_icon_picker_google_small">Google</string>
     <string name="shortcuts_icon_picker_gplus">Google Plus</string>
     <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="shortcuts_icon_picker_help">Ajuda</string>
+    <string name="shortcuts_icon_picker_help">Help</string>
     <string name="shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="shortcuts_icon_picker_key">Chaves/Contas</string>
-    <string name="shortcuts_icon_picker_laptop">Computador</string>
-    <string name="shortcuts_icon_picker_notes">Notas</string>
-    <string name="shortcuts_icon_picker_luggage">Viajar</string>
+    <string name="shortcuts_icon_picker_key">Keys/Accounts</string>
+    <string name="shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="shortcuts_icon_picker_notes">Notes</string>
+    <string name="shortcuts_icon_picker_luggage">Travel</string>
     <string name="shortcuts_icon_picker_maps">Maps</string>
     <string name="shortcuts_icon_picker_market">Market</string>
-    <string name="shortcuts_icon_picker_movie">Filmes</string>
-    <string name="shortcuts_icon_picker_music">Musica</string>
-    <string name="shortcuts_icon_picker_nav">Navegação</string>
-    <string name="shortcuts_icon_picker_phone">Telefone</string>
-    <string name="shortcuts_icon_picker_package">Pacote</string>
+    <string name="shortcuts_icon_picker_movie">Movies</string>
+    <string name="shortcuts_icon_picker_music">Music</string>
+    <string name="shortcuts_icon_picker_nav">Navigation</string>
+    <string name="shortcuts_icon_picker_phone">Phone</string>
+    <string name="shortcuts_icon_picker_package">Package</string>
     <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
     <string name="shortcuts_icon_picker_play">Play</string>
     <string name="shortcuts_icon_picker_pocket">Pocket</string>
-    <string name="shortcuts_icon_picker_quicksettings">Definições rápidas</string>
+    <string name="shortcuts_icon_picker_quicksettings">Quick Settings</string>
     <string name="shortcuts_icon_picker_rss">RSS Feed</string>
     <string name="shortcuts_icon_picker_sdcard">SDCard</string>
-    <string name="shortcuts_icon_picker_search">Pesquisa</string>
-    <string name="shortcuts_icon_picker_sms">Mensagens</string>
-    <string name="shortcuts_icon_picker_tasks">Tarefas</string>
+    <string name="shortcuts_icon_picker_search">Search</string>
+    <string name="shortcuts_icon_picker_sms">Messaging</string>
+    <string name="shortcuts_icon_picker_tasks">Tasks</string>
     <string name="shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="shortcuts_icon_picker_transit">Trânsito/string>
+    <string name="shortcuts_icon_picker_transit">Transit</string>
     <string name="shortcuts_icon_picker_tv">TV</string>
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="shortcuts_icon_picker_unlock">Desbloquer</string>
+    <string name="shortcuts_icon_picker_unlock">Unlock</string>
 
-    <string name="icon_color_mode_all_icons">Todos os ícones</string>
-    <string name="icon_color_mode_system_icons">Ícones de sistema</string>
-    <string name="icon_color_mode_system_custom_icons">Ícones de sistema e personalizados</string>
-    <string name="icon_picker_choose_icon_title">Escolha ícone</string>
-    <string name="group_applications">Aplicações</string>
-    <string name="select_custom_app_title">Selecionar aplicações personalizadas</string>
-    <string name="shortcuts_color_title">Cor do ícone de atalho</string>
-    <string name="shortcuts_color_summary">Defina cor para ícones de atalho</string>
-    <string name="shortcuts_color_mode_title">Modo de cor de ícones</string>
-    <string name="shortcuts_color_mode_summary">Mude a cor dos ícones de atalho</string>
+    <string name="icon_color_mode_all_icons">All icons</string>
+    <string name="icon_color_mode_system_icons">System icons</string>
+    <string name="icon_color_mode_system_custom_icons">System and custom icons</string>
+    <string name="icon_picker_choose_icon_title">Choose icon</string>
+    <string name="group_applications">Applications</string>
+    <string name="select_custom_app_title">Select custom application</string>
+    <string name="shortcuts_color_title">Shortcut icon color</string>
+    <string name="shortcuts_color_summary">Colorize the shortcut icons</string>
+    <string name="shortcuts_color_mode_title">Icon color mode</string>
+    <string name="shortcuts_color_mode_summary">Change the shorcuts icon color mode</string>
 
     <!-- Notification drawer settings  -->
-    <string name="notification_drawer_title">Gaveta de notificações</string>
-    <string name="notification_hide_carrier_title">Esconder nome da operadora</string>
-    <string name="notification_shortcuts_settings_title">Atalhos</string>
-    <string name="notification_shortcuts_settings_summary">Mostrar atalhos na gaveta de notificações</string>
+    <string name="notification_drawer_title">Notification drawer</string>
+    <string name="notification_hide_carrier_title">Hide carrier label</string>
+    <string name="notification_shortcuts_settings_title">Shortcuts</string>
+    <string name="notification_shortcuts_settings_summary">Show shortcuts in the notification drawer</string>
 
     <!-- StatusBar Battery Settings -->
-    <string name="battery_icon_title">BÍcone de bateria</string>
-    <string name="battery_status_icon">Ícone</string>
-    <string name="battery_status_percentage">Percentagem</string>
-    <string name="battery_status_icon_percentage">Ícone com percentagem</string>
-    <string name="battery_status_circle">Circulo</string>
-    <string name="battery_status_circle_percentage">Circulo com percentagem</string>
-    <string name="battery_status_dotted_circle_percentage">Círculo aos pontos com percentagem</string>
-    <string name="battery_status_dotted_circle">Círculo aos pontos</string>
-    <string name="battery_color_title">Cor da bateria</string>
-    <string name="circle_battery_animation_speed">Velocidade da animação do círculo/string>
-    <string name="circle_battery_animation_speed_none">Nenhuma</string>
-    <string name="circle_battery_animation_speed_slow">Baixa</string>
+    <string name="battery_icon_title">Battery icon</string>
+    <string name="battery_status_icon">Icon</string>
+    <string name="battery_status_percentage">Percentage</string>
+    <string name="battery_status_icon_percentage">Icon with percentage</string>
+    <string name="battery_status_circle">Circle</string>
+    <string name="battery_status_circle_percentage">Circle with percentage</string>
+    <string name="battery_status_dotted_circle_percentage">Dotted Circle with percentage</string>
+    <string name="battery_status_dotted_circle">Dotted Circle</string>
+    <string name="battery_color_title">Battery color</string>
+    <string name="circle_battery_animation_speed">Circle animation speed</string>
+    <string name="circle_battery_animation_speed_none">None</string>
+    <string name="circle_battery_animation_speed_slow">Slow</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
-    <string name="circle_battery_animation_speed_fast">Rápida</string>
-    <string name="battery_text_color">Cor do texto de percentagem</string>
-    <string name="battery_bolt_color">Mudança de cor dos pontos</string>
-    <string name="battery_text_charging_color">Cor do texto de percentagem de carregamento</string>
-    <string name="battery_style_reset_message">Definir toda as cores de bateria por defeito?</string>
+    <string name="circle_battery_animation_speed_fast">Fast</string>
+    <string name="battery_text_color">Percentage text color</string>
+    <string name="battery_bolt_color">Bolt charging color</string>
+    <string name="battery_text_charging_color">Percentage text charging color</string>
+    <string name="battery_style_reset_message">Reset all battery colors?</string>
    
     <!-- Animation Controls -->  
-    <string name="title_animation_controls">Animações de sistema personalizadas</string>  
-    <string name="activity_open_title">Animação de abertura de atividade</string>  
-    <string name="activity_close_title">Animação de fecho de atividade</string>  
-    <string name="task_open_title">Animação de abertura de tarefa</string>  
-    <string name="task_close_title">Animação de fecho de tarefa</string>  
-    <string name="task_move_to_front_title">Animação de mover para a frente</string>  
-    <string name="task_move_to_back_title">Animação de mover para trás</string>  
-    <string name="wallpaper_open_title">Animação de abrir wallpaper</string>  
-    <string name="wallpaper_close_title">Animação de fechar wallpaper</string>  
-    <string name="wallpaper_intra_open_title">Animação de abrir wallpaper</string>  
-    <string name="wallpaper_intra_close_title">Animação de fechar wallpaper</string>  
-    <string name="animation_duration_title">Duração de animação</string>  
-    <string name="title_animation_no_override">Prevenir sobreposição de aplicações</string>  
-    <string name="summary_animation_no_override">Prevenir aplicações de sobrepor animações.</string>  
-    <string name="animation_duration_default">Por defeito</string>
+    <string name="title_animation_controls">Custom System Animations</string>  
+    <string name="activity_open_title">Activity Open Animation</string>  
+    <string name="activity_close_title">Activity Close Animation</string>  
+    <string name="task_open_title">Task Open Animation</string>  
+    <string name="task_close_title">Task Close Animation</string>  
+    <string name="task_move_to_front_title">Move To Front Animation</string>  
+    <string name="task_move_to_back_title">Move To Back Animation</string>  
+    <string name="wallpaper_open_title">Wallpaper Open Animation</string>  
+    <string name="wallpaper_close_title">Wallpaper Close Animation</string>  
+    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>  
+    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>  
+    <string name="animation_duration_title">Animation Duration</string>  
+    <string name="title_animation_no_override">Prevent App Overrides</string>  
+    <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>  
+    <string name="animation_duration_default">Default</string>
     <string name="header_summary_animation">@null</string>
 
 </resources>
