@@ -297,4 +297,7 @@
     <string name="animation_duration_default">Default</string>
     <string name="header_summary_animation">@null</string>
 
+    <!-- Lockscreen battery ring -->
+    <string name="battery_around_lockscreen_ring">Battery around unlock ring</string>
+
 </resources>
