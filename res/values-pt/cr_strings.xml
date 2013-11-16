@@ -4,7 +4,6 @@
 
     <!-- About phone screen, temasek version -->
     <string name="temasek_version_title">Versão não oficial Temasek</string>
-    <string name="temasek_version_default">V2</string>
 
     <!-- General strings -->
     <string name="reset">Reset</string>
@@ -53,10 +52,10 @@
     <string name="clock_date_string_edittext_summary">Introduza frase</string>
     <string name="am_pm_clock_normal">Fonte normal</string>
     <string name="am_pm_clock_small">Fonte pequena</string>
-    <string name="am_pm_clock_none">Não mostrar/string>
+    <string name="am_pm_clock_none">Não mostrar</string>
     <string name="clock_date_display_none">Não mostrar</string>
     <string name="clock_date_display_small">Fonte pequena</string>
-    <string name="clock_date_display_normal"Fonte normal</string>
+    <string name="clock_date_display_normal">Fonte normal</string>
     <string name="clock_date_style_normal">Normal</string>
     <string name="clock_date_style_lowercase">Minúsculas</string>
     <string name="clock_date_style_uppercase">Maiúsculas</string>
@@ -93,7 +92,7 @@
 
     <!-- Screen-On Notification Light -->
     <string name="screen_on_notification_led_title">Luz de notificação de ecrã ligado</string>
-    <string name="screen_on_notification_led_summary">Ligar luz de notificação mesmo quando o ecrã está ligado/string> 
+    <string name="screen_on_notification_led_summary">Ligar luz de notificação mesmo quando o ecrã está ligado</string> 
 
     <!-- Alternate default app picker -->
     <string name="general_settings_title">Opções gerais</string>
@@ -124,7 +123,7 @@
     <string name="display_category_animation_options_title">Opções de ecrã e animações</string>
     <string name="system_power_crt_mode_title">Animação CRT</string>
     <string name="system_power_crt_mode_dialog_title">Animação CRT</string>
-    <string name="system_power_crt_mode_off">Nãomostrar/string>
+    <string name="system_power_crt_mode_off">Nãomostrar</string>
     <string name="system_power_crt_mode_horizontal">Colapsar horizontalmente</string>
     <string name="system_power_crt_mode_vertical">Colapsar verticalmente</string>
     <string name="system_power_crt_mode_both">Colapsar dependendo da orientação do ecrã</string>
@@ -187,7 +186,7 @@
 
     <string name="icon_picker_type">Selecione tipo de ícone:</string>
     <string name="icon_default">Por defeito</string>
-    <string name="icon_presets">Ícones de sistema/string>
+    <string name="icon_presets">Ícones de sistema</string>
     <string name="icon_custom">Galeria</string>
     <string name="shortcuts_icon_picker_alarm">Alarme</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
@@ -237,7 +236,7 @@
     <string name="shortcuts_icon_picker_sms">Mensagens</string>
     <string name="shortcuts_icon_picker_tasks">Tarefas</string>
     <string name="shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="shortcuts_icon_picker_transit">Trânsito/string>
+    <string name="shortcuts_icon_picker_transit">Trânsito</string>
     <string name="shortcuts_icon_picker_tv">TV</string>
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Desbloquer</string>
@@ -269,7 +268,7 @@
     <string name="battery_status_dotted_circle_percentage">Círculo aos pontos com percentagem</string>
     <string name="battery_status_dotted_circle">Círculo aos pontos</string>
     <string name="battery_color_title">Cor da bateria</string>
-    <string name="circle_battery_animation_speed">Velocidade da animação do círculo/string>
+    <string name="circle_battery_animation_speed">Velocidade da animação do círculo</string>
     <string name="circle_battery_animation_speed_none">Nenhuma</string>
     <string name="circle_battery_animation_speed_slow">Baixa</string>
     <string name="circle_battery_animation_speed_stock">Normal</string>
@@ -280,20 +279,20 @@
     <string name="battery_style_reset_message">Definir toda as cores de bateria por defeito?</string>
    
     <!-- Animation Controls -->  
-    <string name="title_animation_controls">Animações de sistema personalizadas</string>  
-    <string name="activity_open_title">Animação de abertura de atividade</string>  
-    <string name="activity_close_title">Animação de fecho de atividade</string>  
-    <string name="task_open_title">Animação de abertura de tarefa</string>  
-    <string name="task_close_title">Animação de fecho de tarefa</string>  
+    <string name="title_animation_controls">Animações de sistema personalizadas</string>
+    <string name="activity_open_title">Animação de abertura de atividade</string>
+    <string name="activity_close_title">Animação de fecho de atividade</string>
+    <string name="task_open_title">Animação de abertura de tarefa</string>
+    <string name="task_close_title">Animação de fecho de tarefa</string>
     <string name="task_move_to_front_title">Animação de mover para a frente</string>  
-    <string name="task_move_to_back_title">Animação de mover para trás</string>  
-    <string name="wallpaper_open_title">Animação de abrir wallpaper</string>  
-    <string name="wallpaper_close_title">Animação de fechar wallpaper</string>  
-    <string name="wallpaper_intra_open_title">Animação de abrir wallpaper</string>  
-    <string name="wallpaper_intra_close_title">Animação de fechar wallpaper</string>  
-    <string name="animation_duration_title">Duração de animação</string>  
-    <string name="title_animation_no_override">Prevenir sobreposição de aplicações</string>  
-    <string name="summary_animation_no_override">Prevenir aplicações de sobrepor animações.</string>  
+    <string name="task_move_to_back_title">Animação de mover para trás</string>
+    <string name="wallpaper_open_title">Animação de abrir wallpaper</string>
+    <string name="wallpaper_close_title">Animação de fechar wallpaper</string>
+    <string name="wallpaper_intra_open_title">Animação de abrir wallpaper</string>
+    <string name="wallpaper_intra_close_title">Animação de fechar wallpaper</string>
+    <string name="animation_duration_title">Duração de animação</string>
+    <string name="title_animation_no_override">Prevenir sobreposição de aplicações</string>
+    <string name="summary_animation_no_override">Prevenir aplicações de sobrepor animações.</string>
     <string name="animation_duration_default">Por defeito</string>
     <string name="header_summary_animation">@null</string>
 

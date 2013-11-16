@@ -4,7 +4,6 @@
 
     <!-- About phone screen, temasek version -->
     <string name="temasek_version_title">Version non-officielle de temasek</string>
-    <string name="temasek_version_default">V2</string>
 
     <!-- General strings -->
     <string name="reset">Réinitialiser</string>
@@ -40,7 +39,7 @@
     <string name="status_bar_show_clock_title">Montrer l\'heure et la date</string>
     <string name="status_bar_am_pm_title">AM/PM</string>
     <string name="status_bar_am_pm_info">L\'horloge au format de 24h est activé</string>
-    <string name="enable_clock_weekday">Jour de la semaine</string></string>
+    <string name="enable_clock_weekday">Jour de la semaine</string>
     <string name="enable_clock_weekday_summary">Abréviation du jour de la semaine avant l\'heure</string>
     <string name="right_clock">À droite</string>
     <string name="center_clock">Centrée</string>
@@ -165,6 +164,7 @@
     <string name="shortcut_action_power_menu">Menu d\'extinction</string>
     <string name="shortcut_action_torch">Torche</string>
     <string name="shortcut_action_longpress">Appui long:</string>
+    <!--This needs to redo
     <string name="shortcut_action_select_action_longpress">Choisissez l\'action d\'appui long:</string>
     <string name="shortcut_action_select_action">Choisissez l'action:</string>
     <string name="shortcut_action_select_action_newbutton">Choisissez le nouveau boutton:</string>
@@ -180,7 +180,7 @@
 
     <string name="shortcut_action_help_shortcut">Raccourci</string>
     <string name="shortcut_action_help_button">boutton</string>
-    <string name="shortcut_action_help_icon">, en même temps que l\'icône est séléctionnée fera apparaître les options de personalisation</string>
+    <string name="shortcut_action_help_icon">, en même temps que l\'icône est séléctionnée fera apparaître les options de personalisation</string>-->
     <string name="shortcut_action_help_main">Pour ajouter un(e) %1$s, veuillez selectionner "ajouter une icône".  Une fois qu\'un(e) %1$s est ajouté(e), séléctionner une ligne changera la cible%2$s\n\nPour enlever un(e) %1$s, faire glisser la ligne horizontalement vers la gauche ou la droite.  Re-arrangez le %1$s dans la liste en faisant glisser la poignée sur la gauche verticalement.\n\nPour effacer ou retourner aux valeurs par défaut, veuillez selectionner l\'icône "Réinitialiser".</string>
     <string name="shortcut_action_help_delete_last_entry">Enlever tous les %1$s dans la liste désactivera la fonction complètement.</string>
     <string name="shortcut_action_help">Help</string>
