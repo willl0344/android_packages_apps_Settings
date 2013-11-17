@@ -181,7 +181,8 @@
     <string name="shortcut_action_help_shortcut">acceso directo</string>
     <string name="shortcut_action_help_button">botón</string>
     <string name="shortcut_action_help_icon">,mientras selecciona el icono, aparecerán opciones de personalización</string>
-    <string name="shortcut_action_help_main">Para añadir a %1$s, presione el icono Añadir. Una vez que a %1$s es añadido, al seleccionarlo la fila cambiará el objetivo%2$s\n\nPara eliminar a %1$s, deslice sobre la fila horizontalmente. Reordena a %1$s en la lista deslizando verticalmente.\n\nPara volver a los valores predeterminados presione Restaurar.</string>
+    <string name="shortcut_action_help_main">Para agregar un botón, presiona el icono Añadir (+).Puedes modificar su función tocando sobre él o agregar una acción a su pulsación prolongada.\n\nPara eliminar un botón desliza horizontalmente.\n\nPara reordenar desliza verticalmente.\n\nPara volver a los valores predeterminados presiona el botón Restaurar.
+   </string>
    <string name="shortcut_action_help_delete_last_entry">Eliminar todos los %1$s de la lista desactivará la función.</string>
     <string name="shortcut_action_help">Ayuda</string>
     <string name="icon_picker_type">Selecciona un tipo de icono:</string>
@@ -317,9 +318,9 @@
     <string name="navigation_bar_size_40_dp">40 dp</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
     <string name="navigation_bar_size_0_dp">0 dp (inhabilitada)</string>
-    <string name="navigation_menu_right">Derecho</string>
-    <string name="navigation_menu_left">Izquierdo</string>
-    <string name="navigation_menu_both">Ambos</string>
+    <string name="navigation_menu_right">Derecha</string>
+    <string name="navigation_menu_left">Izquierda</string>
+    <string name="navigation_menu_both">Ambas</string>
     <string name="navigation_menu_default_jb_behavior">Mostrar a pedido (predeterminado)</string>
     <string name="navigation_menu_never_show">Nunca mostrar</string>
     <string name="navigation_menu_always_show">Mostrar siempre</string>
