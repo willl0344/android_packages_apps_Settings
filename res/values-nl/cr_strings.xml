@@ -299,7 +299,4 @@
     <!-- Lockscreen battery ring -->
     <string name="battery_around_lockscreen_ring">Toon batterijlading in ontgrendelring</string>
 
-    <!-- Lockscreen maximized widgets -->
-    <string name="security_maximize_widgets_title">Maximaliseer widgets op ontgrendelscherm</string>
-
 </resources>
