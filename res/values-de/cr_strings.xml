@@ -4,6 +4,7 @@
 
     <!-- About phone screen, temasek version -->
     <string name="temasek_version_title">Temasek inoffizielle Version</string>
+    <string name="temasek_version_default">V4</string>
 
     <!-- General strings -->
     <string name="reset">Zurücksetzen</string>
@@ -12,16 +13,16 @@
     <string name="default_string">Standard</string>
 
     <!-- temasek spare parts -->
-    <string name="temasek_settings_title">Temasek Ersatzteile</string>
+    <string name="temasek_settings_title">Temasek Erweiterungen</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Auswahl Farbe</string>
-    <string name="press_color_to_apply">Zum übernehmen unten auf eine Farbe drücken</string>
+    <string name="press_color_to_apply">Zum übernehmen unten auf eine Farbe drücken.</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
-    <string name="set">Set</string>
+    <string name="set">Setzen</string>
 
     <!-- Status bar -->
     <string name="status_bar_title">Statusleiste</string>
@@ -70,12 +71,12 @@
 
     <!-- Notification drawer background -->
     <string name="notification_wallpaper_title">Hintergrund Benachrichtigungsfeld</string>
-    <string name="notification_wallpaper_landscape_title">Anderer Hintergrund Querformat</string>
+    <string name="notification_wallpaper_landscape_title">Hintergrund im Querformat</string>
     <string name="notification_background_color_fill">Füllfarbe</string>
     <string name="notification_background_custom_image">Eigenes Bild</string>
     <string name="notification_background_default_wallpaper">Standard Hintergrund</string>
     <string name="notification_drawer_custom_background_dialog_title">Farbe auswählen</string>
-    <string name="notif_wallpaper_alpha_title">Hintergrundtransparenz Benachrichtigungen</string>
+    <string name="notif_wallpaper_alpha_title">Transparenz Hintergrund</string>
     <string name="notif_alpha_title">Transparenz Benachrichtigungszeile</string>
 
     <!-- Advanced low battery indicator options -->
@@ -91,15 +92,15 @@
     <string name="low_battery_warning_policy_disabled">Ausgeschaltet</string>
 
     <!-- Screen-On Notification Light -->
-    <string name="screen_on_notification_led_title">Benachrichtigungslicht Bildschirm-Aktiv</string>
-    <string name="screen_on_notification_led_summary">Aktiviere Benachrichtigungslicht wenn Bildschirm aktiv</string>
+    <string name="screen_on_notification_led_title">LED Bildschirm-Aktiv</string>
+    <string name="screen_on_notification_led_summary">Aktiviere Benachrichtigungslicht wenn Bildschirm aktiv.</string>
 
     <!-- Alternate default app picker -->
-    <string name="general_settings_title">Haupteinstellungen</string>
-    <string name="general_settings_style_title">Hauptoptionen</string>
+    <string name="general_settings_title">Allgemeine Einstellungen</string>
+    <string name="general_settings_style_title">Allgemeine Optionen</string>
     <string name="display_short">Anzeige</string>
     <string name="misc_short">Verschiedenes</string>
-    <string name="alt_resolver">Verwende alternatives Standard-App-Raster</string>
+    <string name="alt_resolver">Alternative Programmauswahl</string>
     <string name="alt_resolver_summary">Verwende alternative Standardprogrammauswahl</string>
 
     <!-- Network stats stats -->
@@ -112,10 +113,10 @@
     <!-- Network stats custm colors -->
     <string name="status_bar_network_usage_color_style">Farbstil</string>
     <string name="status_bar_network_usage_color_reset">Farbe zurücksetzen</string>
-    <string name="status_bar_network_usage_color_reset_message">Farbe Netzwerkanzeige zurücksetzen?</string>
+    <string name="status_bar_network_usage_color_reset_message">Netzwerkanzeige zurücksetzen?</string>
 
     <!-- Network stats hide if there's no traffic -->
-    <string name="hide_network_speed">Verstecken wenn kein Datenverkehr</string>
+    <string name="hide_network_speed">Netzwerkanzeige verstecken</string>
     <string name="hide_network_speed_summary">Netzwerkanzeige verstecken wenn kein Datenverkehr</string>
 
     <!-- Display : Animation options -->
@@ -140,17 +141,17 @@
     <string name="status_bar_toggle_info">Automatische Helligkeit ist aktiviert</string>
 
     <!-- TRDS Settings -->
-    <string name="trds_settings_title">Dunkle UI (TRDS)</string>
+    <string name="trds_settings_title">Dunkle Oberfläche</string>
 
     <!-- Restart SystemUI -->
-    <string name="restart_systemui">Neustart SystemUI</string>
+    <string name="restart_systemui">Neustart Oberfläche</string>
 
     <!-- Button shorcut actions -->
     <string name="additional_options_title">Zusatzoptionen</string>
     <string name="shortcut_action_app">Eigene App</string>
     <string name="shortcut_action_home">Home</string>
-    <string name="shortcut_action_back">Back</string>
-    <string name="shortcut_action_recent">Recents</string>
+    <string name="shortcut_action_back">Zurück</string>
+    <string name="shortcut_action_recent">Vor kurzem geöffnet</string>
     <string name="shortcut_action_lastapp">Letzte App</string>
     <string name="shortcut_action_search">Suche</string>
     <string name="shortcut_action_screenshot">Bildschirmfoto</string>
@@ -276,7 +277,7 @@
     <string name="battery_text_color">Textfarbe Prozentanzeige</string>
     <string name="battery_bolt_color">Farbe Ladeblitz</string>
     <string name="battery_text_charging_color">Farbe Prozentanzeige beim laden</string>
-    <string name="battery_style_reset_message">Alle Batteriefarbe zurücksetzen?</string>
+    <string name="battery_style_reset_message">Aussehen der Batterie zurücksetzen?</string>
    
     <!-- Animation Controls -->
     <string name="title_animation_controls">Eigene System Animationen</string>
@@ -291,7 +292,7 @@
     <string name="wallpaper_intra_open_title">Animation - Hintergrundbild Intra öffnen</string>
     <string name="wallpaper_intra_close_title">Animation - Hintergrundbild Intra schließen</string>
     <string name="animation_duration_title">Dauer der Animation</string>
-    <string name="title_animation_no_override">Beuge Überlagerung von Apps vor</string>
+    <string name="title_animation_no_override">Überlagerung vorbeugen</string>
     <string name="summary_animation_no_override">Beuge Überlagerung von Übergängen der Apps vor.</string>
     <string name="animation_duration_default">Standard</string>
     <string name="header_summary_animation">@null</string>
