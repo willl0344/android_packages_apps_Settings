@@ -259,7 +259,7 @@
     <string name="notification_shortcuts_settings_summary">Zeige Verknüpfungen im Benachrichtigungsfeld</string>
 
     <!-- StatusBar Battery Settings -->
-    <string name="battery_icon_title">Battery Symbol</string>
+    <string name="battery_icon_title">Batterie Symbol</string>
     <string name="battery_status_icon">Icon</string>
     <string name="battery_status_percentage">Prozentanzeige</string>
     <string name="battery_status_icon_percentage">Icon mit Prozentanzeige</string>
