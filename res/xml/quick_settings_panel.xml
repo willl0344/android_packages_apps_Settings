@@ -17,7 +17,7 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--    <PreferenceCategory
+    <PreferenceCategory
         android:key="pref_general_settings"
         android:title="@string/title_general" >
 
@@ -33,7 +33,7 @@
             android:title="@string/title_collapse_panel"
             android:summary="@string/summary_collapse_panel" />
 
-    </PreferenceCategory> -->
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="static_tiles"
@@ -45,7 +45,7 @@
             android:summary="@string/tile_picker_summary"
             android:fragment="com.android.settings.quicksettings.QuickSettingsTiles" />
 
-<!--        <MultiSelectListPreference
+        <MultiSelectListPreference
             android:key="pref_ring_mode"
             android:dialogTitle="@string/pref_ring_mode_title"
             android:title="@string/pref_ring_mode_title"
@@ -65,11 +65,11 @@
             android:dialogTitle="@string/pref_screentimeout_mode_title"
             android:title="@string/pref_screentimeout_mode_title"
             android:entries="@array/entries_screentimeout_widget"
-            android:entryValues="@array/values_screentimeout_widget" /> -->
+            android:entryValues="@array/values_screentimeout_widget" />
 
         </PreferenceCategory>
 
-  <!--  <PreferenceCategory
+    <PreferenceCategory
         android:key="pref_dynamic_tiles"
         android:title="@string/title_dynamic_tiles" >
 
@@ -89,10 +89,12 @@
             android:title="@string/title_dynamic_bugreport"
             android:defaultValue="true" />
 
+        <!-- 
         <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="qs_dyanmic_dock_battery"
             android:title="@string/title_dynamic_dock_battery"
             android:defaultValue="true" />
+        -->
 
         <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
             android:key="qs_dyanmic_ime"
@@ -109,6 +111,6 @@
             android:title="@string/title_dynamic_wifi"
             android:defaultValue="true" />
 
-    </PreferenceCategory>-->
+    </PreferenceCategory>
 
 </PreferenceScreen>
