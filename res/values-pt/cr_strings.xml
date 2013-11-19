@@ -123,20 +123,20 @@
     <string name="display_category_animation_options_title">Opções de ecrã e animações</string>
     <string name="system_power_crt_mode_title">Animação CRT</string>
     <string name="system_power_crt_mode_dialog_title">Animação CRT</string>
-    <string name="system_power_crt_mode_off">Nãomostrar</string>
+    <string name="system_power_crt_mode_off">Não mostrar</string>
     <string name="system_power_crt_mode_horizontal">Colapsar horizontalmente</string>
     <string name="system_power_crt_mode_vertical">Colapsar verticalmente</string>
     <string name="system_power_crt_mode_both">Colapsar dependendo da orientação do ecrã</string>
     <string name="system_power_crt_mode_scale">Diminuir escala</string>
 
     <!-- UI debug setting: show CPU info? [CHAR LIMIT=25] -->
-    <string name="show_cpu_info">Mostrar informação do CPU</string>
+    <string name="show_cpu_info">Mostrar informação de CPU</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Moldura do ecrã a mostrar informação do CPU</string>
 
     <!-- Status bar brightness control -->
-    <string name="status_bar_toggle_brightness">Controlo de iluminação</string>
-    <string name="status_bar_toggle_brightness_summary">Ajustar brilho através da barra de estados</string>
+    <string name="status_bar_toggle_brightness">Controle de iluminação</string>
+    <string name="status_bar_toggle_brightness_summary">Ajustar brilho através da barra de status</string>
     <string name="status_bar_toggle_info">Brilho automático</string>
 
     <!-- TRDS Settings -->
@@ -195,7 +195,7 @@
     <string name="shortcuts_icon_picker_calendar">Calendário</string>
     <string name="shortcuts_icon_picker_camera">Câmera</string>
     <string name="shortcuts_icon_picker_cloud">Núvem</string>
-    <string name="shortcuts_icon_picker_contact">Contacto</string>
+    <string name="shortcuts_icon_picker_contact">Contato</string>
     <string name="shortcuts_icon_picker_directdial">Marcação direta</string>
     <string name="shortcuts_icon_picker_directmessage">Mensagem direta</string>
     <string name="shortcuts_icon_picker_drive">Drive</string>
@@ -259,7 +259,7 @@
     <string name="notification_shortcuts_settings_summary">Mostrar atalhos na gaveta de notificações</string>
 
     <!-- StatusBar Battery Settings -->
-    <string name="battery_icon_title">BÍcone de bateria</string>
+    <string name="battery_icon_title">Ícone de bateria</string>
     <string name="battery_status_icon">Ícone</string>
     <string name="battery_status_percentage">Percentagem</string>
     <string name="battery_status_icon_percentage">Ícone com percentagem</string>
