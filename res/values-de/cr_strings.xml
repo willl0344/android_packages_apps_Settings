@@ -317,11 +317,11 @@
     <string name="power_menu_title">Neustartmenü</string>
 
     <!-- Navigation bar -->
-    <string name="navigation_bar_size_42_dp_default">42 dp (default)</string>
+    <string name="navigation_bar_size_42_dp_default">42 dp (Standard)</string>
     <string name="navigation_bar_size_36_dp">36 dp</string>
     <string name="navigation_bar_size_30_dp">30 dp</string>
     <string name="navigation_bar_size_24_dp">24 dp</string>
-    <string name="navigation_bar_size_48_dp_default">48 dp (default)</string>
+    <string name="navigation_bar_size_48_dp_default">48 dp (Standard)</string>
     <string name="navigation_bar_size_44_dp">44 dp</string>
     <string name="navigation_bar_size_40_dp">40 dp</string>
     <string name="navigation_bar_size_42_dp">42 dp</string>
@@ -329,7 +329,7 @@
     <string name="navigation_menu_right">Rechts</string>
     <string name="navigation_menu_left">Links</string>
     <string name="navigation_menu_both">Beides</string>
-    <string name="navigation_menu_default_jb_behavior">Bei Bedarf anzeigen (default)</string>
+    <string name="navigation_menu_default_jb_behavior">Bei Bedarf anzeigen (Standard)</string>
     <string name="navigation_menu_never_show">Niemals anzeigen</string>
     <string name="navigation_menu_always_show">Immer anzeigen</string>
     <string name="navigation_bar">Softkeyleiste</string>
