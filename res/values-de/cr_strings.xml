@@ -16,7 +16,7 @@
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Auswahl Farbe</string>
-    <string name="press_color_to_apply">Zum übernehmen unten auf eine Farbe drücken.</string>
+    <string name="press_color_to_apply">Zum übernehmen unten auf eine Farbe tippen.</string>
     <string name="arrow_right">→</string>
     <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
@@ -271,9 +271,9 @@
     <string name="battery_status_percentage">Prozentanzeige</string>
     <string name="battery_status_icon_percentage">Icon mit Prozentanzeige</string>
     <string name="battery_status_circle">Kreis</string>
-    <string name="battery_status_circle_percentage">Circle mit Prozentanzeige</string>
-    <string name="battery_status_dotted_circle_percentage">Gepunkteter Kreis mit Prozentanzeige</string>
-    <string name="battery_status_dotted_circle">Gepunkteter Kreis</string>
+    <string name="battery_status_circle_percentage">Kreis mit Prozentanzeige</string>
+    <string name="battery_status_dotted_circle_percentage">Kreis gepunktet mit Prozentanzeige</string>
+    <string name="battery_status_dotted_circle">Kreis gepunktet</string>
     <string name="battery_color_title">Farbe Batterie</string>
     <string name="circle_battery_animation_speed">Geschwindigkeit Kreisanimation</string>
     <string name="circle_battery_animation_speed_none">Keine</string>
