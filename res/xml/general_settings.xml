@@ -8,6 +8,12 @@
     <PreferenceCategory
         android:title="@string/general_settings_style_title">
 
+	<!-- Recents RAM bar -->
+  	<PreferenceScreen
+            android:key="recents_ram_bar"
+            android:fragment="com.android.settings.temasek.RamBar"
+            android:title="@string/ram_bar" /> 
+
         <!-- Alternate App picker -->
         <CheckBoxPreference
             android:key="use_alt_resolver"
