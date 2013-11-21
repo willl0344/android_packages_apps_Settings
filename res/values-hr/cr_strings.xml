@@ -25,8 +25,8 @@
 
     <!-- Status bar -->
     <string name="status_bar_title">Statusna traka</string>
-    <string name="status_bar_style_title">Mogućnosti statusne trake</string>
-    <string name="status_bar_general_title">Opće</string>
+    <string name="status_bar_style_title">Izgled statusne trake</string>
+    <string name="status_bar_general_title">Općenito</string>
 
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Sat i datum</string>
@@ -64,7 +64,7 @@
 
     <!-- Notification Drawer Settings -->
     <string name="notification_drawer_title">Ploča s obavijestima</string>
-    <string name="notification_drawer_style_title">Mogućnosti ploče s obavijestima</string>
+    <string name="notification_drawer_style_title">Izgled ploče s obavijestima</string>
     <string name="notification_style_summary">Promjenite svoje postavke ploče s obavijestima</string>
     <string name="notification_drawer_background">Pozadina i prozirnost</string> 
 
@@ -80,7 +80,7 @@
 
     <!-- Advanced low battery indicator options -->  
     <string name="lights_and_warnings_title">Svjetla i upozorenja</string>
-    <string name="lights_and_warnings_style_title">Mogućnosti svjetla i upozorenja</string>
+    <string name="lights_and_warnings_style_title">Izgled svjetla i upozorenja</string>
     <string name="pref_low_battery_warning_policy_title">Upozorenje niske razine baterije</string>
     <string name="pref_low_battery_warning_policy_dialog_title">Naznači nisku razinu baterije sa</string>
     <string name="low_battery_warning_policy_popup_sound">Skočni dijalog i zvuk</string>
@@ -96,7 +96,7 @@
 
     <!-- Alternate default app picker -->
     <string name="general_settings_title">Opće postavke</string>
-    <string name="general_settings_style_title">Opće mogućnosti</string>
+    <string name="general_settings_style_title">Opći izgled</string>
     <string name="display_short">Prikaz</string>
     <string name="misc_short">Razno</string>
     <string name="alt_resolver">Koristi alternativnu rešetku postavljenih aplikacija</string>
@@ -120,7 +120,7 @@
 
     <!-- Display : Animation options -->
     <string name="screen_and_animations_title">Ekran i animacije</string>
-    <string name="display_category_animation_options_title">Mogućnosti ekrana i animacija</string>
+    <string name="display_category_animation_options_title">Izgled ekrana i animacija</string>
     <string name="system_power_crt_mode_title">CRT animacija </string>
     <string name="system_power_crt_mode_dialog_title">CRT animacija</string>
     <string name="system_power_crt_mode_off">Ne prikazuj</string>
@@ -147,6 +147,12 @@
 
     <!-- Button shorcut actions -->
     <string name="additional_options_title">Dodatne mogućnosti</string>
+    <string name="reset_message">Vrati sve vrijednosti na početne?</string>
+    <string name="style_title">Oblik</string>
+    <string name="shortcut_action_airplane">Način rada u zrakoplovu</string>
+    <string name="shortcut_action_power_off">Isključi</string>
+    <string name="shortcut_action_reboot">Ponovno pokreni</string>
+    <string name="shortcut_action_sound">Zvuk</string>
     <string name="shortcut_action_app">Prilagođena aplikacija</string>
     <string name="shortcut_action_home">Početna</string>
     <string name="shortcut_action_back">Natrag</string>
@@ -245,7 +251,7 @@
     <string name="icon_color_mode_system_icons">Sistemske ikone</string>
     <string name="icon_color_mode_system_custom_icons">Sistemske i prilagođene ikone</string>
     <string name="icon_picker_choose_icon_title">Odaberi ikonu</string>
-    <string name="group_applications">plikacije</string>
+    <string name="group_applications">Aplikacije</string>
     <string name="select_custom_app_title">Odaberi prilagođene aplikacije</string>
     <string name="shortcuts_color_title">Boja ikone prečaca</string>
     <string name="shortcuts_color_summary">Oboji ikonu prečaca</string>
@@ -255,6 +261,7 @@
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_title">Traka s obavijestima</string>
     <string name="notification_hide_carrier_title">Sakrij oznaku operatera</string>
+	<string name="notification_hide_carrier_summary">Sakrij oznaku operatera i bezžične mreže u traci s obavijestima</string>
     <string name="notification_shortcuts_settings_title">Prečaci</string>
     <string name="notification_shortcuts_settings_summary">Prikaži prečace u traci s obavijestima</string>
 
@@ -307,6 +314,7 @@
     <!-- Navigation settings -->
     <string name="navigation_settings_options_title">Mogućnosti navigacije</string>
     <string name="navigation_settings_title">Navigacija</string>
+    <string name="power_menu_title">Glavni izbornik</string>
 
     <!-- Navigation bar -->
     <string name="navigation_bar_size_42_dp_default">42 dp (početno)</string>
@@ -345,15 +353,11 @@
     <string name="navbar_targets_title">Radnje na prstenu</string>
     <string name="navbar_cat">Navigacijska traka</string>
     <string name="navbar_dimensions_reset_message">Vrati sve vrijednosti dimenzija na početne?</string>
-    <string name="navbar_button_style_reset_message">Vrati sve mogućnosti tipki na početne?</string>
+
 
     <!-- Navigation bar button style -->
-    <string name="nav_bar_button_style">Mogućnosti tipki</string>
     <string name="nav_bar_button_style_summary">Promjenite izgled tipki na navigacijskoj traci</string>
     <string name="button_transparency_title">Prozirnost tipki</string>
-    <string name="navigation_bar_icon_tint_title">Boja tipki</string>
-    <string name="nav_button_color_mode_title">Način boje</string>
-    <string name="nav_button_color_mode_dialog_title">Obojenost</string>
     <string name="nav_button_color_mode_summary">Promjenite način boje tipki na navigacijskoj traci</string>
     <string name="navigation_bar_glow_tint_title">Boja isijavanja tipki</string>
 
@@ -368,5 +372,28 @@
     <string name="media_scanner_on_boot_enabled">Skeniraj multimedijalne datoteke</string>
     <string name="media_scanner_on_boot_ask">Pitaj za skeniranje (obavijest)</string>
     <string name="media_scanner_on_boot_disabled">Ne skeniraj multimedijalne datoteke</string>
+	<!-- Power menu -->
+    <string name="power_menu_style_summary">Change global menu colors</string>
+
+    <!-- Recents Ram Bar -->
+    <string name="ram_bar">RAM traka sa nedavnim aplikacijama</string>
+    <string name="ram_bar_note_title">Bilješka</string>
+    <string name="ram_bar_note_summary">Ova RAM traka prikazuje stvarno korištenje android memorije. Znajte da aplikacije u predmemoriji pomažu uređaju u puno bržem pokretanju istih. Za dodatna objašnjenja kako upravljanje memorijom radi na Androidu, pogledajte u izborniku pomoći.</string>
+    <string name="ram_bar_mode_title">Prilagodba RAM trake nedavnih aplikacija</string>
+    <string name="ram_bar_mode_dialog_title">Prikaži na traci nedavnih aplikacija</string>
+    <string name="ram_bar_none">Nijedno</string>
+    <string name="ram_bar_apps">Aplikacije</string>
+    <string name="ram_bar_cache">Aplikacije i predmemorija</string>
+    <string name="ram_bar_other">Aplikacije, predmemorija i ostalo</string>
+    <string name="ram_bar_style_cat">Izgled trake s nedavnim aplikacijama</string>
+    <string name="ram_bar_color_app_mem_color">Boja aplikacija</string>
+    <string name="ram_bar_color_cache_mem_color">Boja predmemorije</string>
+    <string name="ram_bar_color_total_mem_color">Boja ostalog</string>
+    <string name="ram_bar_color_enabled">Omogućeno</string>
+    <string name="ram_bar_color_disabled">Onemogućeno</string>
+    <string name="ram_bar_button_help">Pomoć</string>
+    <string name="ram_bar_button_reset">Vrati boje na početne vrijednosti</string>
+    <string name="ram_bar_reset">Vrati</string>
+    <string name="ram_bar_reset_message">Vrati izgled RAM trake na početni?</string>
 
 </resources>
