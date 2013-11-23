@@ -152,6 +152,7 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>
     <string name="shortcut_action_airplane">Airplane mode</string>
+    <string name="shortcut_action_expanded_desktop">Expanded desktop</string>
     <string name="shortcut_action_power_off">Power off</string>
     <string name="shortcut_action_reboot">Reboot</string>
     <string name="shortcut_action_sound">Sound</string>
