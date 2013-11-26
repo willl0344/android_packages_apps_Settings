@@ -45,6 +45,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
     private static final String PREF_LOCKSCREEN_EIGHT_TARGETS = "lockscreen_eight_targets";
     private static final String PREF_LOCKSCREEN_SHORTCUTS = "lockscreen_shortcuts";
 
+    private static final String LOCKSCREEN_GENERAL_CATEGORY = "lockscreen_general_category";
+
     private CheckBoxPreference mLockscreenEightTargets;
     private Preference mShortcuts;
 
@@ -70,6 +72,8 @@ public class LockscreenInterface extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.lockscreen_interface_settings);
         prefs = getPreferenceScreen();
+
+	PreferenceCategory generalCategory = (PreferenceCategory) findPreference(LOCKSCREEN_GENERAL_CATEGORY);
 
         mLockscreenEightTargets = (CheckBoxPreference) findPreference(
                 PREF_LOCKSCREEN_EIGHT_TARGETS);
