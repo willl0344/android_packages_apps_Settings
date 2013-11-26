@@ -188,8 +188,8 @@
     <string name="shortcut_action_help_shortcut">snelkoppeling</string>
     <string name="shortcut_action_help_button">knop</string>
     <string name="shortcut_action_help_icon">, terwijl het icoon geselecteerd wordt, zal aanpassingsopties tonen</string>
-    <string name="shortcut_action_help_main">Om een %1$s toe te voegen, selecteer je het Toevoegen icoon. Als een %1$s toegevoegd is, zal het doel veranderen als je de rij selecteert%2$s\n\nOm een %1$s te wissen, veeg je link/rechts over de rij.  Herorden een %1$s in de lijst door de knop links verticaal te slepen.\n\nOm de standaardinstellingen te herstellen, selecteer je Herstellen.</string>
-    <string name="shortcut_action_help_delete_last_entry">Door %1$s in de lijst te wissen, wordt de functie volledig uitgeschakeld.</string>
+    <string name="shortcut_action_help_main">Om een %1$s toe te voegen, selecteer je het Toevoegen icoon. %2$s\n\nOm een %1$s te wissen, veeg je deze weg.  Herorden een %1$s door links de greep verticaal te verschuiven.\n\nOm de standaardinstellingen te herstellen, selecteer je Herstellen.</string>
+    <string name="shortcut_action_help_delete_last_entry">Door %1$s in de lijst te wissen, wordt de functie volledig uitgeschakeld</string>
     <string name="shortcut_action_help">Help</string>
 
     <string name="icon_picker_type">Selecteer icoon-type:</string>
@@ -345,7 +345,7 @@
     <string name="navigation_bar_height_title">Navigatiebalk hoogte staand</string>
     <string name="navigation_bar_height_summary">Navigatiebalk hoogte in staande schermorientatie</string>
     <string name="navigation_bar_height_landscape_title">Navigatiebalk hoogte liggend</string>
-    <string name="navigation_bar_height_landscape_summary">Navigatiebalk hoogte in liggende schermorientatie.</string>
+    <string name="navigation_bar_height_landscape_summary">Navigatiebalk hoogte in liggende schermorientatie</string>
     <string name="navigation_bar_width_title">Navigatiebalk breedte</string>
     <string name="navigation_bar_width_summary">Navigatiebalk breedte als deze langs een zijkant wordt weergegeven</string>
     <string name="navbar_can_move">Toon liggend</string>
@@ -404,6 +404,10 @@
     <string name="clear_recents_position_bottom_right">Rechtsonder</string>
     <string name="clear_recents_position_bottom_left">Linksonder</string>
     <string name="clear_recents_position_top_right">Rechtsboven</string>
-    <string name="clear_recents_position_top_left">Linksboven</string>	 
+    <string name="clear_recents_position_top_left">Linksboven</string>	
+
+	<!-- Enable Quick Unlock -->
+    <string name="lockscreen_quick_unlock_control_title">Snel ontgrendelen</string>
+    <string name="lockscreen_quick_unlock_control_summary">Automatisch ontgrendelen indien toegangscode correct is ingevuld</string>
 
 </resources>
