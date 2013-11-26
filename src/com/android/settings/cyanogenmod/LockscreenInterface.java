@@ -114,7 +114,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment {
             return true;
         }
 
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+        return true;
     }
 
     public static class DeviceAdminLockscreenReceiver extends DeviceAdminReceiver {}
