@@ -48,9 +48,8 @@ public class LockscreenShortcutFragment extends SettingsPreferenceFragment imple
 
         mLockscreenShortcutsLongpress = (CheckBoxPreference) findPreference(
                 PREF_LOCKSCREEN_SHORTCUTS_LONGPRESS);
-        mLockscreenShortcutsLongpress.setChecked(Settings.System.getInt(
-                getActivity().getApplicationContext().getContentResolver(),
-                Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, 0) == 1);
+        mLockscreenShortcutsLongpress.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, 1) == 1);
         mLockscreenShortcutsLongpress.setOnPreferenceChangeListener(this);
     }
 
@@ -68,20 +67,13 @@ public class LockscreenShortcutFragment extends SettingsPreferenceFragment imple
         return view;
     }
 
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        return true;
-    }
-    
     @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-	boolean value;
-
+    public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mLockscreenShortcutsLongpress) {
-	    value = mLockscreenShortcutsLongpress.isChecked();
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS, value ? 1 : 0);
-	    return true;        
-	}
-	return super.onPreferenceTreeClick(preferenceScreen, preference);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LOCKSCREEN_SHORTCUTS_LONGPRESS,
+                    (Boolean) newValue ? 1 : 0);
+        }
+        return true;
     }
 }
