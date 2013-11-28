@@ -20,8 +20,12 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
 
     private static final String KEY_ANIMATION_OPTIONS = "category_animation_options";
     private static final String KEY_POWER_CRT_MODE = "system_power_crt_mode";
+    private static final String KEY_LISTVIEW_ANIMATION = "listview_animation";
+    private static final String KEY_LISTVIEW_INTERPOLATOR = "listview_interpolator";
 
     private ListPreference mCrtMode;
+    private ListPreference mListViewAnimation;
+    private ListPreference mListViewInterpolator;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,24 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
             prefSet.removePreference(animationOptions);
         }
 
+        //ListView Animations
+        mListViewAnimation = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_ANIMATION);
+        if (mListViewAnimation != null) {
+           int listViewAnimation = Settings.System.getInt(getContentResolver(),
+                    Settings.System.LISTVIEW_ANIMATION, 1);
+           mListViewAnimation.setSummary(mListViewAnimation.getEntry());
+           mListViewAnimation.setValue(String.valueOf(listViewAnimation));
+        }
+        mListViewAnimation.setOnPreferenceChangeListener(this);
+
+        mListViewInterpolator = (ListPreference) prefSet.findPreference(KEY_LISTVIEW_INTERPOLATOR);
+        if (mListViewInterpolator != null) {
+           int listViewInterpolator = Settings.System.getInt(getContentResolver(),
+                    Settings.System.LISTVIEW_INTERPOLATOR, 1);
+           mListViewInterpolator.setSummary(mListViewInterpolator.getEntry());
+           mListViewInterpolator.setValue(String.valueOf(listViewInterpolator));
+        }
+        mListViewInterpolator.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -65,6 +87,20 @@ public class ScreenAndAnimations extends SettingsPreferenceFragment implements
                     Settings.System.SYSTEM_POWER_CRT_MODE,
                     value);
             mCrtMode.setSummary(mCrtMode.getEntries()[index]);
+        } else if (KEY_LISTVIEW_ANIMATION.equals(key)) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewAnimation.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LISTVIEW_ANIMATION,
+                    value);
+            mListViewAnimation.setSummary(mListViewAnimation.getEntries()[index]);
+        } else if (KEY_LISTVIEW_INTERPOLATOR.equals(key)) {
+            int value = Integer.parseInt((String) newValue);
+            int index = mListViewInterpolator.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.LISTVIEW_INTERPOLATOR,
+                    value);
+            mListViewInterpolator.setSummary(mListViewInterpolator.getEntries()[index]);
         }
         return false;
     }
