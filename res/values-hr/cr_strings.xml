@@ -8,6 +8,7 @@
     <!-- General strings -->
     <string name="reset">Vrati početno</string>
     <string name="enabled">Omogućeno</string>
+    <string name="attention">Upozorenje</string>
     <string name="disabled">Onemogućeno</string>
     <string name="default_string">Početno</string>
 
@@ -47,7 +48,7 @@
     <string name="clock_date_display">Datum</string>
     <string name="clock_date_display_summary">Prikaži prilagođeni datum prije sata</string>
     <string name="clock_date_style">Način prikaza datuma</string>
-    <string name="clock_date_format">Oblik prikaza datuma</string>
+    <string name="clock_date_format">Oblik datuma</string>
     <string name="clock_date_string_edittext_title">Mora biti u obliku npr. MM/dd/yy</string>
     <string name="clock_date_string_edittext_summary">Unesi niz</string>
     <string name="am_pm_clock_normal">Normalna veličina slova</string>
@@ -66,7 +67,7 @@
     <string name="notification_drawer_title">Ploča s obavijestima</string>
     <string name="notification_drawer_style_title">Izgled ploče s obavijestima</string>
     <string name="notification_style_summary">Promjenite svoje postavke ploče s obavijestima</string>
-    <string name="notification_drawer_background">Pozadina i prozirnost</string> 
+    <string name="notification_drawer_background">Pozadina i prozirnost</string>
 
     <!-- Notification drawer background -->
     <string name="notification_wallpaper_title">Pozadina ploče s obavijestima</string>
@@ -75,10 +76,10 @@
     <string name="notification_background_custom_image">Prilagođena slika</string>
     <string name="notification_background_default_wallpaper">Početna postava pozadine</string>
     <string name="notification_drawer_custom_background_dialog_title">Odaberi boju</string>
-    <string name="notif_wallpaper_alpha_title">Prozirnost pozadine obavijesti</string> 
+    <string name="notif_wallpaper_alpha_title">Prozirnost pozadine obavijesti</string>
     <string name="notif_alpha_title">Prozirnost retka obavijesti</string>
 
-    <!-- Advanced low battery indicator options -->  
+    <!-- Advanced low battery indicator options -->
     <string name="lights_and_warnings_title">Svjetla i upozorenja</string>
     <string name="lights_and_warnings_style_title">Izgled svjetla i upozorenja</string>
     <string name="pref_low_battery_warning_policy_title">Upozorenje niske razine baterije</string>
@@ -88,19 +89,19 @@
     <string name="low_battery_warning_policy_popup">Samo skočni dijalog</string>
     <string name="low_battery_warning_policy_notif">Samo obavijest</string>
     <string name="low_battery_warning_policy_sound">Samo zvuk</string>
-    <string name="low_battery_warning_policy_disabled">Onemogući</string> 
+    <string name="low_battery_warning_policy_disabled">Onemogući</string>
 
     <!-- Screen-On Notification Light -->
     <string name="screen_on_notification_led_title">Svjetlo obavijesti pri upaljenom ekranu</string>
-    <string name="screen_on_notification_led_summary">Omogući svjetlo obavijesti čak i kad je ekran upaljen</string> 
+    <string name="screen_on_notification_led_summary">Omogući svjetlo obavijesti čak i kad je ekran upaljen</string>
 
     <!-- Alternate default app picker -->
     <string name="general_settings_title">Opće postavke</string>
     <string name="general_settings_style_title">Opći izgled</string>
     <string name="display_short">Prikaz</string>
     <string name="misc_short">Razno</string>
-    <string name="alt_resolver">Koristi alternativnu rešetku postavljenih aplikacija</string>
-    <string name="alt_resolver_summary">Koristi alternativni birač postavljenih aplikacija</string>
+    <string name="alt_resolver">Alternativna rešetka instaliranih aplikacija</string>
+    <string name="alt_resolver_summary">Koristi alternativnu rešetku instaliranih aplikacija</string>
 
     <!-- Network stats stats -->
     <string name="status_bar_network_cat">Mjerač mrežnog prometa</string>
@@ -119,8 +120,8 @@
     <string name="hide_network_speed_summary">Sakrij mjerač mrežnog prometa kad nema prometa</string>
 
     <!-- Display : Animation options -->
-    <string name="screen_and_animations_title">Ekran i animacije</string>
-    <string name="display_category_animation_options_title">Izgled ekrana i animacija</string>
+    <string name="screen_and_animations_title">Prikaz i animacije</string>
+    <string name="display_category_animation_options_title">Izgled prikaza i animacija</string>
     <string name="system_power_crt_mode_title">CRT animacija </string>
     <string name="system_power_crt_mode_dialog_title">CRT animacija</string>
     <string name="system_power_crt_mode_off">Ne prikazuj</string>
@@ -136,7 +137,7 @@
 
     <!-- Status bar brightness control -->
     <string name="status_bar_toggle_brightness">Upravljanje svjetlinom</string>
-    <string name="status_bar_toggle_brightness_summary">Prilagodi svjetlinu ekrana klizačem u statusnoj traci</string>
+    <string name="status_bar_toggle_brightness_summary">Prilagodi svjetlinu prikaza klizačem u statusnoj traci</string>
     <string name="status_bar_toggle_info">Odabrana automatska svjetlina</string>
 
     <!-- TRDS Settings -->
@@ -150,6 +151,7 @@
     <string name="reset_message">Vrati sve vrijednosti na početne?</string>
     <string name="style_title">Oblik</string>
     <string name="shortcut_action_airplane">Način rada u zrakoplovu</string>
+    <string name="shortcut_action_expanded_desktop">Prišireni prikaz</string>
     <string name="shortcut_action_power_off">Isključi</string>
     <string name="shortcut_action_reboot">Ponovno pokreni</string>
     <string name="shortcut_action_sound">Zvuk</string>
@@ -165,6 +167,7 @@
     <string name="shortcut_action_kill">Prisilno zatvori aplikaciju</string>
     <string name="shortcut_action_power">Ugasi ekran</string>
     <string name="shortcut_action_notifications">Obavijesti</string>
+    <string name="shortcut_action_menu_big">Izbornik</string>
     <string name="shortcut_action_qs">Ploča s brzim postavkama</string>
     <string name="shortcut_action_none">Ništa</string>
     <string name="shortcut_action_power_menu">Izbornik napajanja</string>
@@ -190,18 +193,14 @@
     <string name="shortcut_action_help_delete_last_entry">Brisanje svake %1$s na popisu će potpuno onemogućiti značajku.</string>
     <string name="shortcut_action_help">Pomoć</string>
 
-    <string name="icon_picker_type">Odaberi vrtu ikone:</string>
-    <string name="icon_default">Postavljena</string>
-    <string name="icon_presets">Sistemske ikone</string>
-    <string name="icon_custom">Galerija</string>
     <string name="shortcuts_icon_picker_alarm">Alarm</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
     <string name="shortcuts_icon_picker_battery">Baterija</string>
     <string name="shortcuts_icon_picker_browser">Preglednik</string>
     <string name="shortcuts_icon_picker_calendar">Kalendar</string>
-    <string name="shortcuts_icon_picker_camera">Kamera</string>
+    <string name="shortcuts_icon_picker_camera">Fotoaparat</string>
     <string name="shortcuts_icon_picker_cloud">Oblak</string>
-    <string name="shortcuts_icon_picker_contact">Kontact</string>
+    <string name="shortcuts_icon_picker_contact">Kontakt</string>
     <string name="shortcuts_icon_picker_directdial">Direktan poziv</string>
     <string name="shortcuts_icon_picker_directmessage">Direktna poruka</string>
     <string name="shortcuts_icon_picker_drive">Disk</string>
@@ -247,21 +246,26 @@
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
     <string name="shortcuts_icon_picker_unlock">Otključaj</string>
 
+    <string name="icon_picker_type">Odaberi vrtu ikone:</string>
+    <string name="icon_default">Postavljena</string>
+    <string name="icon_presets">Sistemske ikone</string>
+    <string name="icon_custom">Galerija</string>
+    <string name="icon_pack">Paket ikona</string>
+    <string name="icon_picker_choose_icon_title">Odaberi ikonu</string>
     <string name="icon_color_mode_all_icons">Sve ikone</string>
     <string name="icon_color_mode_system_icons">Sistemske ikone</string>
     <string name="icon_color_mode_system_custom_icons">Sistemske i prilagođene ikone</string>
-    <string name="icon_picker_choose_icon_title">Odaberi ikonu</string>
     <string name="group_applications">Aplikacije</string>
     <string name="select_custom_app_title">Odaberi prilagođene aplikacije</string>
+    <string name="shortcuts_text_color_title">Boja naziva</string>
     <string name="shortcuts_color_title">Boja ikone prečaca</string>
-    <string name="shortcuts_color_summary">Oboji ikonu prečaca</string>
     <string name="shortcuts_color_mode_title">Način boje ikone</string>
     <string name="shortcuts_color_mode_summary">Promjeni način boje ikone</string>
 
     <!-- Notification drawer settings  -->
     <string name="notification_drawer_title">Traka s obavijestima</string>
     <string name="notification_hide_carrier_title">Sakrij oznaku operatera</string>
-	<string name="notification_hide_carrier_summary">Sakrij oznaku operatera i bezžične mreže u traci s obavijestima</string>
+    <string name="notification_hide_carrier_summary">Sakrij oznaku operatera i bezžične mreže u traci s obavijestima</string>
     <string name="notification_shortcuts_settings_title">Prečaci</string>
     <string name="notification_shortcuts_settings_summary">Prikaži prečace u traci s obavijestima</string>
 
@@ -284,27 +288,27 @@
     <string name="battery_bolt_color">Boja munje prilikom punjenja</string>
     <string name="battery_text_charging_color">Boja postotka prilikom punjenja</string>
     <string name="battery_style_reset_message">Početne postavke boje baterije?</string>
-   
-    <!-- Animation Controls -->  
-    <string name="title_animation_controls">Prilagođene animacije</string>  
-    <string name="activity_open_title">Otvaranje aktivnosti</string>  
-    <string name="activity_close_title">Zatvaranje aktivnosti</string>  
-    <string name="task_open_title">Otvaranje zadatka</string>  
-    <string name="task_close_title">Zatvaranje zadatka</string>  
-    <string name="task_move_to_front_title">Premjesti naprijed</string>  
-    <string name="task_move_to_back_title">Premjesti natrag</string>  
-    <string name="wallpaper_open_title">Otvaranje tapete</string>  
-    <string name="wallpaper_close_title">Zatvaranje tapete</string>  
-    <string name="wallpaper_intra_open_title">Intra otvaranje tapete</string>  
-    <string name="wallpaper_intra_close_title">Intra zatvaranje tapete</string>  
-    <string name="animation_duration_title">Trajanje animacije</string>  
-    <string name="title_animation_no_override">Onemogući zaobilaženje aplikaciji</string>  
-    <string name="summary_animation_no_override">Onemogući aplikacijama zaobilaženje prijelaza.</string>  
+
+    <!-- Animation Controls -->
+    <string name="title_animation_controls">Prilagođene animacije</string>
+    <string name="activity_open_title">Otvaranje radnji</string>
+    <string name="activity_close_title">Zatvaranje radnji</string>
+    <string name="task_open_title">Otvaranje zadatka</string>
+    <string name="task_close_title">Zatvaranje zadatka</string>
+    <string name="task_move_to_front_title">Premjesti naprijed</string>
+    <string name="task_move_to_back_title">Premjesti natrag</string>
+    <string name="wallpaper_open_title">Otvaranje tapete</string>
+    <string name="wallpaper_close_title">Zatvaranje tapete</string>
+    <string name="wallpaper_intra_open_title">Intra otvaranje tapete</string>
+    <string name="wallpaper_intra_close_title">Intra zatvaranje tapete</string>
+    <string name="animation_duration_title">Trajanje animacije</string>
+    <string name="title_animation_no_override">Onemogući zaobilaženje aplikaciji</string>
+    <string name="summary_animation_no_override">Onemogući aplikacijama zaobilaženje prijelaza.</string>
     <string name="animation_duration_default">Postavljeno</string>
     <string name="header_summary_animation">@null</string>
-	
-	<!-- Lockscreen battery ring -->
-    <string name="battery_around_lockscreen_ring">Baterija oko prstena za otključavanje</string>
+
+    <!-- Lockscreen battery ring -->
+    <string name="battery_around_lockscreen_ring">Baterija oko prstena otključavanja</string>
 
     <!-- Navigation ring -->
     <string name="shortcut_action_ring_vib">Zvono/Vibra</string>
@@ -354,7 +358,6 @@
     <string name="navbar_cat">Navigacijska traka</string>
     <string name="navbar_dimensions_reset_message">Vrati sve vrijednosti dimenzija na početne?</string>
 
-
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style_summary">Promjenite izgled tipki na navigacijskoj traci</string>
     <string name="button_transparency_title">Prozirnost tipki</string>
@@ -372,8 +375,9 @@
     <string name="media_scanner_on_boot_enabled">Skeniraj multimedijalne datoteke</string>
     <string name="media_scanner_on_boot_ask">Pitaj za skeniranje (obavijest)</string>
     <string name="media_scanner_on_boot_disabled">Ne skeniraj multimedijalne datoteke</string>
-	<!-- Power menu -->
-    <string name="power_menu_style_summary">Change global menu colors</string>
+
+    <!-- Power menu -->
+    <string name="power_menu_style_summary">Promjeni boje glavnog izbornika</string>
 
     <!-- Recents Ram Bar -->
     <string name="ram_bar">RAM traka sa nedavnim aplikacijama</string>
@@ -395,5 +399,138 @@
     <string name="ram_bar_button_reset">Vrati boje na početne vrijednosti</string>
     <string name="ram_bar_reset">Vrati</string>
     <string name="ram_bar_reset_message">Vrati izgled RAM trake na početni?</string>
+
+    <!-- Clear Recents position -->
+    <string name="clear_recents_position_title">Obriši mjesto nedavnih aplikacija</string>
+    <string name="clear_recents_position_disabled">Onemogućeno</string>
+    <string name="clear_recents_position_bottom_right">Dolje desno</string>
+    <string name="clear_recents_position_bottom_left">Dolje lijevo</string>
+    <string name="clear_recents_position_top_right">Gore desno</string>
+    <string name="clear_recents_position_top_left">Gore lijevo</string>
+
+    <!-- Enable Quick Unlock -->
+    <string name="lockscreen_quick_unlock_control_title">Brzo otključavanje</string>
+    <string name="lockscreen_quick_unlock_control_summary">Automatski otključaj ako je unešen ispravan PIN ili zaporka</string>
+
+    <!-- Lock Screen ASS -->
+    <string name="lock_screen_title">Zaslon zaključavanja</string>
+    <string name="slide_target_title">Ciljevi klizača i prečaci</string>
+    <string name="lock_screen_summary">Pregledajte ili promjenite ciljeve klizača i prečaca</string>
+
+    <!-- Lock Screen Targets -->
+    <string name="lockscreen_target_info">Povucite klizač do cilja da bi dodjelili aplikaciju</string>
+    <string name="lockscreen_target_title">Ciljevi klizača</string>
+    <string name="lockscreen_target_summary">Pregledajte ili promjenite prilagođene ciljeve zaslona zaključavanja</string>
+    <string name="lockscreen_target_color_title">Boja ikone cilja</string>
+    <string name="lockscreen_eight_targets_title">Osam kliznih ciljeva</string>
+    <string name="lockscreen_eight_targets_summary">Omogući osam prilagođenih ciljeva zaslona zaključavanja.</string>
+    <string name="lockscreen_enable_eight_targets_dialog">Mjenjanje ove mogućnosti vraća početne postavke ciljeva zaslona zaključavanja.</string>
+    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nNe možete istovremeno koristiti prečace zaslona zaključavanja sa omogućenih osam ciljeva.</string>
+    <string name="lockscreen_target_reset">Vraćanje ciljeva zaslona zaključavanja na početne postavke</string>
+    <string name="lockscreen_target_reset_message">Brisanje korisničkih ciljeva zaslona zaključavanja i vraćanje na početne postavke?</string>
+    <string name="lockscreen_target_empty">Nijedno</string>
+    <string name="lockscreen_target_edit_title">Uredi ciljeve i ikone</string>
+    <string name="lockscreen_target_edit_msg">Odaberi ili promjeni željene aplikacije ili radnje i dodjeljenu ikonu</string>
+
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_shortcuts_title">Prečaci</string>
+    <string name="lockscreen_shortcuts_summary">Pregledaj ili promjeni prilagođene prečace zaslona zaključavanja</string>
+    <string name="lockscreen_shorcuts_longpress_title">Dugi pritisak prečaca</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Otvori prilagođene prečace zaslona zaključavanja dugim pritiskom</string>
+
+    <!-- Lock screen targets and shortcuts -->
+    <string name="picker_activities">Radnje</string>
+    <string name="select_custom_activity_title">Odaberi prilagođenu radnju</string>
+    <string name="icon_picker_alarm">Alarm</string>
+    <string name="icon_picker_browser">Preglednik</string>
+    <string name="icon_picker_calendar">Kalendar</string>
+    <string name="icon_picker_camera">Fotoaparat</string>
+    <string name="icon_picker_email">E-pošta</string>
+    <string name="icon_picker_email2">E-pošta Holo</string>
+    <string name="icon_picker_facebook">Facebook</string>
+    <string name="icon_picker_gallery">Galerija</string>
+    <string name="icon_picker_google_small">Google (mali)</string>
+    <string name="icon_picker_googleplus">Google Plus</string>
+    <string name="icon_picker_googletalk">Hangouts</string>
+    <string name="icon_picker_maps">Karte</string>
+    <string name="icon_picker_sms">Poruke</string>
+    <string name="icon_picker_movie">Film</string>
+    <string name="icon_picker_music">Glazba</string>
+    <string name="icon_picker_nav_normal">Navigacija</string>
+    <string name="icon_picker_phone">Telefon</string>
+    <string name="icon_picker_podcast">Podcast</string>
+    <string name="icon_picker_rss">Rss</string>
+    <string name="icon_picker_search">Pretraživanje</string>
+    <string name="icon_picker_twitter">Twitter</string>
+ 
+    <!-- Halo -->
+    <string name="halo_settings_title">Halo</string>
+    <string name="halo_behavior_title">Ponašanje halo</string>
+    <string name="halo_hide_title">Zatvori Halo nakon radnje</string>
+    <string name="halo_hide_summary">Halo će se prikazati pri dolaznim zadacima i ukloniti nakon par trenutaka</string>
+    <string name="halo_reversed_title">Suprotan Halo</string>
+    <string name="halo_reversed_summary">Primjenjuje se kod prebacivanja zadataka i gesti pokreta</string>
+    <string name="halo_state_title">Halo smjernice</string>
+    <string name="halo_state_summary">Omogućuje crno bijeli popis obavijesti</string>
+    <string name="halo_state_black">Crni popis</string>
+    <string name="halo_state_white">Bijeli popis</string>
+    <string name="halo_pause_title">Pauziraj aktivnu aplikaciju</string>
+    <string name="halo_pause_summary">Kod otvaranja aplikacije sa Halo, ishodišna aplikacija će se pauzirati</string>
+    <string name="halo_ninja_title">Ninja način</string>
+    <string name="halo_ninja_summary">Halo će potpuno nestati kad je prazan</string>
+    <string name="halo_notification_msgbox_title">Omogući skočne poruke</string>
+    <string name="halo_notification_msgbox_summary">Prikaži ovir poruke pri dolaznoj obavijesti</string>
+    <string name="halo_unlock_ping_title">Ping pri otključavanju</string>
+    <string name="halo_unlock_ping_summary">Halo će pingati kad se uređaj otključa ako postoje nove obavijesti</string>
+
+    <string name="halo_size_title">Halo veličina</string>
+    <string name="halo_size_summary">Određuje veličinu Halo</string>
+    <string name="halo_size_miniscule">Sitan</string>
+    <string name="halo_size_small">Mali</string>
+    <string name="halo_size_default">Normalan (postavljeno)</string>
+    <string name="halo_size_large">Velik</string>
+    <string name="halo_size_gigantic">Vrlo velik</string>
+    <string name="halo_size_monster">Ogroman</string>
+
+    <string name="halo_notification_count_title">Broj obavijesti</string>
+    <string name="halo_notification_count_summary">Prikaži broj obavijesti na Halo</string>
+    <string name="halo_notification_count_none">Nijedan</string>
+    <string name="halo_notification_count_total">Ukupno</string>
+    <string name="halo_notification_count_individual">Po aplikaciji</string>
+    <string name="halo_notification_count_both">Oboje</string>
+
+    <string name="halo_msgbox_animation_title">Animacija okvira poruke</string>
+    <string name="halo_msgbox_animation_summary">Animacija Halo okvira poruke pri dolaznoj obavijesti</string>
+    <string name="halo_msgbox_animation_none">Nijedna</string>
+    <string name="halo_msgbox_animation_flip">Preokreni</string>
+
+    <!-- Label for are-halo-notifications-allowed checkbox in app details [CHAR LIMIT=20] -->
+    <string name="app_halo_label_black">Zabrani za HALO</string>
+    <string name="app_halo_label_white">Dozvoli za HALO</string>
+ 
+    <!-- ListView animation -->
+    <string name="bars_and_menus_category_system_title">Sustav</string>
+    <string name="listview_animation_title">Animacija popisa</string>
+    <string name="listview_off">Isključeno</string>
+    <string name="listview_wave_left">Valovito u lijevo</string>
+    <string name="listview_wave_right">Valovito u desno</string>
+    <string name="listview_alpha">Alfa</string>
+    <string name="listview_scale">Proporcionalno</string>
+    <string name="listview_stack_top">Slaganje prema vrhu</string>
+    <string name="listview_stack_bottom">Slaganje prema dnu</string>
+    <string name="listview_unfold">Otklapanje</string>
+    <string name="listview_fold">Zaklapanje</string>
+    <string name="listview_translate_left">Prijenos u lijevo</string>
+    <string name="listview_translate_right">Prijenos u desno</string>
+
+    <!-- ListView interpolator -->
+    <string name="listview_interpolator_title">Umetanje popisa</string>
+    <string name="listview_accelerate_interpolator">Ubrzaj umetanje</string>
+    <string name="listview_decelerate_interpolator">Uspori umetanje</string>
+    <string name="listview_accelerate_decelerate_interpolator">Ubrzaj/uspori umetanje</string>
+    <string name="listview_anticipate_interpolator">Predvidi umetanje</string>
+    <string name="listview_overshoot_interpolator">Prebaci umetanje</string>
+    <string name="listview_anticipate_overshoot_interpolator">Predvidi/prebaci umetanje</string>
+    <string name="listview_bounce_interpolator">Skočno umetanje</string>
 
 </resources>
