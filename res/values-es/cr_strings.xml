@@ -60,7 +60,7 @@
     <string name="clock_date_style_lowercase">Minúsculas</string>
     <string name="clock_date_style_uppercase">Mayúsculas</string>
     <string name="clock_date_format_custom">Formato personalizado</string>
-    <string name="status_bar_clock_style_reset_message">Restaurar color del reloj?</string>
+    <string name="status_bar_clock_style_reset_message">¿Restaurar color del reloj?</string>
 
     <!-- Notification Drawer Settings -->
     <string name="notification_drawer_title">Panel de notificaciones</string>
@@ -76,7 +76,7 @@
     <string name="notification_background_default_wallpaper">Fondo predeterminado</string>
     <string name="notification_drawer_custom_background_dialog_title">Elegir color</string>
     <string name="notif_wallpaper_alpha_title">Transparencia de las notificaciones</string>
-    <string name="notif_alpha_title">Notification row transparency</string>
+    <string name="notif_alpha_title">Transparencia de fila de notificaciones</string>
 
     <!-- Advanced low battery indicator options -->
     <string name="lights_and_warnings_title">Leds y alertas</string>
@@ -112,11 +112,11 @@
     <!-- Network stats custm colors -->
     <string name="status_bar_network_usage_color_style">Color</string>
     <string name="status_bar_network_usage_color_reset">Restaurar color</string>
-    <string name="status_bar_network_usage_color_reset_message">Restaurar color predeterminado?</string>
+    <string name="status_bar_network_usage_color_reset_message">¿Restaurar color predeterminado?</string>
 
     <!-- Network stats hide if there's no traffic -->
     <string name="hide_network_speed">Ocultar cuando no hay tráfico</string>
-    <string name="hide_network_speed_summary">No se muestra el contador cuándo no hay datos</string>
+    <string name="hide_network_speed_summary">No se muestra el contador cuando no hay datos</string>
 
     <!-- Display : Animation options -->
     <string name="screen_and_animations_title">Pantalla y animaciones</string>
@@ -134,7 +134,7 @@
     <!--
     UI debug setting: show cpu usage summary [CHAR LIMIT=50]
     -->
-    <string name="show_cpu_info_summary">Informacion del CPU superpuesta sobre cualquier actividad</string>
+    <string name="show_cpu_info_summary">Información del CPU superpuesta sobre cualquier actividad</string>
 
     <!-- Status bar brightness control -->
     <string name="status_bar_toggle_brightness">Control de brillo</string>
@@ -171,21 +171,21 @@
     <string name="shortcut_action_select_action_newbutton">Seleccionar botón:</string>
     <string name="shortcut_action_reset">Restaurar</string>
     <string name="shortcut_action_add">Añadir</string>
-    <string name="shortcut_action_reset_message">Restaurar todas las entradas?</string>
+    <string name="shortcut_action_reset_message">¿Restaurar todas las entradas?</string>
     <string name="shortcut_action_max">Se ha alcanzado el número máximo de entradas</string>
     <string name="shortcut_action_warning">Aviso</string>
     <string name="shortcut_action_warning_message">No es posible borrar la última entrada</string>
     <string name="shortcut_action_disable_message">Inhabilitado\nAñade una entrada para habilitar esta función</string>
-    <string name="shortcut_image_not_valid">La aplicación elegida no posee un icono válido o no admite recorte de imagen. Seleccione otra aplicación</string>
-    <string name="shortcut_duplicate_entry">La accion seleccionada no puede añadirse dos veces</string>
+    <string name="shortcut_image_not_valid">La aplicación elegida no posee un ícono válido o no admite recorte de imagen. Seleccione otra aplicación</string>
+    <string name="shortcut_duplicate_entry">La acción seleccionada no puede añadirse dos veces</string>
     <string name="shortcut_action_help_shortcut">acceso directo</string>
     <string name="shortcut_action_help_button">botón</string>
     <string name="shortcut_action_help_icon">,mientras selecciona el icono, aparecerán opciones de personalización</string>
-    <string name="shortcut_action_help_main">Para agregar un botón, presiona el icono Añadir (+). Puedes modificar su función tocando sobre él o agregar una acción a su pulsación prolongada.\n\nPara eliminar un botón desliza horizontalmente.\n\nPara reordenar desliza verticalmente.\n\nPara volver a los valores predeterminados presiona el botón Restaurar.
+    <string name="shortcut_action_help_main">Para agregar un botón, presiona el ícono Añadir (+). Puedes modificar su función tocando sobre él o agregar una acción a su pulsación prolongada.\n\nPara eliminar un botón desliza horizontalmente.\n\nPara reordenar desliza verticalmente.\n\nPara volver a los valores predeterminados presiona el botón Restaurar.
    </string>
    <string name="shortcut_action_help_delete_last_entry">Eliminar todos los %1$s de la lista desactivará la función.</string>
     <string name="shortcut_action_help">Ayuda</string>
-    <string name="icon_picker_type">Selecciona un tipo de icono:</string>
+    <string name="icon_picker_type">Selecciona un tipo de ícono:</string>
     <string name="icon_default">Predeterminado</string>
     <string name="icon_presets">Iconos del sistema</string>
     <string name="icon_custom">Galería</string>
@@ -280,19 +280,19 @@
 
     <!-- Animation Controls -->
     <string name="title_animation_controls">Control de animaciones</string>
-    <string name="activity_open_title">Activity Open Animation</string>
-    <string name="activity_close_title">Activity Close Animation</string>
-    <string name="task_open_title">Task Open Animation</string>
-    <string name="task_close_title">Task Close Animation</string>
-    <string name="task_move_to_front_title">Move To Front Animation</string>
-    <string name="task_move_to_back_title">Move To Back Animation</string>
-    <string name="wallpaper_open_title">Wallpaper Open Animation</string>
-    <string name="wallpaper_close_title">Wallpaper Close Animation</string>
-    <string name="wallpaper_intra_open_title">Wallpaper Intra Open Animation</string>
-    <string name="wallpaper_intra_close_title">Wallpaper Intra Close Animation</string>
-    <string name="animation_duration_title">Animation Duration</string>
-    <string name="title_animation_no_override">Prevent App Overrides</string>
-    <string name="summary_animation_no_override">Prevent apps from overriding transitions.</string>
+    <string name="activity_open_title">Animación Abrir Actividad</string>
+    <string name="activity_close_title">Animación Cerrar Actividad</string>
+    <string name="task_open_title">Animación Abrir Tarea</string>
+    <string name="task_close_title">Animación Cerrar Tarea</string>
+    <string name="task_move_to_front_title">Animación Mover al Frente</string>
+    <string name="task_move_to_back_title">Animación Mover hacia Atrás</string>
+    <string name="wallpaper_open_title">Animación Abrir Wallpaper</string>
+    <string name="wallpaper_close_title">Animación Cerrar Wallpaper</string>
+    <string name="wallpaper_intra_open_title">Animación Abrir Intra Wallpaper</string>
+    <string name="wallpaper_intra_close_title">Animación Cerrar Intra Wallpaper</string>
+    <string name="animation_duration_title">Duración de animación</string>
+    <string name="title_animation_no_override">Evitar que las App sobreescriban</string>
+    <string name="summary_animation_no_override">Evitar que Apps reemplacen transiciones.</string>
     <string name="animation_duration_default">Default</string>
     <string name="header_summary_animation">@null</string>
 
@@ -327,7 +327,7 @@
     <string name="navigation_bar">Barra de navegación</string>
     <string name="navbar_button_cat">Botones</string>
     <string name="title_pref_menu_location">Ubicación del menú</string>
-    <string name="summary_pref_menu_location">Modifica la ubicación de los botones del menu</string>
+    <string name="summary_pref_menu_location">Modifica la ubicación de los botones del menú</string>
     <string name="title_pref_menu_display">Visibilidad del menú</string>
     <string name="summary_pref_menu_display">Modifica los tiempos y visibilidad del menú</string>
     <string name="navbar_enable_bar">Habilitar barra de navegación</string>
@@ -337,15 +337,15 @@
     <string name="navigation_bar_height_landscape_title">Altura de la barra de navegación</string>
     <string name="navigation_bar_height_landscape_summary">Se aplica al modo paisaje.</string>
     <string name="navigation_bar_width_title">Ancho de la barra de navegación</string>
-    <string name="navigation_bar_width_summary">Se aplica cuándo la barra está de lado.</string>
+    <string name="navigation_bar_width_summary">Se aplica cuando la barra está de lado.</string>
     <string name="navbar_can_move">Mostrar horizontal en modo paisaje</string>
     <string name="navbar_can_move_summary">Muestra la barra de navegación acorde a la orientación</string>
     <string name="navbar_style_dimen_title">Dimensiones</string>
     <string name="navbar_button_title">Botones</string>
     <string name="navbar_targets_title">Accesos rápidos</string>
     <string name="navbar_cat">Barra de navegación</string>
-    <string name="navbar_dimensions_reset_message">Restaurar dimensiones predeterminadas?</string>
-    <string name="navbar_button_style_reset_message">Restaurar configuración predeterminada?</string>
+    <string name="navbar_dimensions_reset_message">¿Restaurar dimensiones predeterminadas?</string>
+    <string name="navbar_button_style_reset_message">¿Restaurar configuración predeterminada?</string>
  
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style">Apariencia</string>
