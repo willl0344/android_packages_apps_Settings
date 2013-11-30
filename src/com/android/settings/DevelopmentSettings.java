@@ -160,6 +160,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private static final String ADVANCED_REBOOT_KEY = "advanced_reboot";
 
+    private static final String DEVELOPMENT_SHORTCUT_KEY = "development_shortcut";
+
     private static final int RESULT_DEBUG_APP = 1000;
 
     private IWindowManager mWindowManager;
@@ -289,6 +291,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         mAllPrefs.add(mPassword);
         mAdvancedReboot = findAndInitCheckboxPref(ADVANCED_REBOOT_KEY);
 	updateAdvancedRebootOptions(); 
+        mDevelopmentShortcut = findAndInitCheckboxPref(DEVELOPMENT_SHORTCUT_KEY);
 
         if (!android.os.Process.myUserHandle().equals(UserHandle.OWNER)) {
             disableForUser(mEnableAdb);
@@ -296,6 +299,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             disableForUser(mEnableTerminal);
             disableForUser(mPassword);
             disableForUser(mAdvancedReboot);
+            disableForUser(mDevelopmentShortcut);
         }
 
         mDebugAppPref = findPreference(DEBUG_APP_KEY);
@@ -633,6 +637,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         resetRootAccessOptions();
         resetAdbNotifyOptions();
         resetVerifyAppsOverUsbOptions();
+        resetAdvancedRebootOptions();
         resetDevelopmentShortcutOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
