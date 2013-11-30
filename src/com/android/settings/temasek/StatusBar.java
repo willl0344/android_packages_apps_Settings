@@ -41,9 +41,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
+    private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
 
     private PreferenceScreen mClockStyle;
     private CheckBoxPreference mStatusBarBrightnessControl;
+    private CheckBoxPreference mStatusBarCustomHeader;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -66,8 +68,13 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 	mStatusBarBrightnessControl =
             (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_BRIGHTNESS_CONTROL);
         mStatusBarBrightnessControl.setChecked((Settings.System.getInt(getContentResolver(),
-                            Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
+            Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL, 0) == 1));
         mStatusBarBrightnessControl.setOnPreferenceChangeListener(this);
+
+        mStatusBarCustomHeader = (CheckBoxPreference) prefSet.findPreference(STATUS_BAR_CUSTOM_HEADER);
+        mStatusBarCustomHeader.setChecked(Settings.System.getInt(getContentResolver(),
+            Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
+        mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
 
     }
 
@@ -75,6 +82,11 @@ public class StatusBar extends SettingsPreferenceFragment implements OnPreferenc
 	if (preference == mStatusBarBrightnessControl) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_BRIGHTNESS_CONTROL,
+                    (Boolean) newValue ? 1 : 0);
+            return true;
+        } else if (preference == mStatusBarCustomHeader) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER,
                     (Boolean) newValue ? 1 : 0);
             return true;
         }
