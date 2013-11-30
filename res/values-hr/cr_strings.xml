@@ -401,7 +401,7 @@
     <string name="ram_bar_reset_message">Vrati izgled RAM trake na početni?</string>
 
     <!-- Clear Recents position -->
-    <string name="clear_recents_position_title">Obriši mjesto nedavnih aplikacija</string>
+    <string name="clear_recents_position_title">Tipka za brisanje nedavnih aplikacija</string>
     <string name="clear_recents_position_disabled">Onemogućeno</string>
     <string name="clear_recents_position_bottom_right">Dolje desno</string>
     <string name="clear_recents_position_bottom_left">Dolje lijevo</string>
@@ -504,9 +504,12 @@
     <string name="halo_msgbox_animation_none">Nijedna</string>
     <string name="halo_msgbox_animation_flip">Preokreni</string>
 
+    <string name="halo_enabled_title">Omogući HALO</string>
+    <string name="halo_enabled_summary">U potpunosti omogući ili onemogući HALO</string>
+
     <!-- Label for are-halo-notifications-allowed checkbox in app details [CHAR LIMIT=20] -->
-    <string name="app_halo_label_black">Zabrani za HALO</string>
-    <string name="app_halo_label_white">Dozvoli za HALO</string>
+    <string name="app_halo_label_black">Zabranjeno za HALO</string>
+    <string name="app_halo_label_white">Dozvoljeno za HALO</string>
  
     <!-- ListView animation -->
     <string name="bars_and_menus_category_system_title">Sustav</string>
@@ -524,7 +527,7 @@
     <string name="listview_translate_right">Prijenos u desno</string>
 
     <!-- ListView interpolator -->
-    <string name="listview_interpolator_title">Umetanje popisa</string>
+    <string name="listview_interpolator_title">Mogućnosti animacije popisa</string>
     <string name="listview_accelerate_interpolator">Ubrzaj umetanje</string>
     <string name="listview_decelerate_interpolator">Uspori umetanje</string>
     <string name="listview_accelerate_decelerate_interpolator">Ubrzaj/uspori umetanje</string>
@@ -532,5 +535,71 @@
     <string name="listview_overshoot_interpolator">Prebaci umetanje</string>
     <string name="listview_anticipate_overshoot_interpolator">Predvidi/prebaci umetanje</string>
     <string name="listview_bounce_interpolator">Skočno umetanje</string>
+
+    <!-- Lockscreen widget settings -->
+    <string name="lockscreen_widgets_title">Dodaci</string>
+    <string name="lockscreen_camera_widget_title">Omogući fotoaparat</string>
+    <string name="lockscreen_camera_widget_summary">Prikaži sigurni dodatak fotoaparata na zaslonu zaključavanja</string>
+    <string name="lockscreen_maximize_widgets_title">Započni uvećan</string>
+    <string name="lockscreen_maximize_widgets_summary">Prikaži dodatak uvećan kod buđenja zaslona</string>
+    <string name="lockscreen_disable_hints_title">Onemogući početne savjete</string>
+    <string name="lockscreen_disable_hints_summary">Onemogućuje sjajni rub dodatka na zaslonu zaključavanja u portretnom prikazu</string>
+    <string name="lockscreen_use_widget_container_carousel_title">Omogući kružni prikaz dodataka u portretnom načinu</string>
+    <string name="lockscreen_use_widget_container_carousel_summary">Koristi kružni prikaz u portretnom načinu za prebacivanje između dodataka na zaslonu zaključavanja</string>
+
+    <!-- Active display settings -->
+    <string name="ad_settings_title">Aktivni prikaz</string>
+    <string name="ad_settings_summary">Promjeni postavke aktivnog prikaza</string>
+    <string name="ad_enable_title">Omogući</string>
+    <string name="ad_enable_summary_on">Aktivni prikaz omogućen</string>
+    <string name="ad_enable_summary_off">Aktivni prikaz onemogućen</string>
+    <string name="ad_text_title">Tekst obavijesti</string>
+    <string name="ad_text_summary">Prikaži tekst obavijesti oko prstena za otključavanje.</string>
+    <string name="ad_all_notifications_title">Sve obavijesti</string>
+    <string name="ad_all_notifications_summary">Prikaži sve obavijesti, uključujući i aktivne, koje se ne mogu očistiti.</string>
+    <string name="ad_hide_low_priority_title">Sakrij obavijesti niske važnosti</string>
+    <string name="ad_hide_low_priority_summary">Sakrij obavijesti niske važnosti, poput onih od Google Now.</string>
+    <string name="ad_pocket_mode_title">Džepni način</string>
+    <string name="ad_pocket_mode_summary">Prikaži obavijesti u aktivnom prikazu kad izvadite uređaj iz džepa.</string>
+    <string name="ad_redisplay_title">Ponovni prikaz obavijesti</string>
+    <string name="ad_sunlight_mode_title">Način jake svjetlosti</string>
+    <string name="ad_sunlight_mode_summary">Obrni boje u područjima jake svjetlosti, poput direktne sunčeve svjetlosti.</string>
+    <string name="ad_customizations_title">Prilagodbe</string>
+    <string name="ad_excluded_apps_title">Isključene aplikacije</string>
+    <string name="ad_excluded_apps_summary">Isključene aplikacije neće biti prikazane u aktivnom prikazu.</string>
+    <string name="ad_brightness_title">Svjetlina obavijesti</string>
+    <string name="ad_brightness_summary">Jakost svjetline kod prikaza obavijesti\n kad automatska svjetlina nije omogućena.</string>
+    <string name="ad_show_date_title">Prikaži datum</string>
+    <string name="ad_show_date_summary">Prikaži datum iznad sata</string>
+    <string name="ad_show_ampm_title">Prikaži AM/PM</string>
+    <string name="ad_show_ampm_summary">Prikaži AM/PM kod 12-satnog prikaza vremena</string>
+    <string name="ad_redisplay_never">Nikad</string>
+    <string name="ad_redisplay_1m">1 minuta</string>
+    <string name="ad_redisplay_5m">5 minuta</string>
+    <string name="ad_redisplay_15m">15 minuta</string>
+    <string name="ad_redisplay_30m">30 minuta</string>
+    <string name="ad_redisplay_1h">1 sat</string>
+    <string name="ad_redisplay_2h">2 sata</string>
+    <string name="ad_redisplay_5h">5 sati</string>
+    <string name="ad_pocket_mode_off">Isključeno</string>
+    <string name="ad_pocket_mode_notifications">Samo obavijesti</string>
+    <string name="ad_pocket_mode_always">Uvijek</string>
+
+    <!-- Lockscreen pin shuffle -->
+    <string name="lock_numpad_random_title">Promjeni redoslijed brojeva na PIN podlozi</string>
+    <string name="lock_numpad_random_dialog_title">Nasumičan redoslijed brojeva na PIN podlozi</string>
+    <string name="lock_numpad_random_off">Isključeno</string>
+    <string name="lock_numpad_random_always">Uvijek</string>
+    <string name="lock_numpad_random_on_request">Na zahtjev</string>
+
+    <!-- Lock before unlock -->
+    <string name="lock_before_unlock_title">Prikaži klizač prije sigurnog otključavanja</string>
+    <string name="lock_before_unlock_summary">Prikaži klizač zaslona zaključavanja prije mehanizma sigurnog otključavanja</string>
+
+    <!-- Sizes for pattern lockscreen -->
+    <string name="lock_pattern_size_3">3x3</string>
+    <string name="lock_pattern_size_4">4x4</string>
+    <string name="lock_pattern_size_5">5x5</string>
+    <string name="lock_pattern_size_6">6x6</string>
 
 </resources>
