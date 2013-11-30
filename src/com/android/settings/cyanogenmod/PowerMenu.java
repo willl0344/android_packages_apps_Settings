@@ -16,35 +16,83 @@
 
 package com.android.settings.cyanogenmod;
 
-import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.UserHandle;
 import android.os.UserManager;
+import android.preference.CheckBoxPreference;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class PowerMenu extends SettingsPreferenceFragment {
+public class PowerMenu extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
+    private static final String TAG = "PowerMenu";
+
+    private static final String KEY_SCREENRECORD = "power_menu_screenrecord";
+    private static final String KEY_PROFILES = "power_menu_profiles";
+    private static final String KEY_USER = "power_menu_user";
+
+    private CheckBoxPreference mScreenrecordPref;
+    private CheckBoxPreference mProfilesPref;
+    private CheckBoxPreference mUserPref;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.power_menu_settings);
 
-        final ContentResolver resolver = getContentResolver();
+        mScreenrecordPref = (CheckBoxPreference) findPreference(KEY_SCREENRECORD);
+        mScreenrecordPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1));
 
-        // Only enable expanded desktop item if expanded desktop support is also enabled
-//        findPreference(Settings.System.POWER_MENU_EXPANDED_DESKTOP_ENABLED).setEnabled(
-//                Settings.System.getInt(resolver, Settings.System.EXPANDED_DESKTOP_STYLE, 0) != 0);
+        mProfilesPref = (CheckBoxPreference) findPreference(KEY_PROFILES);
+        mProfilesPref.setChecked((Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_PROFILES_ENABLED, 1) == 1));
 
-        // Only enable profiles item if System Profiles are also enabled
-//        findPreference(Settings.System.POWER_MENU_PROFILES_ENABLED).setEnabled(
-//                Settings.System.getInt(resolver, Settings.System.SYSTEM_PROFILES_ENABLED, 1) != 0);
-
-        if (!UserHandle.MU_ENABLED || !UserManager.supportsMultipleUsers()) {
-            getPreferenceScreen().removePreference(
-                    findPreference(Settings.System.POWER_MENU_USER_ENABLED));
+        mUserPref = (CheckBoxPreference) findPreference(KEY_USER);
+        if (!UserHandle.MU_ENABLED
+            || !UserManager.supportsMultipleUsers()) {
+            getPreferenceScreen().removePreference(mUserPref);
+        } else {
+            mUserPref.setChecked((Settings.System.getInt(getContentResolver(),
+                    Settings.System.POWER_MENU_USER_ENABLED, 0) == 1));
         }
+
+    }
+
+//    public boolean onPreferenceChange(Preference preference, Object newValue) {
+//    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        boolean value;
+
+        if (preference == mScreenrecordPref) {
+            value = mScreenrecordPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
+                    value ? 1 : 0);
+        } else if (preference == mProfilesPref) {
+            value = mProfilesPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_PROFILES_ENABLED,
+                    value ? 1 : 0);
+       } else if (preference == mUserPref) {
+            value = mUserPref.isChecked();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_USER_ENABLED,
+                    value ? 1 : 0);
+        } else {
+            return super.onPreferenceTreeClick(preferenceScreen, preference);
+        }
+
+        return true;
     }
 }
