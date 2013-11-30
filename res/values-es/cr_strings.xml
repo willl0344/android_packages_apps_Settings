@@ -562,7 +562,7 @@
     <string name="ad_excluded_apps_title">Excluir aplicaciones</string>
     <string name="ad_excluded_apps_summary">Las aplicaciones excluidas no se mostrarán en la pantalla activa.</string>
       <string name="ad_brightness_title">Brillo de notificaciones</string>
-    <string name="ad_brightness_summary">Nivel de brillo para mostrar cuando el brillo automatico no esta activado.
+    <string name="ad_brightness_summary">Nivel de brillo para mostrar cuando el brillo automatico no esta activado.</string>
     <string name="ad_show_date_title">Mostrar fecha</string>
     <string name="ad_show_date_summary">Muestra la fecha encima del reloj</string>
     <string name="ad_show_ampm_title">Mostrar AM/PM</string>
