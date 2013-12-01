@@ -26,7 +26,7 @@
          <extra android:name="disableLongpress" android:value="true" />
          <extra android:name="useAppPickerOnly" android:value="true" />
          <extra android:name="fragment" android:value="com.android.settings.temasek.fragments.NotificationsShortcutFragment" />
-     </PreferenceScreen>
+    </PreferenceScreen>
 
     <PreferenceCategory
         android:key="options"
