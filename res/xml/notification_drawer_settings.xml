@@ -6,16 +6,6 @@
     android:title="@string/status_bar_title">
 
     <!-- Status bar tweaks -->
-    <PreferenceCategory
-        android:title="@string/notification_drawer_style_title">
-
-        <PreferenceScreen
-            android:fragment="com.android.settings.temasek.NotificationDrawerStyle"
-            android:key="notification_drawer_style_pref"
-            android:title="@string/notification_drawer_background" />
-
-    </PreferenceCategory>
-
     <PreferenceScreen
              android:key="temasek_notification_shortcuts"
              android:fragment="com.android.settings.temasek.dslv.ButtonsListViewSettings"

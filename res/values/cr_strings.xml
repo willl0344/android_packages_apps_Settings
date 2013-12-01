@@ -65,22 +65,6 @@
     <string name="clock_date_format_custom">Custom java format</string>
     <string name="status_bar_clock_style_reset_message">Reset clock color?</string>
 
-    <!-- Notification Drawer Settings -->
-    <string name="notification_drawer_title">Notification drawer</string>
-    <string name="notification_drawer_style_title">Notification drawer options</string>
-    <string name="notification_style_summary">Change your notification drawer style</string>
-    <string name="notification_drawer_background">Background and transparency</string> 
-
-    <!-- Notification drawer background -->
-    <string name="notification_wallpaper_title">Notification drawer background</string>
-    <string name="notification_wallpaper_landscape_title">Different landscape background</string>
-    <string name="notification_background_color_fill">Color fill</string>
-    <string name="notification_background_custom_image">Custom image</string>
-    <string name="notification_background_default_wallpaper">Default background</string>
-    <string name="notification_drawer_custom_background_dialog_title">Choose color</string>
-    <string name="notif_wallpaper_alpha_title">Notification background transparency</string> 
-    <string name="notif_alpha_title">Notification row transparency</string>
-
     <!-- Advanced low battery indicator options -->  
     <string name="lights_and_warnings_title">Lights and warnings</string>
     <string name="lights_and_warnings_style_title">Lights and warnings options</string>
