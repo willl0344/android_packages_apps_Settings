@@ -58,10 +58,5 @@
             android:key="keyguard_enable_widgets"
             android:title="@string/lockscreen_enable_widgets_title" />
 
-        <CheckBoxPreference
-            android:key="battery_around_lockscreen_ring"
-            android:title="@string/battery_around_lockscreen_ring"
-            android:defaultValue="true" />
-
     </PreferenceCategory>
 </PreferenceScreen>
