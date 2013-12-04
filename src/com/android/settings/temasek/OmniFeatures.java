@@ -55,8 +55,12 @@ public class OmniFeatures extends SettingsPreferenceFragment implements
     private static final String TAG = "OmniFeatures";
 
     private static final String STATUS_BAR_CUSTOM_HEADER = "custom_status_bar_header";
+    private static final String RECENT_MENU_CLEAR_ALL = "recent_menu_clear_all";
+    private static final String RECENT_MENU_CLEAR_ALL_LOCATION = "recent_menu_clear_all_location";
 
     private CheckBoxPreference mStatusBarCustomHeader;
+    private CheckBoxPreference mRecentClearAll;
+    private ListPreference mRecentClearAllPosition;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -70,6 +74,17 @@ public class OmniFeatures extends SettingsPreferenceFragment implements
         mStatusBarCustomHeader.setChecked(Settings.System.getInt(resolver,
             Settings.System.STATUS_BAR_CUSTOM_HEADER, 0) == 1);
         mStatusBarCustomHeader.setOnPreferenceChangeListener(this);
+
+        mRecentClearAll = (CheckBoxPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL);
+        mRecentClearAll.setChecked(Settings.System.getInt(resolver,
+            Settings.System.SHOW_CLEAR_RECENTS_BUTTON, 1) == 1);
+        mRecentClearAll.setOnPreferenceChangeListener(this);
+        mRecentClearAllPosition = (ListPreference) prefSet.findPreference(RECENT_MENU_CLEAR_ALL_LOCATION);
+        String recentClearAllPosition = Settings.System.getString(resolver, Settings.System.CLEAR_RECENTS_BUTTON_LOCATION);
+        if (recentClearAllPosition != null) {
+             mRecentClearAllPosition.setValue(recentClearAllPosition);
+        }
+        mRecentClearAllPosition.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -84,6 +99,12 @@ public class OmniFeatures extends SettingsPreferenceFragment implements
             Settings.System.putInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER, value ? 1 : 0);
            Helpers.restartSystemUI();
+        } else if (preference == mRecentClearAll) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(resolver, Settings.System.SHOW_CLEAR_RECENTS_BUTTON, value ? 1 : 0);
+        } else if (preference == mRecentClearAllPosition) {
+            String value = (String) objValue;
+            Settings.System.putString(resolver, Settings.System.CLEAR_RECENTS_BUTTON_LOCATION, value);
         } else {
             return false;
         }
