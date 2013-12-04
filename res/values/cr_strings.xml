@@ -386,14 +386,6 @@
     <string name="ram_bar_reset">Reset</string>
     <string name="ram_bar_reset_message">Reset RAM bar style to default?</string>
 
-    <!-- Clear Recents position -->
-    <string name="clear_recents_position_title">Clear recents position</string>
-    <string name="clear_recents_position_disabled">Disabled</string>
-    <string name="clear_recents_position_bottom_right">Bottom right</string>
-    <string name="clear_recents_position_bottom_left">Bottom left</string>
-    <string name="clear_recents_position_top_right">Top right</string>
-    <string name="clear_recents_position_top_left">Top left</string>
-
     <!-- Enable Quick Unlock -->
     <string name="lockscreen_quick_unlock_control_title">Quick unlock</string>
     <string name="lockscreen_quick_unlock_control_summary">Unlock automatically when the correct PIN
