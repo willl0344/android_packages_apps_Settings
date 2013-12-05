@@ -180,12 +180,14 @@ public class QuickSettingsTilesStyle extends SettingsPreferenceFragment implemen
                 Settings.System.QUICK_TILES_PER_ROW_DUPLICATE_LANDSCAPE, 1) == 1);
         mDuplicateColumnsLandscape.setOnPreferenceChangeListener(this);
 
+        /** This FC on tablets
         PreferenceCategory additionalOptions =
             (PreferenceCategory) findPreference(PREF_ADDITIONAL_OPTIONS);
         if (!DeviceUtils.isPhone(getActivity())) {
             additionalOptions.removePreference(
                 findPreference(PREF_TILES_PER_ROW_DUPLICATE_LANDSCAPE));
         }
+        **/ 
 
         setHasOptionsMenu(true);
         mCheckPreferences = true;
