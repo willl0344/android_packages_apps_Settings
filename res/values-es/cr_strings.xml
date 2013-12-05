@@ -27,7 +27,7 @@
     <!-- Status bar -->
     <string name="status_bar_title">Barra de estado</string>
     <string name="status_bar_style_title">Opciones de la barra de estado</string>
-    <string name="status_bar_general_title">Ajuste general</string>
+    <string name="status_bar_general_title">Ajustes generales</string>
 
     <!-- Status bar | Clock -->
     <string name="status_bar_clock">Hora y fecha</string>
@@ -91,7 +91,7 @@
     <string name="status_bar_network_cat">Medidor de tráfico de datos</string>
     <string name="status_bar_network_header">Medidor de datos</string>
     <string name="status_bar_network_title">Contador de datos</string>
-    <string name="status_bar_show_network_stats_title">Motrar velocidad de datos</string>
+    <string name="status_bar_show_network_stats_title">Mostrar velocidad del tráfico de datos</string>
     <string name="status_bar_network_stats_update_title">Frecuencia de actualización</string>
 
     <!-- Network stats custm colors -->
@@ -361,22 +361,22 @@
     <string name="media_scanner_on_boot_disabled">No escanear</string>
     
     <!-- Power menu -->
-    <string name="power_menu_style_summary">Change global menu colors</string>
+    <string name="power_menu_style_summary">Cambia el color de los íconos del menú de apagado</string>
 
     <!-- Recents Ram Bar -->
-    <string name="ram_bar">Barra de RAM</string>
+    <string name="ram_bar">Medidor de RAM</string>
     <string name="ram_bar_note_title">Nota</string>
-    <string name="ram_bar_note_summary">Esta barra muestra como Android usa realmente la RAM disponible. Tenga en cuenta que tener apps de fondo y cache listo ayuda a tu disp. a abrir las aplicaciones rápidamente</string>
-    <string name="ram_bar_mode_title">Modo de barra RAM</string>
-    <string name="ram_bar_mode_dialog_title">Muestra en App recientes una barra de RAM</string>
-    <string name="ram_bar_none">Ninguna</string>
+    <string name="ram_bar_note_summary">Este medidor muestra como Android usa realmente la RAM disponible. Tenga en cuenta que tener apps de fondo y cache, ayuda a tu disp. a abrir procesos rápidamente.</string>
+    <string name="ram_bar_mode_title">Configuración del medidor</string>
+    <string name="ram_bar_mode_dialog_title">Selecciona lo que deseas mostrar en el medidor</string>
+    <string name="ram_bar_none">Inhabilitado</string>
     <string name="ram_bar_apps">Aplicaciones</string>
     <string name="ram_bar_cache">Aplicaciones y cache</string>
     <string name="ram_bar_other">Aplicaciones, cache y otros</string>
-    <string name="ram_bar_style_cat">Estilo Barra RAM</string>
+    <string name="ram_bar_style_cat">Estilo del medidor</string>
     <string name="ram_bar_color_app_mem_color">Color RAM de aplicaciones</string>
     <string name="ram_bar_color_cache_mem_color">Color RAM de caché</string>
-    <string name="ram_bar_color_total_mem_color">Color del total</string>
+    <string name="ram_bar_color_total_mem_color">Color de otros usos</string>
     <string name="ram_bar_color_enabled">Habilitado</string>
     <string name="ram_bar_color_disabled">Inhabilitado</string>
     <string name="ram_bar_button_help">Ayuda</string>
@@ -385,12 +385,12 @@
     <string name="ram_bar_reset_message">¿Restaurar la barra al estilo predefinido?</string>
 
     <!-- Clear Recents position -->
-    <string name="clear_recents_position_title">Clear recents position</string>
-    <string name="clear_recents_position_disabled">Disabled</string>
-    <string name="clear_recents_position_bottom_right">Bottom right</string>
-    <string name="clear_recents_position_bottom_left">Bottom left</string>
-    <string name="clear_recents_position_top_right">Top right</string>
-    <string name="clear_recents_position_top_left">Top left</string>
+    <string name="clear_recents_position_title">Botón Borrar recientes</string>
+    <string name="clear_recents_position_disabled">Inhabilitado</string>
+    <string name="clear_recents_position_bottom_right">Abajo a la derecha</string>
+    <string name="clear_recents_position_bottom_left">Abajo a la izquierda</string>
+    <string name="clear_recents_position_top_right">Arriba a la derecha</string>
+    <string name="clear_recents_position_top_left">Arriba a la izquierda</string>
 
     <!-- Enable Quick Unlock -->
     <string name="lockscreen_quick_unlock_control_title">Desbloqueo rápido</string>
@@ -404,23 +404,23 @@
     <!-- Lock Screen Targets --> 
     <string name="lockscreen_target_info">Arrastra el deslizador para ajustar los accesos directos</string>
     <string name="lockscreen_target_title">Accesos directos</string>
-    <string name="lockscreen_target_summary">Añadir o configurar accesos directos</string>
+    <string name="lockscreen_target_summary">Añadir o configurar accesos directos en la pantalla de bloqueo</string>
     <string name="lockscreen_target_color_title">Color de los íconos</string>
     <string name="lockscreen_eight_targets_title">Ocho accesos deslizables</string>
-    <string name="lockscreen_eight_targets_summary">Habilita ocho accesos personalizados</string>
-    <string name="lockscreen_enable_eight_targets_dialog">Cambiar a esta opción restablecerá sus accesos predeterminados.</string>
-    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nCon ocho accesos habilitados no podrás utilizar los atajos de la pantalla de bloqueo al mismo tiempo.</string>
-    <string name="lockscreen_target_reset">Valores por defecto restaurados</string>
-    <string name="lockscreen_target_reset_message">¿Eliminar todos los accesos directos y restaurar valores por defecto?</string>
+    <string name="lockscreen_eight_targets_summary">Habilita ocho accesos en el deslizador</string>
+    <string name="lockscreen_enable_eight_targets_dialog">Esta acción restablecerá sus accesos predeterminados.</string>
+    <string name="lockscreen_enable_eight_targets_enabled_dialog">\n\nCon ocho accesos habilitados no podrás utilizar los atajos de la pantalla de bloqueo.</string>
+    <string name="lockscreen_target_reset">Valores predeterminados restaurados</string>
+    <string name="lockscreen_target_reset_message">¿Eliminar todos los accesos directos y restaurar valores predeterminados?</string>
     <string name="lockscreen_target_empty">Vacío</string>
     <string name="lockscreen_target_edit_title">Editar acceso directo</string>
     <string name="lockscreen_target_edit_msg">Seleccionar o cambiar la aplicación (o actividad) y su ícono</string>
 
  <!-- Lockscreen Shortcuts -->
-    <string name="lockscreen_shortcuts_title">Accesos directos</string>
-    <string name="lockscreen_shortcuts_summary">Añadir o configurar accesos directos</string>
-    <string name="lockscreen_shorcuts_longpress_title">Atajos en pulsación prolongada</string>
-    <string name="lockscreen_shorcuts_longpress_summary">Añadir o configurar atajos en pulsación prolongada</string>
+    <string name="lockscreen_shortcuts_title">Atajos de desbloqueo</string>
+    <string name="lockscreen_shortcuts_summary">Añadir o configurar atajos en la pantalla de bloqueo</string>
+    <string name="lockscreen_shorcuts_longpress_title">Atajos de pulsación prolongada</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Añadir o configurar atajos de pulsación prolongada</string>
 
     <!-- Lock screen targets and shortcuts -->
     <string name="picker_activities">Actividades</string>
@@ -611,5 +611,11 @@
     <string name="notification_drawer_custom_background_dialog_title">Elegir color</string>
     <string name="notif_wallpaper_alpha_title">Transparencia de las notificaciones</string>
     <string name="notif_alpha_title">Transparencia de fila de notificaciones</string>
-
+    
+    <!-- Custom notification panel header -->
+    <string name="omni_features_title">Características de Omni</string>
+    <string name="notification_drawer_category_title">Panel de notificaciones</string>
+    <string name="custom_statusbar_header_title">Encabezado contextual del panel de notificaciones</string>
+    <string name="custom_statusbar_header_summary">Establece una imagen basada en la fecha y hora actual como fondo del panel</string>
+    
 </resources>
