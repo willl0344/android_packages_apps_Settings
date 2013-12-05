@@ -63,22 +63,6 @@
     <string name="clock_date_format_custom">Format personnalisé java</string>
     <string name="status_bar_clock_style_reset_message">Réinitialiser la couleur de l\'horloge?</string>
 
-    <!-- Notification Drawer Settings -->
-    <string name="notification_drawer_title">Tiroir de notifications</string>
-    <string name="notification_drawer_style_title">Options du tiroir de notification</string>
-    <string name="notification_style_summary">Changez le style de votre tiroir de notification</string>
-    <string name="notification_drawer_background">Arrière-plan et transparence</string> 
-
-    <!-- Notification drawer background -->
-    <string name="notification_wallpaper_title">Arrière-plan du tiroir de notifications</string>
-    <string name="notification_wallpaper_landscape_title">Arrière-plan différent en mode paysage</string>
-    <string name="notification_background_color_fill">Couleur</string>
-    <string name="notification_background_custom_image">Image personalisée</string>
-    <string name="notification_background_default_wallpaper">Arrière-plan par défaut</string>
-    <string name="notification_drawer_custom_background_dialog_title">Choisissez la couleur</string>
-    <string name="notif_wallpaper_alpha_title">Transparence de l\'arrière-plan des notifications</string> 
-    <string name="notif_alpha_title">Transparence de la rangée de notifications</string>
-
     <!-- Advanced low battery indicator options -->  
     <string name="lights_and_warnings_title">Lumières et avertissements</string>
     <string name="lights_and_warnings_style_title">Options des lumières et avertissements</string>
@@ -601,5 +585,28 @@
     <string name="lock_pattern_size_4">4x4</string>
     <string name="lock_pattern_size_5">5x5</string>
     <string name="lock_pattern_size_6">6x6</string>
- 
+
+    <!-- Notification Drawer Settings -->
+    <string name="notification_drawer_title">Tiroir de notifications</string>
+    <string name="notification_drawer_style_title">Options du tiroir de notifications</string>
+    <string name="notification_drawer_background">Arrière-plan et transparence</string> 
+
+    <!-- Notification drawer background -->
+    <string name="notification_style_title">Style</string>
+    <string name="notification_style_summary">Changez le style de votre tiroir de notifications</string>
+    <string name="notification_wallpaper_title">Arrière-plan du tiroir de notifications</string>
+    <string name="notification_wallpaper_landscape_title">Arrière-plan différent en mode paysage</string>
+    <string name="notification_background_color_fill">Couleur</string>
+    <string name="notification_background_custom_image">Image personalisée</string>
+    <string name="notification_background_default_wallpaper">Arrière-plan par défaut</string>
+    <string name="notification_drawer_custom_background_dialog_title">Choisissez la couleur</string>
+    <string name="notif_wallpaper_alpha_title">Transparence de l\'arrière-plan des notifications</string> 
+    <string name="notif_alpha_title">Transparence de la rangée de notifications</string>
+    
+    <!-- Custom notification panel header -->
+    <string name="omni_features_title">Fonctionalités d'Omni</string>
+    <string name="notification_drawer_category_title">Tiroir de notifications</string>
+    <string name="custom_statusbar_header_title">En-tête contextuel du panneau de notifications</string>
+    <string name="custom_statusbar_header_summary">Applique une image basée sur l\'heure et date actuelles en arrière-plan de l\'en-tête du panneau de notifications</string>
+      
 </resources>
