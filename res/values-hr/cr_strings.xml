@@ -63,22 +63,6 @@
     <string name="clock_date_format_custom">Prilagođeni java oblik</string>
     <string name="status_bar_clock_style_reset_message">Početna postava boje sata?</string>
 
-    <!-- Notification Drawer Settings -->
-    <string name="notification_drawer_title">Ploča s obavijestima</string>
-    <string name="notification_drawer_style_title">Izgled ploče s obavijestima</string>
-    <string name="notification_style_summary">Promjenite svoje postavke ploče s obavijestima</string>
-    <string name="notification_drawer_background">Pozadina i prozirnost</string>
-
-    <!-- Notification drawer background -->
-    <string name="notification_wallpaper_title">Pozadina ploče s obavijestima</string>
-    <string name="notification_wallpaper_landscape_title">Različita pejsažna pozadina</string>
-    <string name="notification_background_color_fill">Boja popunjavanja</string>
-    <string name="notification_background_custom_image">Prilagođena slika</string>
-    <string name="notification_background_default_wallpaper">Početna postava pozadine</string>
-    <string name="notification_drawer_custom_background_dialog_title">Odaberi boju</string>
-    <string name="notif_wallpaper_alpha_title">Prozirnost pozadine obavijesti</string>
-    <string name="notif_alpha_title">Prozirnost retka obavijesti</string>
-
     <!-- Advanced low battery indicator options -->
     <string name="lights_and_warnings_title">Svjetla i upozorenja</string>
     <string name="lights_and_warnings_style_title">Izgled svjetla i upozorenja</string>
@@ -601,6 +585,28 @@
     <string name="lock_pattern_size_4">4x4</string>
     <string name="lock_pattern_size_5">5x5</string>
     <string name="lock_pattern_size_6">6x6</string>
+    
+    <!-- Notification Drawer Settings -->
+    <string name="notification_drawer_title">Ploča s obavijestima</string>
+    <string name="notification_drawer_style_title">Izgled ploče s obavijestima</string>
+    <string name="notification_drawer_background">Pozadina i prozirnost</string>
 
+    <!-- Notification drawer background -->
+    <string name="notification_style_title">Izgled</string>
+    <string name="notification_style_summary">Promjenite izgled ploče s obavijestima</string>
+    <string name="notification_wallpaper_title">Pozadina</string>
+    <string name="notification_wallpaper_landscape_title">Različita pozadina za pejsažni način</string>
+    <string name="notification_background_color_fill">Boja popunjavanja</string>
+    <string name="notification_background_custom_image">Prilagođena slika</string>
+    <string name="notification_background_default_wallpaper">Početna postava pozadine</string>
+    <string name="notification_drawer_custom_background_dialog_title">Odaberite boju</string>
+    <string name="notif_wallpaper_alpha_title">Prozirnost ploče obavijesti</string>
+    <string name="notif_alpha_title">Prozirnost pojedine obavijesti</string>
+
+    <!-- Custom notification panel header -->
+    <string name="omni_features_title">Omni dodaci</string>
+    <string name="notification_drawer_category_title">Ploča s obavijestima</string>
+    <string name="custom_statusbar_header_title">Kontekstualno zaglavlje ploče s obavijestima</string>
+    <string name="custom_statusbar_header_summary">Postavljanje slikovne pozadine zaglavlja ploče s obavijestima na osnovu trenutnog vremena i datuma</string>
+    
 </resources>
-
