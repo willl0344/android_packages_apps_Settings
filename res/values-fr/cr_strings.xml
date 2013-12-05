@@ -604,7 +604,7 @@
     <string name="notif_alpha_title">Transparence de la rangée de notifications</string>
     
     <!-- Custom notification panel header -->
-    <string name="omni_features_title">Fonctionalités d'Omni</string>
+    <string name="omni_features_title">Fonctionalités d\'Omni</string>
     <string name="notification_drawer_category_title">Tiroir de notifications</string>
     <string name="custom_statusbar_header_title">En-tête contextuel du panneau de notifications</string>
     <string name="custom_statusbar_header_summary">Applique une image basée sur l\'heure et date actuelles en arrière-plan de l\'en-tête du panneau de notifications</string>
