@@ -14,6 +14,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.android.settings.quicksettings;
 
 import java.util.Collections;
@@ -21,12 +22,15 @@ import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.PorterDuff.Mode;
 import android.os.Handler;
 import android.os.SystemClock;
 import android.util.AttributeSet;
+import android.util.TypedValue;
 import android.view.View.MeasureSpec;
 import android.view.View.OnClickListener;
 import android.view.animation.AlphaAnimation;
@@ -57,10 +61,14 @@ public class DraggableGridView extends ViewGroup implements
     protected int dragged = -1, lastX = -1, lastY = -1, lastTarget = -1;
     protected boolean enabled = true, touching = false, isDelete = false;
     public static int animT = 150;
+    private int mTileTextSize;
+    private int mTileTextPadding;
     protected ArrayList<Integer> newPositions = new ArrayList<Integer>();
     protected OnRearrangeListener onRearrangeListener;
     protected OnClickListener secondaryOnClickListener;
     private OnItemClickListener onItemClickListener;
+
+    private Resources mSystemUiResources;
 
     public DraggableGridView(Context context) {
         super(context);
@@ -79,19 +87,22 @@ public class DraggableGridView extends ViewGroup implements
     }
 
     private void init(Context context) {
+        PackageManager pm = context.getPackageManager();
+        try {
+            mSystemUiResources = pm.getResourcesForApplication("com.android.systemui");
+        } catch (Exception e) {
+            return;
+        }
         setListeners();
         setChildrenDrawingOrderEnabled(true);
         setClipChildren(false);
         setClipToPadding(false);
-        colCount = 3;
     }
 
     public void setColumnCount(int count) {
         colCount = count;
-    }
-
-    public void setCellHeight(int height) {
-        childHeight = height;
+        mTileTextSize = getTileTextSize(colCount);
+        mTileTextPadding = getTileTextPadding(colCount);
     }
 
     public void setCellGap(int gap) {
@@ -161,7 +172,7 @@ public class DraggableGridView extends ViewGroup implements
         int width = MeasureSpec.getSize(widthMeasureSpec);
         int availableWidth = (int) (width - getPaddingLeft() - getPaddingRight() -
                 (colCount - 1) * cellGap);
-        childWidth = (int) Math.ceil(((float) availableWidth) / colCount);
+        childWidth = childHeight = (int) Math.ceil(((float) availableWidth) / colCount);
 
         // Update each of the children's widths accordingly to the cell width
         int N = getChildCount();
@@ -269,20 +280,26 @@ public class DraggableGridView extends ViewGroup implements
     }
 
     void toggleAddDelete(boolean delete) {
-        int resid = R.drawable.ic_menu_add;
-        int stringid = R.string.profiles_add;
+        int resid = R.drawable.ic_menu_add_dark;
+        int stringid = R.string.add;
         if (delete) {
             resid = R.drawable.ic_menu_delete_holo_dark;
             stringid = R.string.dialog_delete_title;
         }
-        TextView addDeleteTile = ((TextView) getChildAt(getChildCount() - 1).findViewById(R.id.tile_textview));
-        addDeleteTile.setCompoundDrawablesRelativeWithIntrinsicBounds(0, resid, 0, 0);
-        addDeleteTile.setText(stringid);
+        final TextView name =
+            ((TextView) getChildAt(getChildCount() - 1).findViewById(R.id.text));
+        final ImageView iv =
+            ((ImageView) getChildAt(getChildCount() - 1).findViewById(R.id.image));
+        name.setText(stringid);
+        name.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTileTextSize);
+        name.setPadding(0, mTileTextPadding, 0, 0);
+        iv.setImageDrawable(getResources().getDrawable(resid));
     }
 
     public boolean onLongClick(View view) {
-        if (!enabled)
+        if (!enabled) {
             return false;
+        }
         int index = getLastIndex();
         if (index != -1 && index != getChildCount() - 1) {
             toggleAddDelete(true);
@@ -308,8 +325,8 @@ public class DraggableGridView extends ViewGroup implements
                 // change draw location of dragged visual
                 int x = (int) event.getX(), y = (int) event.getY();
                 int l = x - (3 * childWidth / 4), t = y - (3 * childHeight / 4);
-                getChildAt(dragged).layout(l, t, l + (childWidth * 3 / 2),
-                        t + (childHeight * 3 / 2));
+                getChildAt(dragged).layout(l, t, l + childWidth,
+                        t + childHeight);
 
                 // check for new target hover
                 int target = getTargetFromCoor(x, y);
@@ -378,12 +395,12 @@ public class DraggableGridView extends ViewGroup implements
         int x = getCoorFromIndex(dragged).x + childWidth / 2, y = getCoorFromIndex(dragged).y
                 + childWidth / 2;
         int l = x - (3 * childWidth / 4), t = y - (3 * childHeight / 4);
-        v.layout(l, t, l + (childWidth * 3 / 2), t + (childHeight * 3 / 2));
+        v.layout(l, t, l + childWidth, t + childHeight);
         AnimationSet animSet = new AnimationSet(true);
         ScaleAnimation scale = new ScaleAnimation(.667f, 1, .667f, 1,
                 childWidth * 3 / 4, childHeight * 3 / 4);
         scale.setDuration(animT);
-        AlphaAnimation alpha = new AlphaAnimation(1, .5f);
+        AlphaAnimation alpha = new AlphaAnimation(1, .8f);
         alpha.setDuration(animT);
 
         animSet.addAnimation(scale);
@@ -511,4 +528,40 @@ public class DraggableGridView extends ViewGroup implements
     public void setOnItemClickListener(OnItemClickListener l) {
         this.onItemClickListener = l;
     }
+
+    public int getTileTextSize(int column) {
+        if (mSystemUiResources == null) {
+            return 12;
+        }
+        // adjust the tile text size based on column count
+        switch (column) {
+            case 5:
+                return (int) (mSystemUiResources.getDimension(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:dimen/qs_5_column_text_size", null, null)));
+            case 4:
+                return (int) (mSystemUiResources.getDimension(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:dimen/qs_4_column_text_size", null, null)));
+            case 3:
+            default:
+                return (int) (mSystemUiResources.getDimension(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:dimen/qs_3_column_text_size", null, null)));
+        }
+    }
+
+    public int getTileTextPadding(int column) {
+        // get tile text padding based on column count
+        switch (column) {
+            case 5:
+                return (int) (mSystemUiResources.getDimension(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:dimen/qs_5_column_text_padding", null, null)));
+            case 4:
+                return (int) (mSystemUiResources.getDimension(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:dimen/qs_4_column_text_padding", null, null)));
+            case 3:
+            default:
+                return (int) (mSystemUiResources.getDimension(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:dimen/qs_tile_margin_below_icon", null, null)));
+        }
+    }
+
 }

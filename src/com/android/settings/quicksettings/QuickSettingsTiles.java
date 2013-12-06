@@ -17,14 +17,21 @@
 package com.android.settings.quicksettings;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.provider.Settings;
+import android.text.TextUtils;
+import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -39,10 +46,12 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.android.internal.util.temasek.DeviceUtils;
 import com.android.internal.util.cm.QSConstants;
 import com.android.settings.R;
-import com.android.settings.Utils;
 import com.android.settings.quicksettings.QuickSettingsUtil.TileInfo;
+
+import android.util.Log;
 
 import java.text.Collator;
 import java.util.ArrayList;
@@ -53,6 +62,13 @@ public class QuickSettingsTiles extends Fragment {
 
     private static final int MENU_RESET = Menu.FIRST;
 
+    private static final String SEPARATOR = "OV=I=XseparatorX=I=VO";
+
+    private static final int DLG_RESET         = 0;
+    private static final int DLG_SCREENTIMEOUT = 1;
+    private static final int DLG_NETWORK_MODE  = 2;
+    private static final int DLG_RINGER        = 3;
+
     private DraggableGridView mDragView;
     private ViewGroup mContainer;
     private LayoutInflater mInflater;
@@ -60,8 +76,12 @@ public class QuickSettingsTiles extends Fragment {
     private TileAdapter mTileAdapter;
     private boolean mConfigRibbon;
 
+    private int mTileTextSize;
+    private int mTileTextPadding;
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater,
+            ViewGroup container, Bundle savedInstanceState) {
         mDragView = new DraggableGridView(getActivity());
         mContainer = container;
         mContainer.setClipChildren(false);
@@ -88,17 +108,27 @@ public class QuickSettingsTiles extends Fragment {
                     FrameLayout.LayoutParams.MATCH_PARENT, Gravity.CENTER_HORIZONTAL);
             mDragView.setLayoutParams(params);
         }
-        int cellHeight = getItemFromSystemUi("quick_settings_cell_height", "dimen");
-        if (cellHeight != 0) {
-            mDragView.setCellHeight(cellHeight);
-        }
         int cellGap = getItemFromSystemUi("quick_settings_cell_gap", "dimen");
         if (cellGap != 0) {
             mDragView.setCellGap(cellGap);
         }
-        int columnCount = getItemFromSystemUi("quick_settings_num_columns", "integer");
+        int columnCount = Settings.System.getIntForUser(getActivity().getContentResolver(),
+                Settings.System.QUICK_TILES_PER_ROW, 3,
+                UserHandle.USER_CURRENT);
+        // do not allow duplication on tablets or any device which do not have
+        // flipsettings
+        boolean duplicateOnLandScape = Settings.System.getIntForUser(
+                getActivity().getContentResolver(),
+                Settings.System.QUICK_TILES_PER_ROW_DUPLICATE_LANDSCAPE,
+                1, UserHandle.USER_CURRENT) == 1
+                        && mSystemUiResources.getBoolean(mSystemUiResources.getIdentifier(
+                        "com.android.systemui:bool/config_hasFlipSettingsPanel", null, null))
+                        && isLandscape();
+
         if (columnCount != 0) {
-            mDragView.setColumnCount(columnCount);
+            mDragView.setColumnCount(duplicateOnLandScape ? (columnCount * 2) : columnCount);
+            mTileTextSize = mDragView.getTileTextSize(columnCount);
+            mTileTextPadding = mDragView.getTileTextPadding(columnCount);
         }
         mTileAdapter = new TileAdapter(getActivity(), mConfigRibbon);
         return mDragView;
@@ -131,7 +161,7 @@ public class QuickSettingsTiles extends Fragment {
                 addTile(tile.getTitleResId(), tile.getIcon(), 0, false);
             }
         }
-        addTile(R.string.profiles_add, null, R.drawable.ic_menu_add, false);
+        addTile(R.string.profiles_add, null, R.drawable.ic_menu_add_dark, false);
     }
 
     /**
@@ -145,11 +175,15 @@ public class QuickSettingsTiles extends Fragment {
         View tileView = null;
         if (iconRegId != 0) {
             tileView = (View) mInflater.inflate(R.layout.quick_settings_tile_generic, null, false);
-            final TextView name = (TextView) tileView.findViewById(R.id.tile_textview);
+            final TextView name = (TextView) tileView.findViewById(R.id.text);
+            final ImageView iv = (ImageView) tileView.findViewById(R.id.image);
             name.setText(titleId);
-            name.setCompoundDrawablesRelativeWithIntrinsicBounds(0, iconRegId, 0, 0);
+            name.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTileTextSize);
+            name.setPadding(0, mTileTextPadding, 0, 0);
+            iv.setImageDrawable(getResources().getDrawable(iconRegId));
         } else {
-            final boolean isUserTile = titleId == QuickSettingsUtil.TILES.get(QSConstants.TILE_USER).getTitleResId();
+            final boolean isUserTile =
+                    titleId == QuickSettingsUtil.TILES.get(QSConstants.TILE_USER).getTitleResId();
             if (mSystemUiResources != null && iconSysId != null) {
                 int resId = mSystemUiResources.getIdentifier(iconSysId, null, null);
                 if (resId > 0) {
@@ -157,16 +191,22 @@ public class QuickSettingsTiles extends Fragment {
                         Drawable d = mSystemUiResources.getDrawable(resId);
                         tileView = null;
                         if (isUserTile) {
-                            tileView = (View) mInflater.inflate(R.layout.quick_settings_tile_user, null, false);
+                            tileView = (View) mInflater.inflate(
+                                    R.layout.quick_settings_tile_user, null, false);
                             ImageView iv = (ImageView) tileView.findViewById(R.id.user_imageview);
                             TextView tv = (TextView) tileView.findViewById(R.id.tile_textview);
                             tv.setText(titleId);
+                            tv.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTileTextSize);
                             iv.setImageDrawable(d);
                         } else {
-                            tileView = (View) mInflater.inflate(R.layout.quick_settings_tile_generic, null, false);
-                            final TextView name = (TextView) tileView.findViewById(R.id.tile_textview);
+                            tileView = (View) mInflater.inflate(
+                                    R.layout.quick_settings_tile_generic, null, false);
+                            final TextView name = (TextView) tileView.findViewById(R.id.text);
+                            final ImageView iv = (ImageView) tileView.findViewById(R.id.image);
                             name.setText(titleId);
-                            name.setCompoundDrawablesRelativeWithIntrinsicBounds(null, d, null, null);
+                            name.setTextSize(TypedValue.COMPLEX_UNIT_PX, mTileTextSize);
+                            name.setPadding(0, mTileTextPadding, 0, 0);
+                            iv.setImageDrawable(d);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -232,29 +272,59 @@ public class QuickSettingsTiles extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        if (Utils.isPhone(getActivity())) {
+        if (DeviceUtils.isPhone(getActivity())) {
             mContainer.setPadding(20, 0, 20, 0);
         }
     }
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-
-        menu.add(0, MENU_RESET, 0, R.string.profile_reset_title)
+        menu.add(0, MENU_RESET, 0, R.string.reset)
                 .setIcon(R.drawable.ic_settings_backup) // use the backup icon
-                .setAlphabeticShortcut('r')
-                .setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM |
-                MenuItem.SHOW_AS_ACTION_WITH_TEXT);
+                .setShowAsAction(MenuItem.SHOW_AS_ACTION_ALWAYS);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_RESET:
-                resetTiles();
+                showDialogInner(DLG_RESET);
                 return true;
             default:
                 return false;
+        }
+    }
+
+    private boolean isLandscape() {
+        final boolean isLandscape =
+            Resources.getSystem().getConfiguration().orientation
+                    == Configuration.ORIENTATION_LANDSCAPE;
+        return isLandscape;
+    }
+
+    private void showDialogInner(int id) {
+        DialogFragment newFragment = MyAlertDialogFragment.newInstance(id);
+        newFragment.setTargetFragment(this, 0);
+        newFragment.show(getFragmentManager(), "dialog " + id);
+    }
+
+    public static class MyAlertDialogFragment extends DialogFragment {
+
+        public static MyAlertDialogFragment newInstance(int id) {
+            MyAlertDialogFragment frag = new MyAlertDialogFragment();
+            Bundle args = new Bundle();
+            args.putInt("id", id);
+            frag.setArguments(args);
+            return frag;
+        }
+
+        QuickSettingsTiles getOwner() {
+            return (QuickSettingsTiles) getTargetFragment();
+        }
+
+        @Override
+        public void onCancel(DialogInterface dialog) {
+
         }
     }
 

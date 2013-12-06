@@ -27,6 +27,7 @@ import static com.android.internal.util.cm.QSConstants.TILE_DELIMITER;
 import static com.android.internal.util.cm.QSConstants.TILE_EXPANDEDDESKTOP;
 import static com.android.internal.util.cm.QSConstants.TILE_GPS;
 import static com.android.internal.util.cm.QSConstants.TILE_LOCKSCREEN;
+import static com.android.internal.util.cm.QSConstants.TILE_LOCATION;
 import static com.android.internal.util.cm.QSConstants.TILE_LTE;
 import static com.android.internal.util.cm.QSConstants.TILE_MOBILEDATA;
 import static com.android.internal.util.cm.QSConstants.TILE_NETWORKADB;
@@ -45,6 +46,8 @@ import static com.android.internal.util.cm.QSConstants.TILE_USER;
 import static com.android.internal.util.cm.QSConstants.TILE_VOLUME;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFI;
 import static com.android.internal.util.cm.QSConstants.TILE_WIFIAP;
+import static com.android.internal.util.cm.QSConstants.TILE_MUSIC;
+import static com.android.internal.util.cm.QSConstants.TILE_REBOOT;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -95,6 +98,9 @@ public class QuickSettingsUtil {
                 "com.android.systemui:drawable/ic_qs_sleep"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_GPS, R.string.title_tile_gps,
+                "com.android.systemui:drawable/ic_qs_location_on"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_LOCATION, R.string.title_tile_location,
                 "com.android.systemui:drawable/ic_qs_location_on"));
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_LOCKSCREEN, R.string.title_tile_lockscreen,
@@ -153,6 +159,12 @@ public class QuickSettingsUtil {
         registerTile(new QuickSettingsUtil.TileInfo(
                 TILE_NETWORKADB, R.string.title_tile_network_adb,
                 "com.android.systemui:drawable/ic_qs_network_adb_off"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_MUSIC, R.string.title_tile_music,
+                "com.android.systemui:drawable/ic_qs_media_play"));
+        registerTile(new QuickSettingsUtil.TileInfo(
+                TILE_REBOOT, R.string.title_tile_reboot,
+                "com.android.systemui:drawable/ic_qs_reboot"));
     }
 
     private static void registerTile(QuickSettingsUtil.TileInfo info) {
