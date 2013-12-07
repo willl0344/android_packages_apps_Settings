@@ -222,6 +222,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
 
     private CheckBoxPreference mAdvancedReboot;
 
+    private CheckBoxPreference mDevelopmentShortcut;
+
     private final ArrayList<Preference> mAllPrefs = new ArrayList<Preference>();
     private final ArrayList<CheckBoxPreference> mResetCbPrefs
             = new ArrayList<CheckBoxPreference>();
@@ -560,6 +562,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         updateWifiDisplayCertificationOptions();
         updateRootAccessOptions();
         updateAdvancedRebootOptions();
+	updateDevelopmentShortcutOptions();
     }
 
     private void writeAdvancedRebootOptions() {
@@ -571,6 +574,22 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
     private void updateAdvancedRebootOptions() {
         mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
                 Settings.Secure.ADVANCED_REBOOT, 0) != 0);
+    }
+
+    private void resetDevelopmentShortcutOptions() {
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.DEVELOPMENT_SHORTCUT, 0);
+    }
+
+    private void writeDevelopmentShortcutOptions() {
+        Settings.Secure.putInt(getActivity().getContentResolver(),
+                Settings.Secure.DEVELOPMENT_SHORTCUT,
+                mDevelopmentShortcut.isChecked() ? 1 : 0);
+    }
+
+    private void updateDevelopmentShortcutOptions() {
+        mAdvancedReboot.setChecked(Settings.Secure.getInt(getActivity().getContentResolver(),
+                Settings.Secure.DEVELOPMENT_SHORTCUT, 0) != 0);
     }
 
     private void updateAdbOverNetwork() {
@@ -614,6 +633,7 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
         resetRootAccessOptions();
         resetAdbNotifyOptions();
         resetVerifyAppsOverUsbOptions();
+        resetDevelopmentShortcutOptions();
         writeAnimationScaleOption(0, mWindowAnimationScale, null);
         writeAnimationScaleOption(1, mTransitionAnimationScale, null);
         writeAnimationScaleOption(2, mAnimatorDurationScale, null);
@@ -1443,6 +1463,8 @@ public class DevelopmentSettings extends RestrictedSettingsFragment
             writeAdvancedRebootOptions();
         } else if (preference == mKillAppLongpressBack) {
             writeKillAppLongpressBackOptions();
+	} else if (preference == mDevelopmentShortcut) {
+            writeDevelopmentShortcutOptions();
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
