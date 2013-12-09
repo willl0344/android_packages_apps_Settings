@@ -515,6 +515,21 @@
     <string name="listview_anticipate_overshoot_interpolator">Predvidi/prebaci umetanje</string>
     <string name="listview_bounce_interpolator">Skočno umetanje</string>
 
+    <!-- Lockscreen style settings -->
+    <string name="lockscreen_style_reset_message">Početne postavke boja zaslona zaključavanja?</string>
+    <string name="lockscreen_icon_title">Ikona ručice zaključavanja</string>
+    <string name="lockscreen_lock_icon_custom">Prilagođena ikona</string>
+    <string name="lockscreen_lock_icon_default">Zadana ikona</string>
+    <string name="lockscreen_colorize_handle_title">Boja prilagođene ručice</string>
+    <string name="lockscreen_colorize_handle_summary">Boja zaključavanja će biti podešena prema vašoj slici</string>
+    <string name="lockscreen_style_title">Izgled teme</string>
+    <string name="lockscreen_frame_color_title">Boja okvira</string>
+    <string name="lockscreen_frame_color_summary">Boja dodataka i okvira otključavanja</string>
+    <string name="lockscreen_lock_color_title">Boja zaključavanja</string>
+    <string name="lockscreen_lock_color_summary">Boja ručica zaključavanja</string>
+    <string name="lockscreen_dots_color_title">Boja točkica</string>
+    <string name="lockscreen_dots_color_summary">Boja točkica isijavanja</string>
+
     <!-- Lockscreen widget settings -->
     <string name="lockscreen_widgets_title">Dodaci</string>
     <string name="lockscreen_camera_widget_title">Omogući fotoaparat</string>
@@ -661,15 +676,18 @@
     <string name="quick_tiles_alpha_title">Prozirnost pozadine pločica</string>
     <string name="qs_style_reset_message">Vrati boje na početne vrijednosti?</string>
 
-    <string name="pref_network_mode_title">Mrežni načini</string>
-    <string name="pref_screentimeout_mode_title">Načini isteka prikaza</string>
-    <string name="pref_ring_mode_title">Načini zvuka</string>
+    <string name="pref_network_mode_title">Mrežni način</string>
+    <string name="pref_screentimeout_mode_title">Način isteka prikaza</string>
+    <string name="pref_ring_mode_title">Način zvuka</string>
+    <string name="pref_music_mode_title">Način glazbe</string>
     <string name="screentimeout_mode1">15s | 1m | 5m | Nikad</string>
     <string name="screentimeout_mode2">30s | 2m | 5m | Nikad</string>
     <string name="sound_mode_silent">Tiho</string>
     <string name="sound_mode_vibrate">Vibracija</string>
     <string name="sound_mode_sound">Zvuk</string>
     <string name="sound_mode_soundVibrate">Zvuk &amp; Vibracija</string>
+    <string name="music_tile_mode_background">Prikaži omot albuma</string>
+    <string name="music_tile_mode_tracktitle">Prikaži naslov pjesme</string>
 
     <!-- QuickSettings: Quick Pulldown -->
     <string name="title_quick_pulldown">Brzo povlačenje</string>
@@ -677,5 +695,9 @@
     <string name="quick_pulldown_off">Isključeno</string>
     <string name="quick_pulldown_left">Lijevo</string>
     <string name="quick_pulldown_right">Desno</string>
-    
+
+    <!-- security settings menu unlock -->
+    <string name="unlock_menu_unlock_title">Otključavanje tipkom izbornika</string>
+    <string name="unlock_menu_unlock_summary">Pritisak tipke izbornika otključava uređaj</string>
+
 </resources>
