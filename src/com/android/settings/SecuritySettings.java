@@ -101,6 +101,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
     private static final String MENU_UNLOCK_PREF = "menu_unlock";
+    private static final String LOCKSCREEN_POWER_MENU = "lockscreen_power_menu";
 
     private PackageManager mPM;
     private DevicePolicyManager mDPM;
@@ -140,6 +141,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
 
     // Omni Additions
     private CheckBoxPreference mLockRingBattery;
+    private CheckBoxPreference mLockScreenPowerMenu;
     private CheckBoxPreference mMenuUnlock;
 
     @Override
@@ -349,6 +351,13 @@ public class SecuritySettings extends RestrictedSettingsFragment
                 }
                 mEnableKeyguardWidgets.setEnabled(!disabled);
             }
+        }
+
+        mLockScreenPowerMenu = (CheckBoxPreference) root.findPreference(LOCKSCREEN_POWER_MENU);
+        if (mLockScreenPowerMenu != null) {
+            mLockScreenPowerMenu.setChecked(Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_POWER_MENU, 1) == 1);
+            mLockScreenPowerMenu.setOnPreferenceChangeListener(this);
         }
 
         // Show password
@@ -686,6 +695,9 @@ public class SecuritySettings extends RestrictedSettingsFragment
         } else if (preference == mMenuUnlock) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);        
+        } else if (preference == mLockScreenPowerMenu) {
+            Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
+                    Settings.Secure.LOCK_SCREEN_POWER_MENU, isToggled(preference) ? 1 : 0);
         } else if (preference == mShowPassword) {
             Settings.System.putInt(getContentResolver(), Settings.System.TEXT_SHOW_PASSWORD,
                     mShowPassword.isChecked() ? 1 : 0);
