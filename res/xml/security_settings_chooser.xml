@@ -27,6 +27,11 @@
             android:persistent="false"/>
 
         <PreferenceScreen
+            android:key="keyguard_style"
+            android:fragment="com.android.settings.temasek.LockscreenStyle"
+            android:title="@string/lockscreen_style_title"/>
+
+        <PreferenceScreen
             android:key="lock_screen_settings"
             android:fragment="com.android.settings.temasek.LockscreenInterface"
             android:title="@string/slide_target_title"
@@ -47,6 +52,11 @@
             android:key="battery_around_lockscreen_ring"
             android:title="@string/battery_around_lockscreen_ring"
             android:defaultValue="true" />
+
+        <CheckBoxPreference
+            android:key="menu_unlock"
+            android:title="@string/unlock_menu_unlock_title"
+            android:summary="@string/unlock_menu_unlock_summary" />
 
         <PreferenceScreen
             android:fragment="com.android.settings.OwnerInfoSettings"
