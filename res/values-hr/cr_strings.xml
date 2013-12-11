@@ -700,4 +700,8 @@
     <string name="unlock_menu_unlock_title">Otključavanje tipkom izbornika</string>
     <string name="unlock_menu_unlock_summary">Pritisak tipke izbornika otključava uređaj</string>
 
+    <!-- Status Bar Activity Indicators -->
+    <string name="show_activity_indicators_on_status_bar_title">Pokazatelj mrežne aktivnosti</string>
+    <string name="show_activity_indicators_on_status_bar_summary">Prikaži aktivnosti mreže u statusnoj tracu</string>
+
 </resources>
