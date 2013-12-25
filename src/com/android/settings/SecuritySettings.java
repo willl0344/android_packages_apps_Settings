@@ -100,7 +100,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     // Omni Additions
     private static final String LOCKSCREEN_QUICK_UNLOCK_CONTROL = "lockscreen_quick_unlock_control";
     private static final String BATTERY_AROUND_LOCKSCREEN_RING = "battery_around_lockscreen_ring";
-    private static final String MENU_UNLOCK_PREF = "menu_unlock";
     private static final String LOCKSCREEN_POWER_MENU = "lockscreen_power_menu";
 
     private PackageManager mPM;
@@ -142,7 +141,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
     // Omni Additions
     private CheckBoxPreference mLockRingBattery;
     private CheckBoxPreference mLockScreenPowerMenu;
-    private CheckBoxPreference mMenuUnlock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -233,15 +231,6 @@ public class SecuritySettings extends RestrictedSettingsFragment
         if (mLockAfter != null) {
             setupLockAfterPreference();
             updateLockAfterPreferenceSummary();
-        }
-
-        // Menu Unlock
-        mMenuUnlock = (CheckBoxPreference) root.findPreference(MENU_UNLOCK_PREF);
-        if (mMenuUnlock != null) {
-            final boolean configDisabled = getResources().getBoolean
-                    (com.android.internal.R.bool.config_disableMenuKeyInLockScreen);
-            mMenuUnlock.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.MENU_UNLOCK_SCREEN, configDisabled ? 0 : 1) == 1);
         }
 
         // biometric weak liveliness
@@ -691,10 +680,7 @@ public class SecuritySettings extends RestrictedSettingsFragment
                     Settings.System.LOCKSCREEN_QUICK_UNLOCK_CONTROL, isToggled(preference) ? 1 : 0);
         } else if (preference == mLockRingBattery) {
             Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, isToggled(preference) ? 1 : 0);
-        } else if (preference == mMenuUnlock) {
-            Settings.System.putInt(getActivity().getApplicationContext().getContentResolver(),
-                    Settings.System.MENU_UNLOCK_SCREEN, isToggled(preference) ? 1 : 0);        
+                    Settings.System.BATTERY_AROUND_LOCKSCREEN_RING, isToggled(preference) ? 1 : 0);   
         } else if (preference == mLockScreenPowerMenu) {
             Settings.Secure.putInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.Secure.LOCK_SCREEN_POWER_MENU, isToggled(preference) ? 1 : 0);
