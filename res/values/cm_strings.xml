@@ -688,6 +688,9 @@ two in order to insert additional control points. \'Remove\' deletes the selecte
     <string name="development_shortcut_title">Development shortcut</string>
     <string name="development_shortcut_summary">Enable \'wipe data\' and \'force close\' options in notification area and recent apps list</string>
 
+    <string name="storage_rescan_media">Rescan media for the storage volume</string>
+    <string name="storage_rescan_media_complete">Scan completed</string>
+
     <!-- WhisperPush -->
     <string name="whisperpush_title">WhisperPush</string>
     <string name="whisperpush_registration_title">Register</string>
