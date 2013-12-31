@@ -4,8 +4,6 @@
 
     <!-- About phone screen, temasek version -->
     <string name="temasek_version_title">Temasek unofficial version</string>
-    <!-- Do NOT Translate this -->
-    <string name="temasek_version_default">V26</string>
 
     <!-- General strings -->
     <string name="reset">Reiniciar</string>
@@ -25,8 +23,8 @@
     <!-- Color Picker -->
     <string name="dialog_color_picker">Selector de color</string>
     <string name="press_color_to_apply">Elegir color</string>
-    <string name="arrow_right">?</string>
-    <string name="arrow_down">?</string>
+    <string name="arrow_right">→</string>
+    <string name="arrow_down">↓</string>
     <string name="hex">Hex:</string>
     <string name="hex_hint">#ff000000</string>
     <string name="set">Set</string>
