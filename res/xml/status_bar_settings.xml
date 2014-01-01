@@ -39,7 +39,13 @@
         <PreferenceScreen
             android:key="network_usage_stats"
             android:fragment="com.android.settings.temasek.NetworkUsageStats"
-            android:title="@string/status_bar_network_cat" /> 
+            android:title="@string/status_bar_network_cat" />
+
+        <!-- Double tap sleep gesture -->
+        <com.android.settings.cyanogenmod.SystemSettingCheckBoxPreference
+            android:key="double_tap_sleep_gesture"
+            android:title="@string/status_bar_double_tap_to_sleep_title"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
