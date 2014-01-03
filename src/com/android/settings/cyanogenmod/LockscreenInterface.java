@@ -67,7 +67,7 @@ public class LockscreenInterface extends SettingsPreferenceFragment {
 
         // Remove lockscreen button actions if device doesn't have hardware keys
         if (!hasButtons()) {
-            generalCategory.removePreference(findPreference(KEY_LOCKSCREEN_BUTTONS);
+            generalCategory.removePreference(findPreference(KEY_LOCKSCREEN_BUTTONS));
         }
 
         // Remove/disable custom widgets based on device RAM and policy
