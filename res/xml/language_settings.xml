@@ -111,21 +111,25 @@
 
         <!-- Gesture pad settings -->
         <Preference
-            android:key="gesture_pad_settings">
+            android:key="gesture_pad_settings"
+            android:visibility="gone">
             <intent
                 android:action="com.cyanogenmod.action.LAUNCH_GESTURE_PAD_SETTINGS"
                 android:targetPackage="com.cyanogenmod.settings.device"
-                android:targetClass="com.cyanogenmod.settings.device.GesturePadSettings" />
+                android:targetClass="com.cyanogenmod.settings.device.GesturePadSettings"
+                android:visibility="gone" />
         </Preference>
     </PreferenceCategory>
 
     <PreferenceCategory android:key="game_controller_settings_category"
-            android:title="@string/game_controller_settings_category">
+            android:title="@string/game_controller_settings_category"
+            android:visibility="gone">
         <CheckBoxPreference
                 android:key="vibrate_input_devices"
                 android:title="@string/vibrate_input_devices"
                 android:summaryOn="@string/vibrate_input_devices_summary"
                 android:summaryOff="@string/vibrate_input_devices_summary"
-                android:persistent="false"/>
+                android:persistent="false"
+                android:visibility="gone"/>
     </PreferenceCategory>
 </PreferenceScreen>
