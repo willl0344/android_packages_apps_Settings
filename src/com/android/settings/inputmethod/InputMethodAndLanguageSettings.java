@@ -186,6 +186,8 @@ public class InputMethodAndLanguageSettings extends SettingsPreferenceFragment
             if (pointerSettingsCategory != null) {
                 pointerSettingsCategory.removePreference(mStylusGestures);
                 pointerSettingsCategory.removePreference(mStylusIconEnabled);
+                Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
+                        pointerSettingsCategory, KEY_TRACKPAD_SETTINGS);
             }
         }
 
